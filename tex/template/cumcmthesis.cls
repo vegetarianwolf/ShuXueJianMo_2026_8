@@ -37,6 +37,8 @@
 Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 \fi
 % 支持中文的 ctex 宏包
+% 不使用 Windows/macOS 的系统字体；所有 CJK 字体在 ./fonts/ 中提供。
+\PassOptionsToPackage{fontset=none}{ctex}
 \RequirePackage{ctex}
 % 页面布局
 \RequirePackage{geometry}
@@ -102,11 +104,17 @@ Just choose `xelatex', no `pdflatex' or `latex' and so on.}
 
 
 \RequirePackage{fontspec}
-\newfontfamily\yaheiconsola{YaHei.Consolas.1.11b.ttf}
+% 代码字体也从模板目录读取，避免依赖系统字体注册表。
+\newfontfamily\yaheiconsola[
+    Path = ./,
+    Extension = .ttf
+]{YaHei.Consolas.1.11b}
 \setmonofont[
+Path = ./,
+Extension = .ttf,
 Contextuals={Alternate},
 ItalicFont = Fira Code Retina Nerd Font Complete.otf     % to avoid font warning
-]{YaHei.Consolas.1.11b.ttf}
+]{YaHei.Consolas.1.11b}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 
@@ -173,10 +181,53 @@ ItalicFont = Fira Code Retina Nerd Font Complete.otf     % to avoid font warning
 
 
 
-% 设置字体（替换宋体为思源宋体）
-\setmainfont{Times New Roman}
-\setsansfont{Arial}
-\setCJKfamilyfont{kai}[AutoFakeBold]{simkai.ttf}
+% 设置字体：全部使用仓库内文件，避免依赖 STHeiti、Times New Roman、Arial、simkai.ttf。
+\setmainfont[
+    Path = ./fonts/,
+    Extension = .otf,
+    UprightFont = texgyretermes-regular,
+    BoldFont = texgyretermes-bold,
+    ItalicFont = texgyretermes-italic,
+    BoldItalicFont = texgyretermes-bolditalic
+]{texgyretermes}
+\setsansfont[
+    Path = ./fonts/,
+    Extension = .otf,
+    UprightFont = texgyreheros-regular,
+    BoldFont = texgyreheros-bold,
+    ItalicFont = texgyreheros-italic,
+    BoldItalicFont = texgyreheros-bolditalic
+]{texgyreheros}
+
+\setCJKmainfont[
+    Path = ./fonts/,
+    UprightFont = SourceHanSerifCN-Regular.otf,
+    BoldFont = SourceHanSerifCN-Bold.otf
+]{SourceHanSerifCN}
+
+\setCJKfamilyfont{hei}[
+    Path = ./fonts/,
+    UprightFont = FandolHei-Regular.otf,
+    BoldFont = FandolHei-Bold.otf
+]{FandolHei}
+\setCJKfamilyfont{kai}[
+    Path = ./fonts/,
+    UprightFont = FandolKai-Regular.otf,
+    BoldFont = FandolKai-Regular.otf,
+    AutoFakeBold = 2
+]{FandolKai}
+\setCJKfamilyfont{fang}[
+    Path = ./fonts/,
+    UprightFont = FandolFang-Regular.otf,
+    BoldFont = FandolFang-Regular.otf,
+    AutoFakeBold = 2
+]{FandolFang}
+
+% ctex 的 fontset=none 不再替我们绑定系统字体，显式绑定四种中文字体族。
+\def\songti{\CJKfamily{song}}
+\def\heiti{\CJKfamily{hei}}
+\def\kaishu{\CJKfamily{kai}}
+\def\fangsong{\CJKfamily{fang}}
 \newcommand*{\kai}{\CJKfamily{kai}}
 
 

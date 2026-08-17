@@ -29,7 +29,7 @@
 3. 原始下载文件统一放入 `data/raw/`，下载失败或网页仅提供在线表格时记录在来源清单中，不把网页截图当作正式数据。
 4. 题目已使用 MinerU 重新解析，主 Markdown 为 `docs/TJMML_C.md`，旧的本地回退版保存在 `docs/TJMML_C_fallback.md`。
 5. LaTeX 模板已并入 `tex/template/`，模板编译产物归档在 `build/tex/template/`。
-6. 已做 XeLaTeX 路径检查；当前环境因模板依赖的系统字体 `STHeiti` 未被 XeLaTeX 找到而停止，模板源文件未改动。
+6. 模板已改为引用仓库内字体；不再依赖 `STHeiti`、Times New Roman、Arial 或 `simkai.ttf` 等系统字体。
 
 ## 可复现约定
 
