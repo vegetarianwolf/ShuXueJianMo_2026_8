@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  17 AUG 2026 16:11
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  17 AUG 2026 16:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1422,8 +1422,7 @@ File: pgflibraryarrows.meta.code.tex 2026-08-01 v3.1.12 (3.1.12)
 (D:\junk mass\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypo
 sitioning.code.tex
 File: tikzlibrarypositioning.code.tex 2026-08-01 v3.1.12 (3.1.12)
-)
-No file 数模通用模板.aux.
+) (数模通用模板.aux)
 \openout1 = `数模通用模板.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
@@ -1509,6 +1508,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/YaHei.Consolas.1.11b(1)/b/n on inpu
 t line 53.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
@@ -1548,31 +1548,21 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 Package hyperref Info: Link coloring ON on input line 53.
+(数模通用模板.out) (数模通用模板.out)
 \@outlinefile=\write5
 \openout5 = `数模通用模板.out'.
 
+ [1
 
-Package hyperref Warning: Rerun to get /PageLabels entry.
-
-[1
-
-]
-
-Package natbib Warning: Citation `hyndman2021forecasting' on page 1 undefined o
-n input line 124.
-
-
-Package natbib Warning: Citation `untourism2024barometer' on page 1 undefined o
-n input line 124.
-
-[1]
-LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 161.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 161
+] [1]
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 140.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 140
 .
- (D:\junk mass\MiKTeX\tex/latex/amsfonts\umsa.fd
+
+(D:\junk mass\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 161
+LaTeX Font Info:    Trying to load font information for U+msb on input line 140
 .
 
 (D:\junk mass\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -1584,9 +1574,6 @@ No file 数模通用模板.bbl.
 Package caption Warning: Unused \captionsetup[sub] on input line 14.
 See the caption package documentation for explanation.
 
-
-Package natbib Warning: There were undefined citations.
-
 [11] (数模通用模板.aux)
  ***********
 LaTeX2e <2026-06-01>
@@ -1596,20 +1583,14 @@ L3 programming layer <2026/08/07>
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `数模通用模板.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `数模通用模板.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D9459B6A780E045C9E2F6E0376487286;4292.
+Package rerunfilecheck Info: File `数模通用模板.out' has not changed.
+(rerunfilecheck)             Checksum: F62694F44B8F32F3490EB9FF263A840B;4220.
  ) 
 Here is how much of TeX's memory you used:
- 35417 strings out of 402620
- 747760 string characters out of 5444058
+ 35433 strings out of 402620
+ 747946 string characters out of 5444058
  1210720 words of memory out of 5000000
- 63949 multiletter control sequences out of 15000+600000
+ 63959 multiletter control sequences out of 15000+600000
  637638 words of font info for 121 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  112i,11n,117p,537b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
