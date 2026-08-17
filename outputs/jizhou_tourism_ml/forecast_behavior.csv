@@ -1,0 +1,19 @@
+metric,model,forecast_2025,forecast_2030,five_year_change_percent,extrapolation_note
+tourism_comprehensive_income,bayesian_ridge,265.046958,615.194902,132.107890,linear extrapolation with Bayesian shrinkage and conditional model variance
+tourism_comprehensive_income,gaussian_process,252.646208,500.269348,98.011817,linear plus smooth kernel extrapolation; variance is conditional on kernel choice
+tourism_comprehensive_income,huber_regime,262.554368,591.112192,125.138967,robust linear extrapolation that downweights large residuals
+tourism_comprehensive_income,naive_last,221.000000,221.000000,0.000000,constant persistence baseline
+tourism_comprehensive_income,random_forest,203.167066,203.167066,0.000000,trees cannot extrapolate beyond observed terminal leaves
+tourism_comprehensive_income,ridge_regime,253.962635,487.431677,91.930470,"linear extrapolation with regularized time, pandemic, and post-2022 features"
+tourism_comprehensive_income,robust_ml_ensemble,262.554368,591.112192,125.138967,"median of Ridge, BayesianRidge, and Huber"
+tourism_comprehensive_income,spline_ridge,166.697359,80.388697,-51.775663,linear spline extrapolation outside the observed year range
+tourism_comprehensive_income,svr_rbf,214.805931,174.012336,-18.990907,RBF predictions tend back toward the learned level outside training support
+tourist_visits,bayesian_ridge,3056.603965,5970.763931,95.339795,linear extrapolation with Bayesian shrinkage and conditional model variance
+tourist_visits,gaussian_process,2913.025926,4889.555460,67.851423,linear plus smooth kernel extrapolation; variance is conditional on kernel choice
+tourist_visits,huber_regime,3070.710615,6071.490826,97.722664,robust linear extrapolation that downweights large residuals
+tourist_visits,naive_last,2643.000000,2643.000000,0.000000,constant persistence baseline
+tourist_visits,random_forest,2593.643118,2593.643118,0.000000,trees cannot extrapolate beyond observed terminal leaves
+tourist_visits,ridge_regime,3056.589356,5969.918320,95.313064,"linear extrapolation with regularized time, pandemic, and post-2022 features"
+tourist_visits,robust_ml_ensemble,3056.603965,5970.763931,95.339795,"median of Ridge, BayesianRidge, and Huber"
+tourist_visits,spline_ridge,2113.242073,1171.979970,-44.541140,linear spline extrapolation outside the observed year range
+tourist_visits,svr_rbf,2518.115202,2246.631098,-10.781242,RBF predictions tend back toward the learned level outside training support

@@ -1,0 +1,13 @@
+metric,unit,model,selected_ml_model,year,forecast,backtest_stress_lower,backtest_stress_upper,calibration_max_absolute_log_error,interval_note,native_gp_forecast,native_gp_interval95_lower,native_gp_interval95_upper,conditional_bayesian_forecast,conditional_bayesian_interval95_lower,conditional_bayesian_interval95_upper
+tourist_visits,10k_persons,ridge_regime,True,2025,3056.589356,1401.273081,6667.321752,0.779919,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourist_visits,10k_persons,ridge_regime,True,2026,3494.486403,1602.024072,7622.504201,0.779919,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourist_visits,10k_persons,ridge_regime,True,2027,3995.118022,1831.535311,8714.529230,0.779919,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourist_visits,10k_persons,ridge_regime,True,2028,4567.471773,2093.927085,9963.001358,0.779919,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourist_visits,10k_persons,ridge_regime,True,2029,5221.822805,2393.909969,11390.333709,0.779919,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourist_visits,10k_persons,ridge_regime,True,2030,5969.918320,2736.869386,13022.150389,0.779919,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourism_comprehensive_income,100m_cny,ridge_regime,True,2025,253.962635,115.382923,558.982372,0.788931,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourism_comprehensive_income,100m_cny,ridge_regime,True,2026,289.333426,131.452945,636.834961,0.788931,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourism_comprehensive_income,100m_cny,ridge_regime,True,2027,329.630504,149.761129,725.530515,0.788931,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourism_comprehensive_income,100m_cny,ridge_regime,True,2028,375.539980,170.619196,826.579192,0.788931,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourism_comprehensive_income,100m_cny,ridge_regime,True,2029,427.843526,194.382282,941.701481,0.788931,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,
+tourism_comprehensive_income,100m_cny,ridge_regime,True,2030,487.431677,221.454985,1072.857493,0.788931,max rolling-origin absolute log error envelope; no coverage guarantee,,,,,,

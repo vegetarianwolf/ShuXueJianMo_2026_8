@@ -1,0 +1,13 @@
+metric,unit,target_transform,model,year,forecast,interpretation
+tourist_visits,10k_persons,raw_additive,raw_target_ridge_alpha_0.1,2025,2841.477300,recommended additive sensitivity path; same time/regime features
+tourist_visits,10k_persons,raw_additive,raw_target_ridge_alpha_0.1,2026,3061.404690,recommended additive sensitivity path; same time/regime features
+tourist_visits,10k_persons,raw_additive,raw_target_ridge_alpha_0.1,2027,3281.332080,recommended additive sensitivity path; same time/regime features
+tourist_visits,10k_persons,raw_additive,raw_target_ridge_alpha_0.1,2028,3501.259470,recommended additive sensitivity path; same time/regime features
+tourist_visits,10k_persons,raw_additive,raw_target_ridge_alpha_0.1,2029,3721.186860,recommended additive sensitivity path; same time/regime features
+tourist_visits,10k_persons,raw_additive,raw_target_ridge_alpha_0.1,2030,3941.114250,recommended additive sensitivity path; same time/regime features
+tourism_comprehensive_income,100m_cny,raw_additive,raw_target_ridge_alpha_0.1,2025,227.614895,recommended additive sensitivity path; same time/regime features
+tourism_comprehensive_income,100m_cny,raw_additive,raw_target_ridge_alpha_0.1,2026,241.796984,recommended additive sensitivity path; same time/regime features
+tourism_comprehensive_income,100m_cny,raw_additive,raw_target_ridge_alpha_0.1,2027,255.979073,recommended additive sensitivity path; same time/regime features
+tourism_comprehensive_income,100m_cny,raw_additive,raw_target_ridge_alpha_0.1,2028,270.161162,recommended additive sensitivity path; same time/regime features
+tourism_comprehensive_income,100m_cny,raw_additive,raw_target_ridge_alpha_0.1,2029,284.343251,recommended additive sensitivity path; same time/regime features
+tourism_comprehensive_income,100m_cny,raw_additive,raw_target_ridge_alpha_0.1,2030,298.525340,recommended additive sensitivity path; same time/regime features
