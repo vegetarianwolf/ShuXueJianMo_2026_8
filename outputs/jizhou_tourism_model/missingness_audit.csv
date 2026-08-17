@@ -1,0 +1,5 @@
+metric,unit,years_total,years_with_value,coverage_percent,missing_years,questionable_or_provisional_years
+tourist_visits,10k_persons,16,12,75.00,2020;2021;2022;2025,1
+tourism_comprehensive_income,100m_cny,16,12,75.00,2016;2020;2022;2025,3
+gdp,100m_cny,16,15,93.75,2017,5
+tertiary_value_added,100m_cny,16,11,68.75,2012;2015;2016;2017;2018,1
