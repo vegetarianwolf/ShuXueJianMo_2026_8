@@ -1,7 +1,9 @@
 file,source_sheet,source_range,data_rows,columns,description
 01_annual_summary_2010_2025.csv,年度主表,A1:O17,16,15,2010—2025年度优选宽表，末两列比率以小数保存
 02_tourism_observations_2010_2025.csv,旅游观测,A1:N47,46,14,旅游人次、直接收入和综合收入长表，保留口径与版本
-03_macro_observations_2010_2025.csv,宏观观测,A1:J38,37,10,GDP与第三产业增加值长表，保留初值和修订值
-04_related_indicators_2014_2025.csv,相关指标,A1:H38,37,8,社零、投资、收入、人口、财政等解释变量长表
-05_source_catalog.csv,来源清单,A1:G57,56,7,来源ID、政府网址、本地原件路径和获取状态
+03_macro_observations_2010_2025.csv,宏观观测,A1:J56,55,10,GDP与第三产业增加值长表，保留初值和修订值
+04_related_indicators_2014_2025.csv,相关指标,A1:H45,44,8,社零、投资、收入、人口、财政等解释变量长表
+05_source_catalog.csv,来源清单,A1:G62,61,7,来源ID、政府网址、本地原件路径和获取状态
 06_data_notes_and_gaps.csv,说明与缺口,A1:D37,36,4,覆盖概览、口径规则、数据缺口和推荐过滤方式
+07_tourism_supply_2012_2024.csv,供给能力,A1:K42,41,11,限额以上住宿餐饮供给长表及单列星级饭店锚点
+08_supplemental_gap_evidence_2016_2025.csv,补缺线索,A1:K8,7,11,二手报道、代数约束和目标隐含基数，仅用于敏感性与校验

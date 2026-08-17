@@ -55,3 +55,8 @@ gov_tj_yearbook_2025_jizhou,天津统计年鉴,2025年鉴蓟州区基本情况,h
 gov_tj_yearbook_2025_districts,天津统计年鉴,2025年鉴各区主要经济指标,https://stats.tj.gov.cn/nianjian/2025nj/zk/html/25-01.xls,data/raw/government/tianjin_statistics/tj_yearbook_2025_district_indicators.xls,downloaded_xls,accessed=2026-08-17;跨区校验表
 gov_tj_whly_star_hotels_2024,天津文旅统计,2024年分区星级饭店,https://whly.tj.gov.cn/ZWGKYXXGK1640/ZFXXGK5456_1/FDZDGKNR5153/TJXX3610/202509/W020250912551107590041.xls,data/raw/government/tianjin_culture_tourism/star_hotels_by_district_2024.xls,downloaded_xls,accessed=2026-08-17;结构校验数据非蓟州旅游总量
 gov_tj_whly_scenic_2021_2024,天津文旅统计,2021—2024重点A级景区,https://whly.tj.gov.cn/ZWGKYXXGK1640/ZFXXGK5456_1/FDZDGKNR5153/TJXX3610/202509/W020250912550622295186.xls,data/raw/government/tianjin_culture_tourism/key_a_scenic_spots_2021_2024.xls,downloaded_xls,accessed=2026-08-17;结构校验数据非全区旅游总量
+db_nankai_catalog_20260817,南开大学图书馆数据库,数据库检索目录,https://lib.nankai.edu.cn/sjkjs_15469/list.htm,,browser_verified_catalog,accessed=2026-08-17;用于筛选EPS中经网和国研网等可能数据库
+db_cnki_jizhou_gap_20260817,知网中国经济社会大数据,蓟州旅游缺口检索,https://data.cnki.net/,,browser_searched_no_direct_p0,accessed=2026-08-17;区县年度旅游分类和天津统计年鉴表均未检出缺失年度游客量或综合收入
+db_eps_jizhou_macro_20260817,EPS数据平台,中国区域经济数据库年度分县,https://olap.epsnet.com.cn/,,browser_verified_query_no_export,accessed=2026-08-17;cubeId=776;蓟州GDP和第三产业值与中经网一致;旅游库无区县总量
+db_cei_jizhou_macro_20260817,中经网统计数据库,县域年度库蓟州区宏观序列,https://ceidata.cei.cn/db,,browser_verified_query_no_export,accessed=2026-08-17;南开大学集团用户入口;GDP和第三产业来源栏标注天津统计年鉴
+media_itbear_jizhou_2025,二手媒体,2025年蓟州旅游接待量报道,https://www.itbear.com.cn/html/2026-04/1271544.html,,secondary_media_reference,accessed=2026-08-17;报道游客量2691万人次且旅游收入突破200亿元;未作为官方年度实际
