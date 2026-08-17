@@ -16,7 +16,15 @@ const outputPath = path.join(
   "蓟州区旅游经济政府数据扩充版_2010-2025.xlsx",
 );
 
-const [summaryCsv, tourismCsv, macroCsv, relatedCsv, sourcesCsv] =
+const [
+  summaryCsv,
+  tourismCsv,
+  macroCsv,
+  relatedCsv,
+  supplyCsv,
+  gapEvidenceCsv,
+  sourcesCsv,
+] =
   await Promise.all([
     fs.readFile(
       path.join(dataDir, "official_annual_summary_2010_2025.csv"),
@@ -34,6 +42,14 @@ const [summaryCsv, tourismCsv, macroCsv, relatedCsv, sourcesCsv] =
       path.join(dataDir, "official_related_observations_2014_2025.csv"),
       "utf8",
     ),
+    fs.readFile(
+      path.join(dataDir, "official_tourism_supply_observations_2012_2024.csv"),
+      "utf8",
+    ),
+    fs.readFile(
+      path.join(dataDir, "supplemental_gap_evidence_2016_2025.csv"),
+      "utf8",
+    ),
     fs.readFile(path.join(metadataDir, "sources.csv"), "utf8"),
   ]);
 
@@ -41,6 +57,8 @@ const workbook = await Workbook.fromCSV(summaryCsv, { sheetName: "年度主表" 
 await workbook.fromCSV(tourismCsv, { sheetName: "旅游观测" });
 await workbook.fromCSV(macroCsv, { sheetName: "宏观观测" });
 await workbook.fromCSV(relatedCsv, { sheetName: "相关指标" });
+await workbook.fromCSV(supplyCsv, { sheetName: "供给能力" });
+await workbook.fromCSV(gapEvidenceCsv, { sheetName: "补缺线索" });
 await workbook.fromCSV(sourcesCsv, { sheetName: "来源清单" });
 const notes = workbook.worksheets.add("说明与缺口");
 
@@ -195,24 +213,24 @@ macro.getRange("A1:J1").values = [[
   "来源URL",
   "备注",
 ]];
-applyBodyStyle(macro, "A1:J38");
+applyBodyStyle(macro, "A1:J56");
 applyHeaderStyle(macro, "A1:J1");
-macro.getRange("A2:A38").format.numberFormat = "0";
-macro.getRange("C2:C38").format.numberFormat = "#,##0.0000";
-macro.getRange("H2:H38").format.numberFormat = "0";
-macro.getRange("E2:F38").format.fill = lightGray;
-macro.getRange("H2:H38").format.fill = paleBlue;
-macro.getRange("I2:J38").format.wrapText = true;
-setWidth(macro, "A1:A38", 10);
-setWidth(macro, "B1:B38", 29);
-setWidth(macro, "C1:C38", 16);
-setWidth(macro, "D1:D38", 14);
-setWidth(macro, "E1:E38", 31);
-setWidth(macro, "F1:F38", 28);
-setWidth(macro, "G1:G38", 31);
-setWidth(macro, "H1:H38", 11);
-setWidth(macro, "I1:I38", 66);
-setWidth(macro, "J1:J38", 58);
+macro.getRange("A2:A56").format.numberFormat = "0";
+macro.getRange("C2:C56").format.numberFormat = "#,##0.0000";
+macro.getRange("H2:H56").format.numberFormat = "0";
+macro.getRange("E2:F56").format.fill = lightGray;
+macro.getRange("H2:H56").format.fill = paleBlue;
+macro.getRange("I2:J56").format.wrapText = true;
+setWidth(macro, "A1:A56", 10);
+setWidth(macro, "B1:B56", 29);
+setWidth(macro, "C1:C56", 16);
+setWidth(macro, "D1:D56", 14);
+setWidth(macro, "E1:E56", 31);
+setWidth(macro, "F1:F56", 28);
+setWidth(macro, "G1:G56", 31);
+setWidth(macro, "H1:H56", 11);
+setWidth(macro, "I1:I56", 66);
+setWidth(macro, "J1:J56", 58);
 
 const related = workbook.worksheets.getItem("相关指标");
 related.showGridLines = false;
@@ -227,20 +245,90 @@ related.getRange("A1:H1").values = [[
   "来源URL",
   "备注",
 ]];
-applyBodyStyle(related, "A1:H38");
+applyBodyStyle(related, "A1:H45");
 applyHeaderStyle(related, "A1:H1");
-related.getRange("A2:A38").format.numberFormat = "0";
-related.getRange("C2:C38").format.numberFormat = "#,##0.0000";
-related.getRange("E2:E38").format.fill = lightGray;
-related.getRange("G2:H38").format.wrapText = true;
-setWidth(related, "A1:A38", 10);
-setWidth(related, "B1:B38", 43);
-setWidth(related, "C1:C38", 16);
-setWidth(related, "D1:D38", 18);
-setWidth(related, "E1:E38", 18);
-setWidth(related, "F1:F38", 31);
-setWidth(related, "G1:G38", 66);
-setWidth(related, "H1:H38", 58);
+related.getRange("A2:A45").format.numberFormat = "0";
+related.getRange("C2:C45").format.numberFormat = "#,##0.0000";
+related.getRange("E2:E45").format.fill = lightGray;
+related.getRange("G2:H45").format.wrapText = true;
+setWidth(related, "A1:A45", 10);
+setWidth(related, "B1:B45", 43);
+setWidth(related, "C1:C45", 16);
+setWidth(related, "D1:D45", 18);
+setWidth(related, "E1:E45", 18);
+setWidth(related, "F1:F45", 31);
+setWidth(related, "G1:G45", 66);
+setWidth(related, "H1:H45", 58);
+
+const supply = workbook.worksheets.getItem("供给能力");
+supply.showGridLines = false;
+supply.freezePanes.freezeRows(1);
+supply.getRange("A1:K1").values = [[
+  "年份",
+  "指标",
+  "数值",
+  "单位",
+  "值状态",
+  "指标范围",
+  "版本",
+  "来源ID",
+  "证据等级",
+  "来源URL",
+  "备注",
+]];
+applyBodyStyle(supply, "A1:K42");
+applyHeaderStyle(supply, "A1:K1");
+supply.getRange("A2:A42").format.numberFormat = "0";
+supply.getRange("C2:C42").format.numberFormat = "#,##0.0000";
+supply.getRange("I2:I42").format.numberFormat = "0";
+supply.getRange("E2:G42").format.fill = lightGray;
+supply.getRange("I2:I42").format.fill = paleBlue;
+supply.getRange("J2:K42").format.wrapText = true;
+setWidth(supply, "A1:A42", 10);
+setWidth(supply, "B1:B42", 22);
+setWidth(supply, "C1:C42", 16);
+setWidth(supply, "D1:D42", 14);
+setWidth(supply, "E1:E42", 24);
+setWidth(supply, "F1:F42", 43);
+setWidth(supply, "G1:G42", 27);
+setWidth(supply, "H1:H42", 31);
+setWidth(supply, "I1:I42", 11);
+setWidth(supply, "J1:J42", 66);
+setWidth(supply, "K1:K42", 58);
+
+const gapEvidence = workbook.worksheets.getItem("补缺线索");
+gapEvidence.showGridLines = false;
+gapEvidence.freezePanes.freezeRows(1);
+gapEvidence.getRange("A1:K1").values = [[
+  "起始年",
+  "结束年",
+  "指标",
+  "数值",
+  "单位",
+  "证据角色",
+  "来源ID",
+  "推导式/原文",
+  "模型用途",
+  "来源URL",
+  "备注",
+]];
+applyBodyStyle(gapEvidence, "A1:K8");
+applyHeaderStyle(gapEvidence, "A1:K1");
+gapEvidence.getRange("A2:B8").format.numberFormat = "0";
+gapEvidence.getRange("D2:D8").format.numberFormat = "#,##0.0000";
+gapEvidence.getRange("F2:F8").format.fill = paleYellow;
+gapEvidence.getRange("I2:I8").format.fill = paleRed;
+gapEvidence.getRange("H2:K8").format.wrapText = true;
+setWidth(gapEvidence, "A1:B8", 10);
+setWidth(gapEvidence, "C1:C8", 37);
+setWidth(gapEvidence, "D1:D8", 16);
+setWidth(gapEvidence, "E1:E8", 17);
+setWidth(gapEvidence, "F1:F8", 27);
+setWidth(gapEvidence, "G1:G8", 34);
+setWidth(gapEvidence, "H1:H8", 30);
+setWidth(gapEvidence, "I1:I8", 18);
+setWidth(gapEvidence, "J1:J8", 72);
+setWidth(gapEvidence, "K1:K8", 64);
 
 const sources = workbook.worksheets.getItem("来源清单");
 sources.showGridLines = false;
@@ -254,24 +342,24 @@ sources.getRange("A1:G1").values = [[
   "获取状态",
   "说明",
 ]];
-applyBodyStyle(sources, "A1:G57");
+applyBodyStyle(sources, "A1:G62");
 applyHeaderStyle(sources, "A1:G1");
-sources.getRange("F2:F57").format.fill = paleBlue;
-sources.getRange("C2:G57").format.wrapText = true;
-setWidth(sources, "A1:A57", 34);
-setWidth(sources, "B1:B57", 24);
-setWidth(sources, "C1:C57", 42);
-setWidth(sources, "D1:D57", 72);
-setWidth(sources, "E1:E57", 62);
-setWidth(sources, "F1:F57", 34);
-setWidth(sources, "G1:G57", 66);
+sources.getRange("F2:F62").format.fill = paleBlue;
+sources.getRange("C2:G62").format.wrapText = true;
+setWidth(sources, "A1:A62", 34);
+setWidth(sources, "B1:B62", 24);
+setWidth(sources, "C1:C62", 42);
+setWidth(sources, "D1:D62", 72);
+setWidth(sources, "E1:E62", 62);
+setWidth(sources, "F1:F62", 34);
+setWidth(sources, "G1:G62", 66);
 
 notes.showGridLines = false;
 notes.mergeCells("A1:D1");
 notes.mergeCells("A2:D2");
 notes.getRange("A1").values = [["蓟州区旅游经济政府数据扩充版"]];
 notes.getRange("A2").values = [[
-  "整理日期 2026-08-17｜实际、目标、累计、推导和修订版本已分开保存",
+  "整理日期 2026-08-17｜官方原件、授权数据库核验、目标、累计与推导值已分开保存",
 ]];
 notes.getRange("A4:D4").values = [["覆盖概览", "有值年份", "总年份", "说明"]];
 notes.getRange("A5:A8").values = [
@@ -289,8 +377,8 @@ notes.getRange("C5:C8").values = [[16], [16], [16], [16]];
 notes.getRange("D5:D8").values = [
   ["含约数和已下线官方页缓存值"],
   ["含2010反推值和2015辅助附件值"],
-  ["2017缺值；部分早期年份为预计或推导"],
-  ["2012、2015—2018仍有缺口"],
+  ["16年全覆盖；2012—2020已用天津统计年鉴回列值补齐"],
+  ["16年全覆盖；2012—2020已用天津统计年鉴回列值补齐"],
 ];
 notes.getRange("A10:D10").values = [["核心口径", "规则", "影响", "建议"]];
 notes.getRange("A11:D15").values = [
@@ -304,16 +392,17 @@ notes.getRange("A17:D17").values = [["未解决缺口", "年份", "当前可用�
 notes.getRange("A18:D23").values = [
   ["年度游客量/综合收入", "2020", "未找到可靠公开年度总量", "保留空白"],
   ["精确游客量", "2021", "仅找到综合收入110亿元", "保留游客空白"],
-  ["年度游客量/实际综合收入", "2022", "2023报告为目标而非2022实际", "保留空白"],
-  ["年度旅游实际", "2025", "仅有目标和十四五累计", "排除目标值"],
+  ["年度游客量/实际综合收入", "2022", "仅有累计余量和目标隐含基数", "不得回填推导值"],
+  ["官方年度旅游实际", "2025", "二手报道2691万人次且收入突破200亿元", "仅作敏感性证据"],
   ["旅游综合收入", "2016", "仅找到直接收入", "不得按5倍自动冒充实测"],
-  ["最终宏观值", "2012/2015—2018", "部分为预计或推导", "需继续查旧年鉴"],
+  ["连续政策/行为/全域供给", "2012—2025", "已有道路、财政和限上住宿锚点", "补齐连续同口径序列"],
 ];
 notes.getRange("A25:D25").values = [["证据等级", "含义", "是否有本地原件", "推荐用途"]];
-notes.getRange("A26:D28").values = [
+notes.getRange("A26:D29").values = [
   [1, "可直接复核的政府HTML/PDF/XLS/RAR", "是", "主模型"],
-  [2, "官方页下线或旧站防护；目录/同URL索引复核", "最小证据记录", "稳健性分析"],
+  [2, "授权数据库展示原年鉴值或官方索引复核", "浏览器核验记录", "宏观主序列/稳健性"],
   [3, "政府站辅助附件而非统计公报", "附件当前不可直取", "补充说明"],
+  [4, "二手媒体转述或阈值", "无官方原表", "仅敏感性/约束"],
 ];
 notes.getRange("A30:D30").values = [["建模过滤", "保留", "排除/单列", "原因"]];
 notes.getRange("A31:D34").values = [
@@ -325,14 +414,14 @@ notes.getRange("A31:D34").values = [
 notes.getRange("A36:D36").values = [[
   "来源入口",
   "蓟州区政府数据发布",
-  "天津统计年鉴",
-  "天津市文旅局统计",
+  "南开大学图书馆数据库目录",
+  "中经网统计数据库",
 ]];
 notes.getRange("A37:D37").values = [[
   "URL",
   "https://www.tjjz.gov.cn/zwgk/sjfb/",
-  "https://stats.tj.gov.cn/tjsj_52032/tjnj/",
-  "https://whly.tj.gov.cn/ZWGKYXXGK1640/ZFXXGK5456_1/FDZDGKNR5153/TJXX3610/",
+  "https://lib.nankai.edu.cn/sjkjs_15469/list.htm",
+  "https://ceidata.cei.cn/db",
 ]];
 applyBodyStyle(notes, "A1:D37");
 notes.getRange("A1:D1").format.fill = navy;
@@ -377,6 +466,26 @@ const mainInspect = await workbook.inspect({
 });
 console.log(`MAIN_INSPECT\n${mainInspect.ndjson}`);
 
+const supplementalInspect = await workbook.inspect({
+  kind: "table",
+  range: "供给能力!A1:K42",
+  include: "values,formulas",
+  tableMaxRows: 45,
+  tableMaxCols: 11,
+  maxChars: 24000,
+});
+console.log(`SUPPLY_INSPECT\n${supplementalInspect.ndjson}`);
+
+const gapInspect = await workbook.inspect({
+  kind: "table",
+  range: "补缺线索!A1:K8",
+  include: "values,formulas",
+  tableMaxRows: 10,
+  tableMaxCols: 11,
+  maxChars: 12000,
+});
+console.log(`GAP_INSPECT\n${gapInspect.ndjson}`);
+
 const errorScan = await workbook.inspect({
   kind: "match",
   searchTerm: "#REF!|#DIV/0!|#VALUE!|#NAME\\?|#N/A",
@@ -391,9 +500,11 @@ await fs.mkdir(renderDir, { recursive: true });
 const renderTargets = [
   ["年度主表", "A1:O17"],
   ["旅游观测", "A1:N22"],
-  ["宏观观测", "A1:J22"],
-  ["相关指标", "A1:H22"],
-  ["来源清单", "A1:G18"],
+  ["宏观观测", "A1:J30"],
+  ["相关指标", "A1:H30"],
+  ["供给能力", "A1:K24"],
+  ["补缺线索", "A1:K8"],
+  ["来源清单", "A1:G20"],
   ["说明与缺口", "A1:D37"],
 ];
 for (const [sheetName, range] of renderTargets) {
@@ -409,4 +520,13 @@ for (const [sheetName, range] of renderTargets) {
 
 const output = await SpreadsheetFile.exportXlsx(workbook);
 await output.save(outputPath);
+
+const artifactInspect = await workbook.inspect({
+  kind: "workbook,sheet,table,region,formula,definedName,drawing,thread,computedStyle",
+  include: "values,formulas,styles",
+  tableMaxRows: 100,
+  tableMaxCols: 20,
+  maxChars: 2000000,
+});
+await fs.writeFile(`${outputPath}.inspect.ndjson`, `${artifactInspect.ndjson}\n`, "utf8");
 console.log(`OUTPUT ${outputPath}`);
