@@ -31,19 +31,19 @@ const exports = [
   },
   {
     sheet: "宏观观测",
-    range: "A1:J38",
+    range: "A1:J56",
     file: "03_macro_observations_2010_2025.csv",
     description: "GDP与第三产业增加值长表，保留初值和修订值",
   },
   {
     sheet: "相关指标",
-    range: "A1:H38",
+    range: "A1:H45",
     file: "04_related_indicators_2014_2025.csv",
     description: "社零、投资、收入、人口、财政等解释变量长表",
   },
   {
     sheet: "来源清单",
-    range: "A1:G57",
+    range: "A1:G62",
     file: "05_source_catalog.csv",
     description: "来源ID、政府网址、本地原件路径和获取状态",
   },
@@ -52,6 +52,18 @@ const exports = [
     range: "A1:D37",
     file: "06_data_notes_and_gaps.csv",
     description: "覆盖概览、口径规则、数据缺口和推荐过滤方式",
+  },
+  {
+    sheet: "供给能力",
+    range: "A1:K42",
+    file: "07_tourism_supply_2012_2024.csv",
+    description: "限额以上住宿餐饮供给长表及单列星级饭店锚点",
+  },
+  {
+    sheet: "补缺线索",
+    range: "A1:K8",
+    file: "08_supplemental_gap_evidence_2016_2025.csv",
+    description: "二手报道、代数约束和目标隐含基数，仅用于敏感性与校验",
   },
 ];
 
