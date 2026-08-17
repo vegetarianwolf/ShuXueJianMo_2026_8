@@ -8,6 +8,7 @@
 - `official_macro_observations_2010_2025.csv`：GDP 与第三产业增加值长表。公报初值、政府报告预计值、年鉴修订值互不覆盖。
 - `official_related_observations_2014_2025.csv`：社零、固定资产投资、居民收入、人口、公路、财政支出和文化旅游体育与传媒支出等解释变量。
 - `official_annual_summary_2010_2025.csv`：按规则挑选的年度宽表。适合快速浏览，不应替代长表中的版本和口径信息。
+- `csv_exports/`：扩充版工作簿六张工作表的一一对应 CSV 导出，并含文件清单 `manifest.csv`，便于程序批量读取。
 - `蓟州区旅游经济数据集_2010-2025.xlsx`：仓库原有汇总工作簿，包含非政府补充来源，保留作历史快照，不作为本次官方优选表的覆盖依据。
 
 原始政府文件位于 `data/raw/government/`，来源登记位于 `data/metadata/sources.csv`。
