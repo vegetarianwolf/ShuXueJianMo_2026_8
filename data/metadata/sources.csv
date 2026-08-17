@@ -1,0 +1,6 @@
+source_id,topic,source_label,url,expected_local_path,status,notes
+tj_2025_bulletin,天津市统计数据,2025年统计公报,https://www.tjjz.gov.cn/zwgk/sjfb/tjgb/202606/t20260629_7325623.html,data/raw/tj_2025_bulletin_browser.txt,downloaded_via_chrome_text,官方页面正文快照；原始HTML因命令行DNS不可用未保存
+tj_2024_yearbook,天津市统计数据,2024年统计年鉴,https://www.tjjz.gov.cn/zwgk/sjfb/tjnb/202511/t20251126_7185954.html,data/raw/tj_2024_yearbook_browser.txt,downloaded_via_chrome_text,官方页面正文快照；原始HTML因命令行DNS不可用未保存
+tj_historical_data,天津市统计数据,历年数据,https://www.tjjz.gov.cn/zwgk/sjfb/,data/raw/tj_historical_index_browser.txt,downloaded_via_chrome_text,官方数据发布页正文快照
+tj_2024_monthly,天津市统计数据,2024年1月至12月数据,https://www.tjjz.gov.cn/zwgk/sjfb/tjyb/202501/t20250123_6842681.html,data/raw/tj_2024_monthly_browser.txt,downloaded_via_chrome_text,官方页面正文快照，含指标表
+tj_tourism_search,蓟州区旅游数据,站内检索：旅游接待人次,https://www.tjjz.gov.cn/searchsite/tjsjzqrmzf/search.html?siteId=87&searchWord=%E6%97%85%E6%B8%B8%E6%8E%A5%E5%BE%85%E4%BA%BA%E6%AC%A1,data/raw/tj_tourism_search_browser.txt,downloaded_via_chrome_text,检索结果包含2011—2017年部分旅游接待人次和旅游收入历史记录

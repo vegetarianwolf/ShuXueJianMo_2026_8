@@ -1,0 +1,9 @@
+year,period_type,tourist_visits_10k_persons,tourism_revenue_10k_cny,gdp_100m_cny,tertiary_value_100m_cny,source_id,value_status,notes
+2010,annual,848.34,71044.17,,,,tj_tourism_search,inferred,由2011年值及同比增长29.5%反推；后续需用原始年报核验
+2011,annual,1098.60,92002.20,,,,tj_tourism_search,observed,蓟县2011年简明统计资料
+2014,annual,1553.40,158007.00,,,,tj_tourism_search,observed,2015年4季度页面中的上年对比值
+2015,annual,1814.40,187661.00,,,,tj_tourism_search,observed,2015年4季度页面
+2016,annual,2086.27,219191.00,,,,tj_tourism_search,observed,2016年商业、外贸、建筑业、固定资产、旅游、居民生活水平页面
+2017,annual,2392.00,261347.00,,,,tj_tourism_search,observed,2017年4季度页面
+2024,annual,,,298.87,183.97,tj_2024_monthly,observed,2024年1-12月统计资料；旅游接待人次和旅游收入未在该页面表中列出
+2025,annual,,,311.94,195.17,tj_2025_bulletin,observed,2025年统计公报；旅游接待人次和旅游综合收入未在公报正文中列出

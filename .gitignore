@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.idea/
+.DS_Store
+
+# Local and generated files
+tmp/
+build/tex/*
+!build/tex/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+figures/*
+!figures/.gitkeep
+!figures/TJMML_C-000.jpg
+
+# Download caches
+*.part
+*.crdownload
