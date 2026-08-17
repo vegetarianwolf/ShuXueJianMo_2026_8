@@ -826,7 +826,10 @@ def data_availability_audit(data: pd.DataFrame) -> pd.DataFrame:
                     map(str, data.loc[data["preferred_tertiary_100m_cny"].notna(), "year"].astype(int))
                 ),
                 "future_known_2026_2030": False,
-                "decision": "excluded from final forecast; five historical gaps and future values unknown",
+                "decision": (
+                    "excluded from final forecast; historical coverage is complete, but the 2019 "
+                    "level break and future values remain unknown"
+                ),
             },
         ]
     )
