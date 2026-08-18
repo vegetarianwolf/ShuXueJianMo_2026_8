@@ -1,0 +1,7 @@
+metric,selection_track,selected_lambda,alpha_code_parameter,selection_status,boundary_hit,boundary_side,inner_validation_count,mean_inner_smape_percent,selected_for_forecast,training_max_year,uses_2024_for_selection
+tourist_visits,official_only,0.0001000000,0.0001000000,selected_by_nested_expanding_origin_smape,True,lower,7,11.7942996709,False,2023,False
+tourist_visits,fold_local_augmented_sensitivity,0.0001000000,0.0001000000,selected_by_nested_expanding_origin_smape,True,lower,7,11.8990148954,True,2023,False
+tourist_visits,zero_boundary_diagnostic,0.0000000000,0.0000000000,selected_by_nested_expanding_origin_smape,True,lower,7,11.7939172456,False,2023,False
+tourism_comprehensive_income,official_only,0.0001000000,0.0001000000,selected_by_nested_expanding_origin_smape,True,lower,7,15.3447422108,False,2023,False
+tourism_comprehensive_income,fold_local_augmented_sensitivity,0.0001000000,0.0001000000,selected_by_nested_expanding_origin_smape,True,lower,7,15.4388304746,True,2023,False
+tourism_comprehensive_income,zero_boundary_diagnostic,0.0000000000,0.0000000000,selected_by_nested_expanding_origin_smape,True,lower,7,15.3444776895,False,2023,False

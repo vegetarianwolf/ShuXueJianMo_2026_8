@@ -6,3 +6,4 @@
 - `TJMML_C_fallback.md`：此前使用本地 PDF 文本解析得到的回退版本。
 - `mineru/`：MinerU 输出目录，包含原始 Markdown 和识别出的图片资源。
 - `unified_branch_model_comparison.md`：围绕题目 1—3 的四项指标、增长模型、统一模型评测、2026—2030 预测区间、三情景、敏感性与对策建议；附分支合并和复现审计。
+- `ridge_model_optimization_report.md`：在统一比较选定的原尺度 Ridge 基础上，对 `lambda`（代码参数 `alpha`）做防泄漏嵌套调参，并比较优化前后回测、诊断、2026—2030 条件区间及题目 1—3 的合理性衔接。

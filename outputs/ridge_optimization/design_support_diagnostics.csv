@@ -1,0 +1,15 @@
+scope,metric,fold_id,test_year,training_n,centered_feature_rank,year_index_unique,pandemic_positive_count,post_2022_positive_count,warning
+official_outer_training,tourism_comprehensive_income,tourism_comprehensive_income_test_2015,2015.0000000000,5,1,5,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourism_comprehensive_income,tourism_comprehensive_income_test_2017,2017.0000000000,6,1,6,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourism_comprehensive_income,tourism_comprehensive_income_test_2018,2018.0000000000,7,1,7,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourism_comprehensive_income,tourism_comprehensive_income_test_2019,2019.0000000000,8,1,8,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourism_comprehensive_income,tourism_comprehensive_income_test_2021,2021.0000000000,9,1,9,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourism_comprehensive_income,tourism_comprehensive_income_test_2023,2023.0000000000,10,2,10,1,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourist_visits,tourist_visits_test_2015,2015.0000000000,5,1,5,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourist_visits,tourist_visits_test_2016,2016.0000000000,6,1,6,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourist_visits,tourist_visits_test_2017,2017.0000000000,7,1,7,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourist_visits,tourist_visits_test_2018,2018.0000000000,8,1,8,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourist_visits,tourist_visits_test_2019,2019.0000000000,9,1,9,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+official_outer_training,tourist_visits,tourist_visits_test_2023,2023.0000000000,10,1,10,0,0,rank is descriptive; outer folds cannot validate an unseen recovery coefficient
+final_augmented_training,tourist_visits,final_2010_2024,,15,3,15,3,2,full rank does not remove weak support: only 2023-2024 carry the recovery indicator
+final_augmented_training,tourism_comprehensive_income,final_2010_2024,,15,3,15,3,2,full rank does not remove weak support: only 2023-2024 carry the recovery indicator

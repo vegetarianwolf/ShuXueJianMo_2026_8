@@ -1,0 +1,7 @@
+track,scope,delta_smape_tuned_minus_baseline_percent_points,bootstrap_ci95_lower,bootstrap_ci95_upper,bootstrap_probability_delta_below_zero,bootstrap_repetitions,random_seed,warning,targets_resampled_independently,inferential_confidence_interval
+fold_local_augmented_nested,tourist_visits,-0.1157162692,-0.4076630848,0.2835132731,0.7313000000,10000,20260817,fold-level descriptive bootstrap; folds overlap and are not independent,True,False
+fold_local_augmented_nested,tourism_comprehensive_income,0.0658486763,-0.3473112394,0.5781170334,0.4523000000,10000,20260817,fold-level descriptive bootstrap; folds overlap and are not independent,True,False
+fold_local_augmented_nested,equal_target_macro,-0.0249337965,-0.2955630789,0.2904472534,0.5891000000,10000,20260817,fold-level descriptive bootstrap; folds overlap and are not independent,True,False
+official_only_nested,tourist_visits,-0.1564734534,-0.4076696925,0.1639065921,0.8302000000,10000,20260817,fold-level descriptive bootstrap; folds overlap and are not independent,True,False
+official_only_nested,tourism_comprehensive_income,0.0658344595,-0.4190483046,0.5507172237,0.4442000000,10000,20260817,fold-level descriptive bootstrap; folds overlap and are not independent,True,False
+official_only_nested,equal_target_macro,-0.0453194969,-0.3210420465,0.2502385366,0.6287000000,10000,20260817,fold-level descriptive bootstrap; folds overlap and are not independent,True,False

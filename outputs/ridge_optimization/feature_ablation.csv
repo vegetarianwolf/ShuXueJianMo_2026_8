@@ -1,0 +1,17 @@
+scope,metric,feature_set,lambda,n_test,mean_smape_percent,worst_smape_percent,forecast_2030,selection_use
+official_outer_fixed_final_lambda_exploratory,tourism_comprehensive_income,full_regime_features,0.0001000000,6.0000000000,16.2268395251,51.5362369819,,exploratory only; final lambda is retrospectively fixed
+official_outer_fixed_final_lambda_exploratory,tourism_comprehensive_income,time_only,0.0001000000,6.0000000000,15.5623528949,51.5362369819,,exploratory only; final lambda is retrospectively fixed
+official_outer_fixed_final_lambda_exploratory,tourism_comprehensive_income,time_plus_pandemic,0.0001000000,6.0000000000,16.2268395251,51.5362369819,,exploratory only; final lambda is retrospectively fixed
+official_outer_fixed_final_lambda_exploratory,tourism_comprehensive_income,time_plus_recovery,0.0001000000,6.0000000000,15.5623528949,51.5362369819,,exploratory only; final lambda is retrospectively fixed
+official_outer_fixed_final_lambda_exploratory,tourist_visits,full_regime_features,0.0001000000,6.0000000000,12.5778514175,43.9421583224,,exploratory only; final lambda is retrospectively fixed
+official_outer_fixed_final_lambda_exploratory,tourist_visits,time_only,0.0001000000,6.0000000000,12.5778514175,43.9421583224,,exploratory only; final lambda is retrospectively fixed
+official_outer_fixed_final_lambda_exploratory,tourist_visits,time_plus_pandemic,0.0001000000,6.0000000000,12.5778514175,43.9421583224,,exploratory only; final lambda is retrospectively fixed
+official_outer_fixed_final_lambda_exploratory,tourist_visits,time_plus_recovery,0.0001000000,6.0000000000,12.5778514175,43.9421583224,,exploratory only; final lambda is retrospectively fixed
+final_augmented_2030,tourist_visits,time_only,0.0001000000,,,,3781.6275548604,structural sensitivity only; not a causal estimate
+final_augmented_2030,tourist_visits,time_plus_pandemic,0.0001000000,,,,3774.7719831487,structural sensitivity only; not a causal estimate
+final_augmented_2030,tourist_visits,time_plus_recovery,0.0001000000,,,,3594.3094400000,structural sensitivity only; not a causal estimate
+final_augmented_2030,tourist_visits,full_regime_features,0.0001000000,,,,3924.5307904267,structural sensitivity only; not a causal estimate
+final_augmented_2030,tourism_comprehensive_income,time_only,0.0001000000,,,,261.5807356203,structural sensitivity only; not a causal estimate
+final_augmented_2030,tourism_comprehensive_income,time_plus_pandemic,0.0001000000,,,,297.5966119169,structural sensitivity only; not a causal estimate
+final_augmented_2030,tourism_comprehensive_income,time_plus_recovery,0.0001000000,,,,270.0289537439,structural sensitivity only; not a causal estimate
+final_augmented_2030,tourism_comprehensive_income,full_regime_features,0.0001000000,,,,299.3379287615,structural sensitivity only; not a causal estimate
