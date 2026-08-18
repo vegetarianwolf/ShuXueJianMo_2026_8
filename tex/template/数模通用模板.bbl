@@ -1,4 +1,4 @@
-\begin{thebibliography}{2}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{#1}
 \expandafter\ifx\csname urlstyle\endcsname\relax\else
@@ -6,6 +6,36 @@
 \expandafter\ifx\csname href\endcsname\relax
   \DeclareUrlCommand\doi{\urlstyle{rm}}\else
   \providecommand\doi[1]{\href{https://doi.org/#1}{\nolinkurl{#1}}}\fi
+
+\bibitem[{天津市蓟州区人民政府}(2012)]{jizhou2011bulletin}
+{天津市蓟州区人民政府}.
+\newblock
+  2011年蓟县国民经济和社会发展统计公报\allowbreak[EB/OL].
+\newblock 2012\allowbreak[2026-08-17].
+\newblock
+  \url{https://www.tjjz.gov.cn/zwgk/zfxxgkqjjg/tjj1/fdzdgknr34/tjxx34/202012/t20201227_5212509.html}.
+
+\bibitem[{天津市蓟州区人民政府}(2025{\natexlab{a}})]{jizhou2024yearbook}
+{天津市蓟州区人民政府}.
+\newblock 2024年蓟州区统计年鉴\allowbreak[EB/OL].
+\newblock 2025\allowbreak[2026-08-17].
+\newblock
+  \url{https://www.tjjz.gov.cn/zwgk/sjfb/tjnb/202511/W020251126560102082891.pdf}.
+
+\bibitem[{天津市蓟州区人民政府}(2025{\natexlab{b}})]{jizhou2025report}
+{天津市蓟州区人民政府}.
+\newblock 2025年蓟州区政府工作报告\allowbreak[EB/OL].
+\newblock 2025\allowbreak[2026-08-17].
+\newblock
+  \url{https://www.tjjz.gov.cn/zwgk/ZFGZBG_20201207/202501/t20250114_6833334.html}.
+
+\bibitem[{天津市蓟州区人民政府}(2026)]{jizhou2025bulletin}
+{天津市蓟州区人民政府}.
+\newblock
+  2025年蓟州区国民经济和社会发展统计公报\allowbreak[EB/OL].
+\newblock 2026\allowbreak[2026-08-17].
+\newblock
+  \url{https://www.tjjz.gov.cn/zwgk/sjfb/tjgb/202606/t20260629_7325623.html}.
 
 \bibitem[Hyndman et~al.(2021)Hyndman and
   Athanasopoulos]{hyndman2021forecasting}
@@ -15,10 +45,43 @@ HYNDMAN~R~J, ATHANASOPOULOS~G.
 \newblock Melbourne, Australia: OTexts, 2021.
 \newblock \url{https://otexts.com/fpp3/}.
 
+\bibitem[Hoerl et~al.(1970)Hoerl and Kennard]{hoerl1970ridge}
+HOERL~A~E, KENNARD~R~W.
+\newblock Ridge regression: Biased estimation for nonorthogonal
+  problems\allowbreak[J/OL].
+\newblock Technometrics, 1970, 12\penalty0 (1):\penalty0 55-67.
+\newblock DOI: \doi{10.1080/00401706.1970.10488634}.
+
+\bibitem[Efron(1979)]{efron1979bootstrap}
+EFRON~B.
+\newblock Bootstrap methods: Another look at the jackknife\allowbreak[J/OL].
+\newblock The Annals of Statistics, 1979, 7\penalty0 (1):\penalty0 1-26.
+\newblock DOI: \doi{10.1214/aos/1176344552}.
+
 \bibitem[{UN Tourism}(2024)]{untourism2024barometer}
 {UN Tourism}.
 \newblock World tourism barometer\allowbreak[R/OL].
 \newblock Madrid: UN Tourism, 2024.
 \newblock \url{https://www.unwto.org/un-tourism-world-tourism-barometer-data}.
+
+\bibitem[焦爱英\ 等(2025)焦爱英, 陈磊, and 贾童]{jiao2025ismmicmac}
+焦爱英, 陈磊, 贾童.
+\newblock
+  基于ISM-MICMAC的乡村旅游产业发展影响因素及路径研究——以天津市蓟州区为例\allowbreak[J/OL].
+\newblock 天津城建大学学报, 2025, 31\penalty0 (3):\penalty0 181-189.
+\newblock DOI: \doi{10.19479/j.2095-719x.2503181}.
+
+\bibitem[金秋\ 等(2024)金秋, 王清岩, and 张文静]{jin2024highquality}
+金秋, 王清岩, 张文静.
+\newblock
+  天津市蓟州区乡村旅游高质量发展路径研究\allowbreak[J/OL].
+\newblock 乡村科技, 2024, 15\penalty0 (13):\penalty0 63-66.
+\newblock DOI: \doi{10.19345/j.cnki.1674-7909.2024.13.013}.
+
+\bibitem[武彦辰\ 等(2024)武彦辰, 张戈, and 徐嵩]{wu2024coupling}
+武彦辰, 张戈, 徐嵩.
+\newblock
+  超大城市远郊乡村农文旅融合发展评价及耦合分析——以天津市蓟州区为例\allowbreak[J].
+\newblock 小城镇建设, 2024, 42\penalty0 (10):\penalty0 30-39.
 
 \end{thebibliography}
