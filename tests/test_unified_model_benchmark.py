@@ -755,6 +755,7 @@ class GeneratedBenchmarkContractTest(unittest.TestCase):
         for section in (
             "# C题：蓟州区旅游经济趋势预测与对策分析——统一分支模型比较报告",
             "## 题目要求覆盖矩阵",
+            "## 指标、缩写与技术用语对照",
             "## 问题1：指标整理与简单增长模型",
             "## 问题2：模型评判与 2026—2030 预测",
             "## 问题3：政策锚定三情景与敏感性",
@@ -771,12 +772,24 @@ class GeneratedBenchmarkContractTest(unittest.TestCase):
             self.assertIn(relative_path, report)
         self.assertIn("不是题面直接指定的评价指标", report)
         self.assertIn("不能把“综合收入/GDP”解释为旅游增加值贡献率", report)
-        self.assertIn("23 个唯一 `source_id`", report)
+        self.assertIn("23 个唯一来源编号（代码字段 `source_id`）", report)
         self.assertIn("实际获取日期均为 2026-08-17", report)
-        self.assertIn("作为 2026—2030 的主点预测", report)
-        self.assertIn("Q1 疫情前简单模型在疫情后不再适合作为主预测", report)
+        self.assertIn("作为2026—2030年的主点预测", report)
+        self.assertIn("问题1疫情前简单模型在疫情后不再适合作为主预测", report)
         self.assertIn("target_scale/loocv_scale", report)
         self.assertIn("不是标准化弹性", report)
+        for definition in (
+            "平均绝对误差（Mean Absolute Error）",
+            "对称平均绝对百分比误差（Symmetric Mean Absolute Percentage Error）",
+            "小样本修正赤池信息准则（Corrected Akaike Information Criterion）",
+            "留一交叉验证（Leave-One-Out Cross-Validation）",
+            "德宾—沃森统计量（Durbin–Watson Statistic）",
+            "雅克—贝拉正态性检验（Jarque–Bera Test）",
+            "跨疫情阶段压力测试",
+        ):
+            self.assertIn(definition, report)
+        self.assertIn("| 预测指标 | 模型 | 测试点数 |", report)
+        self.assertNotIn("| metric | model | n_test |", report)
 
 
 class BenchmarkReproducibilityTest(unittest.TestCase):

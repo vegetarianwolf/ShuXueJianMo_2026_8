@@ -2780,18 +2780,173 @@ def _relative(path: Path) -> str:
         return str(path.resolve())
 
 
+REPORT_COLUMN_LABELS: Final = {
+    "indicator_label_cn": "指标",
+    "unit": "单位",
+    "nonmissing_count": "有数据年份数",
+    "missing_years": "缺失年份",
+    "first_nonmissing_year": "首个有数据年份",
+    "first_nonmissing_value": "首个数值",
+    "last_nonmissing_year": "最近有数据年份",
+    "last_nonmissing_value": "最近数值",
+    "cagr_2010_2019_percent": "2010—2019年均复合增长率（CAGR，%）",
+    "cagr_2010_2018_percent": "2010—2018年均复合增长率（CAGR，%）",
+    "cagr_2019_2025_percent": "2019—2025年均复合增长率（CAGR，%）",
+    "growth_2023_2024_percent": "2023—2024增长率（%）",
+    "status_boundary_note": "数据状态与口径说明",
+    "metric": "预测指标",
+    "parameter": "参数或解释变量",
+    "estimate": "估计值",
+    "standard_error": "标准误",
+    "t_value": "t统计量",
+    "p_value": "p值",
+    "ci95_lower": "95%置信区间下限",
+    "ci95_upper": "95%置信区间上限",
+    "df_resid": "残差自由度",
+    "n": "样本数",
+    "annual_growth_rate_percent": "年增长率（%）",
+    "r_squared_log": "对数尺度决定系数（R²）",
+    "adjusted_r_squared_log": "对数尺度调整后决定系数（调整后R²）",
+    "rmse_original_units": "原尺度均方根误差（RMSE）",
+    "mape_percent": "平均绝对百分比误差（MAPE，%）",
+    "aicc_log": "对数尺度小样本修正赤池信息准则（AICc）",
+    "loocv_log_rmse": "对数尺度留一交叉验证均方根误差（LOOCV RMSE）",
+    "durbin_watson": "德宾—沃森统计量（DW）",
+    "jarque_bera_p": "雅克—贝拉检验p值（JB p值）",
+    "model": "模型",
+    "year": "年份",
+    "forecast": "点预测",
+    "mean_ci95_lower": "平均响应95%置信区间下限",
+    "mean_ci95_upper": "平均响应95%置信区间上限",
+    "prediction_interval95_lower": "单次预测95%区间下限",
+    "prediction_interval95_upper": "单次预测95%区间上限",
+    "n_test": "测试点数",
+    "smape_percent": "对称平均绝对百分比误差（sMAPE，%）",
+    "naive_smape_percent": "上一期数值法sMAPE（%）",
+    "smape_skill_vs_naive": "相对上一期数值法的改进率",
+    "worst_point_smape_percent": "最差单点sMAPE（%）",
+    "training_n": "训练样本数",
+    "simulated_training_n": "模拟训练样本数",
+    "target_scale": "因变量计算尺度",
+    "r_squared": "决定系数（R²）",
+    "rmse": "均方根误差（RMSE）",
+    "aicc": "小样本修正赤池信息准则（AICc）",
+    "loocv_rmse": "留一交叉验证均方根误差（LOOCV RMSE）",
+    "loocv_scale": "留一交叉验证计算尺度",
+    "bootstrap_ci95_lower": "自助法95%区间下限",
+    "bootstrap_ci95_upper": "自助法95%区间上限",
+    "feature_training_mean": "解释变量训练均值",
+    "feature_training_scale": "解释变量训练标准差",
+    "scenario_label_cn": "情景",
+    "scenario": "情景代码",
+    "tourist_visits": "旅游接待人次（万人次）",
+    "tourism_comprehensive_income": "旅游综合收入（亿元）",
+    "nominal_spend_per_visit": "名义人均次消费（元/人次）",
+    "factor": "影响因素",
+    "setting": "扰动方向",
+    "baseline_2030": "2030年基准值",
+    "scenario_2030": "2030年扰动后数值",
+    "delta_2030": "2030年变化量",
+    "delta_percent": "相对基准变化率（%）",
+    "descriptive_rank": "描述性排序",
+    "branch": "来源分支",
+    "macro_smape_percent": "两个目标等权平均sMAPE（%）",
+    "macro_smape_skill_vs_naive": "相对上一期数值法的等权平均改进率",
+    "beats_naive_all_targets": "两个目标是否均优于上一期数值法",
+    "worst_target": "误差较大的目标",
+    "worst_target_smape_percent": "误差较大目标的sMAPE（%）",
+    "tie_status": "并列状态",
+    "training_track": "训练数据方案",
+    "original_declaration": "原分支声明角色",
+    "rolling_execution_status": "滚动检验执行状态",
+    "simulated_track_macro_smape_percent": "模拟增强方案等权平均sMAPE（%）",
+    "official_track_macro_smape_percent": "未模拟方案等权平均sMAPE（%）",
+    "jointly_rankable_original_declared_representatives": "原声明模型能否共同排名",
+    "reason": "原因",
+    "exploratory_rank": "探索性排序",
+    "stability_flag": "排序稳定性标记",
+    "mae": "平均绝对误差（MAE）",
+    "test_years": "测试年份",
+    "path": "文件路径",
+    "pinned_commit": "固定提交",
+    "git_blob_oid": "Git对象标识",
+    "sha256": "SHA-256哈希",
+    "validated": "是否校验通过",
+}
+
+REPORT_VALUE_LABELS: Final = {
+    "10k_persons": "万人次",
+    "100m_cny": "亿元",
+    "tourist_visits": "旅游接待人次",
+    "tourism_comprehensive_income": "旅游综合收入",
+    "intercept": "截距项",
+    "year_index": "时间趋势项",
+    "pandemic_2020_2022": "2020—2022年疫情期指示变量",
+    "post_2022": "2023年后恢复期指示变量",
+    "raw": "原尺度",
+    "log": "对数尺度",
+    "raw_target_ridge_alpha_0.1": "原尺度岭回归（Ridge，惩罚参数α=0.1）",
+    "no_break_log_linear_common_rows": "相同训练年份的无断点对数线性回归（OLS）",
+    "no_break_log_linear": "原生无断点对数线性回归（OLS）",
+    "pre_covid_exponential": "疫情前指数增长模型",
+    "post_2022_level_break": "2023年后水平断点模型",
+    "strict_evidence_level_break": "严格证据口径的水平断点模型",
+    "ridge_regime": "分阶段岭回归",
+    "gaussian_process": "高斯过程回归",
+    "ml_inner_selector": "训练内部模型选择器",
+    "svr_rbf": "径向基核支持向量回归（RBF-SVR）",
+    "robust_ml_ensemble": "稳健机器学习集成模型",
+    "bayesian_ridge": "贝叶斯岭回归",
+    "huber_regime": "分阶段Huber稳健回归",
+    "naive_last": "上一期数值法（朴素基准）",
+    "random_forest": "随机森林回归",
+    "spline_ridge": "样条岭回归",
+    "official_only_physical_rows": "未模拟的官方来源训练行",
+    "user_simulated_augmentation": "模拟增强训练行",
+    "baseline_policy_anchor": "基准情景",
+    "optimistic_assumption": "乐观情景",
+    "pessimistic_assumption": "悲观情景",
+    "external_shock": "突发事件冲击",
+    "new_format_spend_growth": "新业态与人均消费增速",
+    "policy_coordination_multiplier": "政策协同水平",
+    "source_market_growth": "客源市场增长",
+    "high": "上行情景",
+    "low": "下行情景",
+    "unique": "无并列",
+    "primary_model": "原分支主模型",
+    "recommended_point_forecast": "原分支推荐点预测",
+    "selected_ml_models for both targets": "原分支为两个目标选定的机器学习模型",
+    "not_executed_user_protocol": "按本次约定不执行",
+    "fixed_adapter_executed_but_historical_selection_saw_2024": "本次固定规格已执行，但原历史选择曾使用2024年数据",
+    "exploratory_candidate_retrained_with_inner_tuning": "仅作探索，并在每折训练内部重新调参",
+    "exploratory_candidate": "探索性候选模型",
+    "user_protocol_fixed_ml_adapter": "本次约定的固定机器学习规格",
+    "user_protocol_common_row_adapter": "本次约定的相同训练年份规格",
+    "benchmark_created_exploratory_adapter": "本次比较新增的探索性规格",
+    "baseline": "基准模型",
+    "physical canonical training rows only; no simulated labels": "仅使用未模拟的官方来源训练行",
+    "2020-2022 and 2025 are missing": "2020—2022年及2025年缺失",
+    "2010 is inferred_from_yoy; 2016,2020,2022,2025 are missing": "2010年由同比反推；2016、2020、2022、2025年缺失",
+    "2019 macro series has a documented scope break; 2025 is official_initial": "2019年宏观序列存在已记录的统计口径断点；2025年为官方初值",
+}
+
+
 def _markdown_table(frame: pd.DataFrame, columns: list[str]) -> str:
     selected = frame[columns].copy()
 
     def format_cell(value: object) -> str:
         if pd.isna(value):
             return "—"
+        if isinstance(value, (bool, np.bool_)):
+            return "是" if bool(value) else "否"
         if isinstance(value, (float, np.floating)):
             return f"{float(value):.3f}"
-        return str(value).replace("|", "\\|").replace("\n", " ")
+        text = REPORT_VALUE_LABELS.get(str(value), str(value))
+        return text.replace("|", "\\|").replace("\n", " ")
 
     rows = [[format_cell(value) for value in row] for row in selected.itertuples(index=False)]
-    header = "| " + " | ".join(columns) + " |"
+    headers = [REPORT_COLUMN_LABELS.get(column, column) for column in columns]
+    header = "| " + " | ".join(headers) + " |"
     divider = "| " + " | ".join(["---"] * len(columns)) + " |"
     body = ["| " + " | ".join(row) + " |" for row in rows]
     return "\n".join([header, divider, *body])
@@ -2891,9 +3046,9 @@ def _write_report(
         simulated_comparison["cross_track_order_consistent"].iloc[0]
     )
     ordering_sentence = (
-        "两轨的适配器相对顺序一致，但这仍不能替代原分支声明模型的共同排名。"
+        "两种训练数据方案下，固定模型规格的相对顺序一致，但这仍不能替代原分支声明模型的共同排名。"
         if ordering_consistent
-        else "两轨的适配器相对顺序发生反转，因此连统一适配器层面也不能给出稳健赢家。"
+        else "两种训练数据方案下，固定模型规格的相对顺序发生反转，因此不能给出稳健赢家。"
     )
     track_target_view = pd.concat(
         [
@@ -2975,7 +3130,7 @@ def _write_report(
                     "problem1_simple_growth_forecasts_2026_2030.csv；"
                     "q1_required_indicators.png"
                 ),
-                "解释边界": "pre_covid_exponential 只描述2010—2019疫情前可用值",
+                "解释边界": "疫情前指数增长模型只描述2010—2019年疫情前可用值",
             },
             {
                 "题目": "问题2",
@@ -2985,7 +3140,7 @@ def _write_report(
                     "problem2_final_model_diagnostics.csv；"
                     "两张Q2图"
                 ),
-                "解释边界": "2025目标proxy不进训练；所有区间均为模型条件区间",
+                "解释边界": "2025年政府目标代理值不进训练；所有区间均为模型条件区间",
             },
             {
                 "题目": "问题3",
@@ -3000,12 +3155,12 @@ def _write_report(
                 "题目": "资料说明",
                 "题面任务": "论文注明所有数据的实际获取日期",
                 "直接产物": (
-                    f"problem_source_access_dates.csv 核验 canonical 引用的 "
+                    f"problem_source_access_dates.csv 核验官方优选数据引用的 "
                     f"{len(canonical_source_access)} 个唯一来源"
                 ),
                 "解释边界": (
-                    f"这{len(canonical_source_access)}项均记录 accessed=2026-08-17；"
-                    "不推广到 sources.csv 全部条目"
+                    f"这{len(canonical_source_access)}项均记录实际获取日期为2026-08-17；"
+                    "不推广到来源总表的全部条目"
                 ),
             },
         ]
@@ -3285,31 +3440,71 @@ def _write_report(
 
 {_markdown_table(coverage_matrix, list(coverage_matrix.columns))}
 
-本报告把题面要求与计算产物逐项对齐。sMAPE、naive skill、滚动验证和 pseudo-holdout 是为回答“模型是否适用、合理、哪个更好”而自行选择的审计工具，**不是题面直接指定的评价指标**。
+本报告把题面要求与计算产物逐项对齐。对称平均绝对百分比误差（sMAPE）、相对上一期数值法的改进率、滚动检验和单年留出检验，是为回答“模型是否适用、合理、哪个更好”而选用的审计工具，**不是题面直接指定的评价指标**。
 
-canonical annual summary 实际引用的 {len(canonical_source_access)} 个唯一 `source_id` 均能在 `data/metadata/sources.csv` 中定位，且 `notes` 记录的实际获取日期均为 {canonical_access_dates}；逐项核对见 `problem_source_access_dates.csv`。这个结论只覆盖 canonical 真正引用的来源，不声称 `sources.csv` 全部条目都有日期。
+官方优选年度汇总表实际引用的 {len(canonical_source_access)} 个唯一来源编号（代码字段 `source_id`）均能在 `data/metadata/sources.csv` 中定位，且备注字段（`notes`）记录的实际获取日期均为 {canonical_access_dates}；逐项核对见 `problem_source_access_dates.csv`。这个结论只覆盖官方优选数据真正引用的来源，不声称来源总表全部条目都有日期。
+
+## 指标、缩写与技术用语对照
+
+为避免同一缩写在不同学科中含义不同，正文和表格均以中文名称为主；英文缩写只在首次出现或需要复现代码时保留。
+
+| 名称或缩写 | 本报告中的中文含义 | 用来判断什么 |
+| --- | --- | --- |
+| GDP | 国内生产总值（Gross Domestic Product） | 描述地区总体经济规模；本报告只作背景核对，不与旅游目标混合评分。 |
+| OLS | 普通最小二乘法（Ordinary Least Squares） | 估计线性或对数线性趋势；本报告中的传统模型是不设断点的对数线性回归。 |
+| Ridge | 岭回归（Ridge Regression） | 在最小二乘损失中加入系数惩罚，降低小样本、多解释变量下系数过度波动。 |
+| MAE | 平均绝对误差（Mean Absolute Error） | 平均相差多少原单位；游客量与收入单位不同，不能直接合并。 |
+| RMSE | 均方根误差（Root Mean Squared Error） | 对大误差惩罚更重；同样只能在同一指标、同一单位内比较。 |
+| MAPE | 平均绝对百分比误差（Mean Absolute Percentage Error） | 平均相差实际值的百分之多少；实际值接近零时会不稳定。 |
+| sMAPE | 对称平均绝对百分比误差（Symmetric Mean Absolute Percentage Error） | 用实际值与预测值绝对值之和作分母，便于对游客量和收入进行无量纲比较；越低越好。 |
+| 两个目标等权平均 sMAPE | 游客量 sMAPE 与综合收入 sMAPE 的算术平均 | 本报告选主预测模型的核心汇总指标；两个目标各占 50%，不是另一个国际通用缩写。 |
+| 相对上一期数值法的改进率 | `1－模型sMAPE÷上一期数值法sMAPE` | 大于0表示优于“下一年等于上一期实际值”的简单基准，小于0表示还不如该基准。 |
+| R² / 调整后R² | 决定系数 / 调整后决定系数 | 描述样本内拟合程度；调整后R²对解释变量数量作惩罚，不能替代样本外预测误差。 |
+| AICc | 小样本修正赤池信息准则（Corrected Akaike Information Criterion） | 在同一因变量、同一尺度的候选模型间权衡拟合与复杂度；越低越好，不能跨尺度比较。 |
+| LOOCV | 留一交叉验证（Leave-One-Out Cross-Validation） | 每次留出一个样本，观察模型对未参与拟合样本的误差；本报告只作同尺度诊断。 |
+| DW | 德宾—沃森统计量（Durbin–Watson Statistic） | 检查残差是否存在一阶自相关；明显低于2通常提示正自相关。 |
+| JB | 雅克—贝拉正态性检验（Jarque–Bera Test） | 检查残差的偏度和峰度是否偏离正态；本报告样本很小，只作提示，不作“已证明正态”的结论。 |
+| 95% CI | 95%置信区间（Confidence Interval） | 表示模型平均响应或参数估计的不确定范围。 |
+| 95% PI | 95%预测区间（Prediction Interval） | 表示单个未来观测可能落入的范围，通常比平均响应置信区间宽。 |
+| CAGR | 年均复合增长率（Compound Annual Growth Rate） | 把一段时期的首尾变化换算为等效年增长率；跨统计口径断点时不计算。 |
+| OAT | 单因素逐次敏感性分析（One-at-a-Time） | 每次只改变一个情景假设，观察结果变化；不同因素扰动幅度不同，不能当作标准化因果贡献。 |
+| KPI | 关键绩效指标（Key Performance Indicator） | 把情景结果转成可监测目标；本报告中的KPI是管理建议，不是模型估计出的因果系数。 |
+
+| 报告用语 | 中文解释 |
+| --- | --- |
+| 官方优选数据（代码中称 `canonical`） | 从多来源中按证据规则选定的年度值；保留来源、状态和修订信息。 |
+| 原始证据训练行（代码中称 `physical`） | 来自官方优选数据、没有由本次模型插补生成的训练行。 |
+| 模拟训练值（`simulated`） | 仅为补齐训练年份而按训练期信息生成的数值，不是官方事实。 |
+| 代理锚值（`proxy`） | 用政府目标或替代资料作情景起点，不是实际观测。 |
+| 扩展窗口滚动检验（`expanding-origin`） | 按年份向前推进，每次只用测试年以前的数据训练，再预测下一可观测年份，模拟真实预测顺序。 |
+| 上一期数值法（代码中称 `naive_last`） | 直接把最近一期实际值作为下一期预测，是判断复杂模型是否真正有增益的最低基准。 |
+| 相同训练年份比较（代码中称 `common-row`） | 两个模型在每一折使用完全相同的有效训练年份，避免由删样规则不同造成不公平。 |
+| 单年留出检验（代码中称 `pseudo-holdout`） | 把2024年从本次调参与排序流程中隔离，仅作最后一年检查；由于研究者此前已见过2024年数据，它不是真正前瞻检验。 |
+| 跨疫情阶段压力测试 | 只用截至2019年的数据，直接预测疫情及恢复阶段的可观测年份，用来检查模型遇到结构突变时会错到什么程度；它不是疫情效应的因果识别。 |
+| 最终修订版回溯数据（代码中称 `final-vintage`） | 使用当前能获得的历史修订值重建过去；不等同于当年预测时实际可获得的数据版本。 |
+| 自助法（`bootstrap`） | 对模型残差反复重抽样以近似参数或预测的不确定范围；本报告岭回归固定随机种子并重复10,000次。 |
 
 ## 问题1：指标整理与简单增长模型
 
-四项题目指标统一到 2010—2025 年历；“覆盖数”只统计 canonical 非空值，不把 benchmark 模拟点冒充事实。游客量在 2020—2022 和 2025 缺失，综合收入在 2016、2020、2022、2025 缺失；宏观指标虽覆盖 16/16，但 2019 存在资料口径边界，不能把整段机械解释为同口径因果趋势。GDP 和第三产业增加值只用于历史背景与预测合理性核对，不参与跨单位模型评分；旅游综合收入是收入总量口径，不是增加值，不能把“综合收入/GDP”解释为旅游增加值贡献率。
+四项题目指标统一到 2010—2025 年历；“覆盖数”只统计官方优选数据的非空值，不把模型比较中生成的模拟点冒充事实。游客量在 2020—2022 和 2025 缺失，综合收入在 2016、2020、2022、2025 缺失；宏观指标虽覆盖 16/16，但 2019 存在资料口径边界，不能把整段机械解释为同口径因果趋势。国内生产总值（GDP）和第三产业增加值只用于历史背景与预测合理性核对，不参与跨单位模型评分；旅游综合收入是收入总量口径，不是增加值，不能把“综合收入/GDP”解释为旅游增加值贡献率。
 
-清洗规则是：每个指标每年只保留 canonical preferred 值，强制转为数值并保留原始 `status/source_ids`；游客量统一为 `10k_persons`（表中解释为万人次），收入、GDP、第三产业增加值统一为 `100m_cny`（亿元）。缺失保持缺失，不用 0 代替。双侧 log 插值只在 Q2 的模型训练契约中生成，均标记 `is_simulated=true`，不是 Q1 指标事实或官方观测。
+清洗规则是：每个指标每年只保留官方优选值，强制转为数值并保留数据状态和来源编号（代码字段 `status/source_ids`）；游客量统一为万人次（代码单位 `10k_persons`），收入、GDP、第三产业增加值统一为亿元（代码单位 `100m_cny`）。缺失保持缺失，不用 0 代替。双侧对数插值只在问题2的模型训练契约中生成，均标记为模拟值（`is_simulated=true`），不是问题1的指标事实或官方观测。
 
 {_markdown_table(problem1_summary_view, list(problem1_summary_view.columns))}
 
-宏观指标的 `cagr_2010_2019_percent` 因跨越口径断点而置空：GDP 的 2010—2018 / 2019—2025 分段 CAGR 为 {float(q1_summary_by_metric.loc['jizhou_gdp', 'cagr_2010_2018_percent']):.3f}% / {float(q1_summary_by_metric.loc['jizhou_gdp', 'cagr_2019_2025_percent']):.3f}%，第三产业为 {float(q1_summary_by_metric.loc['jizhou_tertiary_value_added', 'cagr_2010_2018_percent']):.3f}% / {float(q1_summary_by_metric.loc['jizhou_tertiary_value_added', 'cagr_2019_2025_percent']):.3f}%。2018→2019 的 GDP 与第三产业表观变化分别为 {gdp_2019_vs_2018:.3f}% 和 {tertiary_2019_vs_2018:.3f}%，应读作资料口径断裂，不是经济活动骤降。
+2010—2019年均复合增长率（CAGR）的代码字段 `cagr_2010_2019_percent` 因跨越口径断点而置空：GDP 的 2010—2018 / 2019—2025 分段 CAGR 为 {float(q1_summary_by_metric.loc['jizhou_gdp', 'cagr_2010_2018_percent']):.3f}% / {float(q1_summary_by_metric.loc['jizhou_gdp', 'cagr_2019_2025_percent']):.3f}%，第三产业为 {float(q1_summary_by_metric.loc['jizhou_tertiary_value_added', 'cagr_2010_2018_percent']):.3f}% / {float(q1_summary_by_metric.loc['jizhou_tertiary_value_added', 'cagr_2019_2025_percent']):.3f}%。2018→2019 的 GDP 与第三产业表观变化分别为 {gdp_2019_vs_2018:.3f}% 和 {tertiary_2019_vs_2018:.3f}%，应读作资料口径断裂，不是经济活动骤降。
 
 旅游目标的恢复路径也不是简单回到疫情前趋势：游客量 2023 较 2019 仍为 {visitor_2023_vs_2019:.3f}%，2024 较 2019 为 {visitor_2024_vs_2019:.3f}%，但 2023→2024 同比增长 {float(q1_summary_by_metric.loc['tourist_visits', 'growth_2023_2024_percent']):.3f}%；综合收入 2021 较 2019 为 {income_2021_vs_2019:.3f}%，2023 已较 2019 高 {income_2023_vs_2019:.3f}%，2023→2024 再增长 {float(q1_summary_by_metric.loc['tourism_comprehensive_income', 'growth_2023_2024_percent']):.3f}%。这些断点是后续模型不能只延长疫情前指数曲线的直接证据。
 
-题目1的简单增长模型固定为 `pre_covid_exponential`：对 2010—2019 年可用 canonical 值拟合 `log(value)=β0+β1(year-2010)`。参数表给出模型条件标准误、t 检验和 95% t 区间：
+题目1的简单增长模型固定为疫情前指数增长模型（代码标识 `pre_covid_exponential`）：对 2010—2019 年可用官方优选值拟合 `ln(指标值)=β0+β1×(年份−2010)`。参数表给出模型条件标准误、t检验和95%置信区间：
 
 {_markdown_table(problem1_parameter_view, list(problem1_parameter_view.columns))}
 
 {_markdown_table(problem1_diagnostic_view, list(problem1_diagnostic_view.columns))}
 
-诊断量只描述疫情前小样本拟合；R² 是 log 尺度，RMSE/MAPE 是原尺度，AICc 与 LOOCV 仅供同一目标规格核对，不能证明疫情后的结构稳定性。
+诊断量只描述疫情前小样本拟合；决定系数（R²）按对数尺度计算，均方根误差（RMSE）和平均绝对百分比误差（MAPE）按原尺度计算，小样本修正赤池信息准则（AICc）与留一交叉验证（LOOCV）仅供同一目标规格核对，不能证明疫情后的结构稳定性。
 
-若把 Q1 简单模型不加结构修正地机械外推到 2026—2030，结果如下；点值是 log 条件均值指数化后在原尺度上的条件中位数，不是带 lognormal 偏差修正的算术均值，也不作为 Q2 主预测：
+若把问题1简单模型不加结构修正地机械外推到 2026—2030，结果如下；点值是对数条件均值指数化后在原尺度上的条件中位数，不是经过对数正态偏差修正的算术均值，也不作为问题2主预测：
 
 {_markdown_table(problem1_forecast_view, list(problem1_forecast_view.columns))}
 
@@ -3317,45 +3512,45 @@ canonical annual summary 实际引用的 {len(canonical_source_access)} 个唯�
 
 ## 问题2：模型评判与 2026—2030 预测
 
-模型形式先由截至 2023 年的统一滚动验证冻结，再把 2024 canonical 目标加入最终系数重拟合。最终训练契约为每目标 2010—2024 共 15 个年度位置：12 个 physical canonical 值和 3 个训练期内双侧 log 插值；**不生成、不读取、不使用 2025 目标值**。其中 2010 年综合收入虽是 canonical physical 行，但状态为 `inferred_from_yoy`，不是 strict observed。
+模型形式先由截至2023年的统一滚动检验冻结，再把2024年官方优选目标值加入最终系数重拟合。最终训练契约为每个目标2010—2024共15个年度位置：12个原始证据值和3个训练期内双侧对数插值；**不生成、不读取、不使用2025年目标值**。其中2010年综合收入虽是官方来源的非模拟行，但状态为“由同比反推”（代码状态 `inferred_from_yoy`），不是严格意义上的直接观测。
 
-模型评判首先落到两个题面目标的未模拟 canonical expanding-origin 回测（每目标 6 个外层实际测试点）：
+模型评判首先采用两个题面目标的未模拟官方数据扩展窗口滚动检验（`expanding-origin`，每个目标6个外层实际测试点）：
 
 {_markdown_table(problem2_validation_view, list(problem2_validation_view.columns))}
 
-Q1 的 `pre_covid_exponential` 在游客量/综合收入上的未模拟滚动 sMAPE 分别为 {float(official_by_target.loc[(official_by_target['model'].eq('pre_covid_exponential')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}% / {float(official_by_target.loc[(official_by_target['model'].eq('pre_covid_exponential')) & (official_by_target['metric'].eq('tourism_comprehensive_income')), 'smape_percent'].iloc[0]):.3f}%，fixed raw Ridge 则为 {float(official_by_target.loc[(official_by_target['model'].eq('raw_target_ridge_alpha_0.1')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}% / {float(official_by_target.loc[(official_by_target['model'].eq('raw_target_ridge_alpha_0.1')) & (official_by_target['metric'].eq('tourism_comprehensive_income')), 'smape_percent'].iloc[0]):.3f}%；这直接说明 Q1 疫情前简单模型在疫情后不再适合作为主预测。它机械外推到 2026 年已达游客量 {float(q1_forecast_keyed.loc[('tourist_visits', 2026)]):.1f} 万人次、收入 {float(q1_forecast_keyed.loc[('tourism_comprehensive_income', 2026)]):.1f} 亿元，到 2030 年达 {float(q1_forecast_keyed.loc[('tourist_visits', 2030)]):.1f} 万人次和 {float(q1_forecast_keyed.loc[('tourism_comprehensive_income', 2030)]):.1f} 亿元，远离恢复期实际与政策情景尺度。
+问题1的疫情前指数增长模型在游客量/综合收入上的未模拟滚动对称平均绝对百分比误差（sMAPE）分别为 {float(official_by_target.loc[(official_by_target['model'].eq('pre_covid_exponential')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}% / {float(official_by_target.loc[(official_by_target['model'].eq('pre_covid_exponential')) & (official_by_target['metric'].eq('tourism_comprehensive_income')), 'smape_percent'].iloc[0]):.3f}%，固定的原尺度岭回归（Ridge）则为 {float(official_by_target.loc[(official_by_target['model'].eq('raw_target_ridge_alpha_0.1')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}% / {float(official_by_target.loc[(official_by_target['model'].eq('raw_target_ridge_alpha_0.1')) & (official_by_target['metric'].eq('tourism_comprehensive_income')), 'smape_percent'].iloc[0]):.3f}%；这直接说明问题1疫情前简单模型在疫情后不再适合作为主预测。它机械外推到2026年已达游客量 {float(q1_forecast_keyed.loc[('tourist_visits', 2026)]):.1f} 万人次、收入 {float(q1_forecast_keyed.loc[('tourism_comprehensive_income', 2026)]):.1f} 亿元，到2030年达 {float(q1_forecast_keyed.loc[('tourist_visits', 2030)]):.1f} 万人次和 {float(q1_forecast_keyed.loc[('tourism_comprehensive_income', 2030)]):.1f} 亿元，远离恢复期实际与政策情景尺度。
 
-在未模拟轨上，固定 raw Ridge 的两目标等权 macro-sMAPE 为 {float(official_comparison.loc[official_comparison['model'].eq('raw_target_ridge_alpha_0.1'), 'macro_smape_percent'].iloc[0]):.3f}%，无断点 common-row OLS 为 {float(official_comparison.loc[official_comparison['model'].eq('no_break_log_linear_common_rows'), 'macro_smape_percent'].iloc[0]):.3f}%；在模拟增强轨上二者分别为 {float(simulated_comparison.loc[simulated_comparison['model'].eq('raw_target_ridge_alpha_0.1'), 'macro_smape_percent'].iloc[0]):.3f}% 和 {float(simulated_comparison.loc[simulated_comparison['model'].eq('no_break_log_linear_common_rows'), 'macro_smape_percent'].iloc[0]):.3f}%。但 Ridge 在游客量上的未模拟 sMAPE {float(official_by_target.loc[(official_by_target['model'].eq('raw_target_ridge_alpha_0.1')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}% 仍略高于 naive 的 {float(official_by_target.loc[(official_by_target['model'].eq('naive_last')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}%，因此不能称为全目标稳健赢家。这里并列给出两个冻结模型的未来路径，供趋势型与恢复特征型假设交叉核对。所有选型只比较同一目标原尺度上的外层滚动 sMAPE；下方不同 target/LOOCV 尺度的拟合诊断不能横向替代该选型依据。
+在未模拟方案上，固定原尺度岭回归的两个目标等权平均sMAPE为 {float(official_comparison.loc[official_comparison['model'].eq('raw_target_ridge_alpha_0.1'), 'macro_smape_percent'].iloc[0]):.3f}%，使用相同训练年份的无断点对数线性普通最小二乘模型（OLS）为 {float(official_comparison.loc[official_comparison['model'].eq('no_break_log_linear_common_rows'), 'macro_smape_percent'].iloc[0]):.3f}%；在模拟增强方案上二者分别为 {float(simulated_comparison.loc[simulated_comparison['model'].eq('raw_target_ridge_alpha_0.1'), 'macro_smape_percent'].iloc[0]):.3f}% 和 {float(simulated_comparison.loc[simulated_comparison['model'].eq('no_break_log_linear_common_rows'), 'macro_smape_percent'].iloc[0]):.3f}%。但岭回归在游客量上的未模拟sMAPE {float(official_by_target.loc[(official_by_target['model'].eq('raw_target_ridge_alpha_0.1')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}% 仍略高于上一期数值法的 {float(official_by_target.loc[(official_by_target['model'].eq('naive_last')) & (official_by_target['metric'].eq('tourist_visits')), 'smape_percent'].iloc[0]):.3f}%，因此不能称为全目标稳健赢家。这里并列给出两个冻结模型的未来路径，供趋势型与恢复特征型假设交叉核对。所有选型只比较同一目标原尺度上的外层滚动sMAPE；下方在不同因变量尺度和留一交叉验证尺度上计算的拟合诊断，不能横向替代该选型依据。
 
-两种固定规格分别是无断点 common-row log OLS 和 `raw_target_ridge_alpha_0.1`。OLS 区间直接采用分支源码的 Student-t 公式，是平均 log 响应区间指数化；Ridge 使用固定种子 `{RANDOM_SEED}` 的 {RIDGE_BOOTSTRAP_REPETITIONS:,} 次固定设计残差 bootstrap。两者都把插值当作给定训练值，都是模型条件区间，不保证在重复抽样意义下达到 95% 覆盖率，也不是五年同时置信带。
+两种固定规格分别是使用相同训练年份的无断点对数线性普通最小二乘模型（OLS）和原尺度岭回归（代码标识 `raw_target_ridge_alpha_0.1`）。OLS区间直接采用分支源码的学生t分布公式，是平均对数响应区间指数化后的结果；岭回归使用固定种子 `{RANDOM_SEED}` 的 {RIDGE_BOOTSTRAP_REPETITIONS:,} 次固定设计残差自助法（bootstrap）。两者都把插值当作给定训练值，都是模型条件区间，不保证在重复抽样意义下达到95%覆盖率，也不是五年同时置信带。
 
 {_markdown_table(problem2_forecast_view, list(problem2_forecast_view.columns))}
 
 {_markdown_table(problem2_diagnostic_view, list(problem2_diagnostic_view.columns))}
 
-`target_scale/loocv_scale` 明示：OLS 的 R²、AICc 与 LOOCV 在 log 尺度，Ridge 在 raw 尺度，二者及两个不同单位目标之间不可直接比较。OLS 点预测是 log 条件均值指数化后的原尺度条件中位数；没有做 lognormal 均值修正。
+表中的“因变量计算尺度”和“留一交叉验证计算尺度”（代码字段 `target_scale/loocv_scale`）说明：普通最小二乘模型的决定系数（R²）、小样本修正赤池信息准则（AICc）与留一交叉验证（LOOCV）在对数尺度计算，岭回归在原尺度计算，二者及两个不同单位的预测目标之间不可直接比较。OLS点预测是对数条件均值指数化后的原尺度条件中位数；没有做对数正态均值修正。
 
-Ridge 的标准化参数及 bootstrap 百分位区间如下；没有为 Ridge 系数伪造 t 检验或 p 值：
+岭回归的标准化参数及自助法（bootstrap）百分位区间如下；没有为岭回归系数伪造t检验或p值：
 
 {_markdown_table(problem2_parameter_view, list(problem2_parameter_view.columns))}
 
-Ridge 特征固定为 `year_index=(year-2010)/10`、`pandemic_2020_2022=1[2020≤year≤2022]`、`post_2022=1[year≥2023]`，再按最终训练样本标准化。系数只用于预测，不是因果效应；最终 2020—2022 目标是训练期双侧 log 插值，因此疫情 dummy 尤其受模拟路径驱动，不能解释为已识别的疫情冲击。
+岭回归的解释变量固定为时间趋势项（`year_index=(year-2010)/10`）、2020—2022年疫情期指示变量（`pandemic_2020_2022`）和2023年后恢复期指示变量（`post_2022`），再按最终训练样本标准化。系数只用于预测，不是因果效应；最终2020—2022年目标值是训练期双侧对数插值，因此疫情期指示变量尤其受模拟路径驱动，不能解释为已识别的疫情冲击。
 
 ![问题2模型评判](../outputs/unified_model_benchmark/q2_model_judgement.png)
 
 ![问题2预测](../outputs/unified_model_benchmark/q2_forecast_2026_2030.png)
 
-**题目导向的选模结论：** 两条统一滚动轨上，fixed raw Ridge 的 macro-sMAPE 都低于无断点 common-row OLS，因此把 `raw_target_ridge_alpha_0.1` 作为 2026—2030 的主点预测：游客量从 {ridge_2026_visits:.1f} 万人次增至 {ridge_2030_visits:.1f} 万人次，综合收入从 {ridge_2026_income:.2f} 亿元增至 {ridge_2030_income:.2f} 亿元；OLS 族保留为 Q1 简单增长模型和 Q2 的解释性趋势对照。到 2030 年，OLS 给出 {ols_2030_visits:.1f} 万人次和 {ols_2030_income:.2f} 亿元，明显高于 Ridge，原因是 OLS 把全期平均 log 增长持续外推，而 Ridge 在 raw 目标上同时估计时间趋势、疫情和 2023 年后恢复水平，外推更平缓。两条路径都为正且随时间增长，但 OLS 区间更宽、对长期指数趋势更敏感；再考虑 Ridge 的游客量未模拟回测没有胜过 naive、样本很小，主预测只是相对更审慎的固定规格，不能称为稳健胜者。
+**题目导向的选模结论：** 两种统一滚动检验方案中，固定原尺度岭回归的两个目标等权平均sMAPE都低于无断点相同训练年份OLS，因此把原尺度岭回归（代码标识 `raw_target_ridge_alpha_0.1`）作为2026—2030年的主点预测：游客量从 {ridge_2026_visits:.1f} 万人次增至 {ridge_2030_visits:.1f} 万人次，综合收入从 {ridge_2026_income:.2f} 亿元增至 {ridge_2030_income:.2f} 亿元；普通最小二乘模型保留为问题1简单增长模型和问题2的解释性趋势对照。到2030年，OLS给出 {ols_2030_visits:.1f} 万人次和 {ols_2030_income:.2f} 亿元，明显高于岭回归，原因是OLS把全期平均对数增长持续外推，而岭回归在原尺度上同时估计时间趋势、疫情期和2023年后恢复水平，外推更平缓。两条路径都为正且随时间增长，但OLS区间更宽、对长期指数趋势更敏感；再考虑岭回归的游客量未模拟回测没有胜过上一期数值法、样本很小，主预测只是相对更审慎的固定规格，不能称为稳健胜者。
 
-合理性衔接上，Ridge 2030 年游客量 {ridge_2030_visits:.1f} 万人次和收入 {ridge_2030_income:.2f} 亿元均落在 Q3 三情景包络（游客量 {scenario_2030_envelope['tourist_visits'][0]:.1f}—{scenario_2030_envelope['tourist_visits'][1]:.1f} 万人次；收入 {scenario_2030_envelope['tourism_comprehensive_income'][0]:.2f}—{scenario_2030_envelope['tourism_comprehensive_income'][1]:.2f} 亿元）内，但呈现“客流高于政策基准、收入低于政策基准”的组合。其隐含名义人均次消费由 2026 年 {ridge_2026_implied_spend:.1f} 元降至 2030 年 {ridge_2030_implied_spend:.1f} 元，相比 2024 canonical 的 {actual_2024_spend:.1f} 元下降 {abs(ridge_spend_2030_vs_2024):.2f}%；因此把 Ridge 作为偏保守风险主线时，应同步监测客单价，而不能只看客流。
+合理性衔接上，岭回归2030年游客量 {ridge_2030_visits:.1f} 万人次和收入 {ridge_2030_income:.2f} 亿元均落在问题3三情景包络（游客量 {scenario_2030_envelope['tourist_visits'][0]:.1f}—{scenario_2030_envelope['tourist_visits'][1]:.1f} 万人次；收入 {scenario_2030_envelope['tourism_comprehensive_income'][0]:.2f}—{scenario_2030_envelope['tourism_comprehensive_income'][1]:.2f} 亿元）内，但呈现“客流高于政策基准、收入低于政策基准”的组合。其隐含名义人均次消费由2026年 {ridge_2026_implied_spend:.1f} 元降至2030年 {ridge_2030_implied_spend:.1f} 元，相比2024年官方优选值的 {actual_2024_spend:.1f} 元下降 {abs(ridge_spend_2030_vs_2024):.2f}%；因此把岭回归作为偏保守风险主线时，应同步监测客单价，而不能只看客流。
 
 ## 问题3：政策锚定三情景与敏感性
 
-三情景沿用已合并分支的透明政策锚定口径：2025 年游客量 2800 万人次、综合收入 231 亿元均是政府目标 proxy，**不是实际观测**；对应名义人均次消费为 825 元/人次。基准情景取收入年增 8%、人均消费年增 3%；乐观情景取 12%/4%；悲观情景先在 2026 年施加收入水平冲击 −15%，随后收入年增 5%、人均消费年增 2%。所有游客量均由 `收入=游客量×人均次消费/10000` 恒等式反推。
+三情景沿用已合并分支的透明政策锚定口径：2025年游客量2800万人次、综合收入231亿元均是政府目标代理锚值（proxy），**不是实际观测**；对应名义人均次消费为825元/人次。基准情景取收入年增8%、人均消费年增3%；乐观情景取12%/4%；悲观情景先在2026年施加收入水平冲击−15%，随后收入年增5%、人均消费年增2%。所有游客量均由“收入=游客量×人均次消费÷10000”的恒等式反推。
 
 {_markdown_table(scenario_view, list(scenario_view.columns))}
 
-OAT 敏感性只围绕基准情景，每次只改变一项假设：客源年增速 ±2 个百分点、人均消费年增速 ±1 个百分点、2026 政策协同水平乘数 ±5%，以及突发冲击从 0 到 −15%。水平乘数和冲击在该恒等式中都表现为持续水平位移，不能解释成两个独立可加机制。
+单因素逐次敏感性分析（OAT）只围绕基准情景，每次只改变一项假设：客源年增速±2个百分点、人均消费年增速±1个百分点、2026年政策协同水平乘数±5%，以及突发冲击从0到−15%。水平乘数和冲击在该恒等式中都表现为持续水平位移，不能解释成两个独立可加机制。
 
 各因素的扰动宽度和单位不同（±2 个百分点、±1 个百分点、±5%、0 至 −15%），所以图中的影响幅度不是标准化弹性，不能据此作严格“杠杆效率”排序；这里只展示在指定假设幅度下的非因果压力结果。
 
@@ -3363,11 +3558,11 @@ OAT 敏感性只围绕基准情景，每次只改变一项假设：客源年增�
 
 量化建议（均为情景计算，不是历史因果效应）：
 
-- **客源拓展 KPI**：把隐含客源年增速从 4.854% 提高到 6.854%；情景计算的 2030 游客量为 {source_high_visits['scenario_2030']:.1f} 万人次，较基准增加 {source_high_visits['delta_2030']:.1f} 万人次，收入增加 {source_high_income['delta_2030']:.2f} 亿元。该增量是 OAT 假设结果，不证明投放会因果地产生同等增量。
-- **新业态消费 KPI**：把名义人均次消费年增速从 3% 提高到 4%；在客源路径不变时，2030 收入为 {spend_high_income['scenario_2030']:.2f} 亿元，较基准增加 {spend_high_income['delta_2030']:.2f} 亿元。该计算未识别业态投资的历史弹性或成本。
-- **政策协同 KPI**：以 2026 路径水平乘数 1.05 作压力目标；2030 游客量和收入分别较基准增加 {coordination_high_visits['delta_2030']:.1f} 万人次、{coordination_high_income['delta_2030']:.2f} 亿元。乘数是外生假设，不能当作政策因果系数。
-- **风险预案 KPI**：监测预订量、客单价和交通可达性，使 2026 冲击幅度尽量高于 −15%；若形成持续 −15% 水平缺口，2030 游客量和收入将比基准少 {abs(shock_low_visits['delta_2030']):.1f} 万人次、{abs(shock_low_income['delta_2030']):.2f} 亿元。损失仅为压力测试，不是风险概率预测。
-- **年度校准 KPI**：以基准 2030 的 {float(baseline_2030['tourist_visits']):.1f} 万人次和 {float(baseline_2030['tourism_comprehensive_income']):.2f} 亿元作为可滚动修订的假设锚，而非硬承诺；每年用新实际更新偏差。锚值来自 2025 proxy 和设定增速，不具有因果或概率保证。
+- **客源拓展关键绩效指标（KPI）**：把隐含客源年增速从4.854%提高到6.854%；情景计算的2030年游客量为 {source_high_visits['scenario_2030']:.1f} 万人次，较基准增加 {source_high_visits['delta_2030']:.1f} 万人次，收入增加 {source_high_income['delta_2030']:.2f} 亿元。该增量是单因素逐次敏感性分析假设结果，不证明投放会因果地产生同等增量。
+- **新业态消费关键绩效指标（KPI）**：把名义人均次消费年增速从3%提高到4%；在客源路径不变时，2030年收入为 {spend_high_income['scenario_2030']:.2f} 亿元，较基准增加 {spend_high_income['delta_2030']:.2f} 亿元。该计算未识别业态投资的历史弹性或成本。
+- **政策协同关键绩效指标（KPI）**：以2026年路径水平乘数1.05作压力目标；2030年游客量和收入分别较基准增加 {coordination_high_visits['delta_2030']:.1f} 万人次、{coordination_high_income['delta_2030']:.2f} 亿元。乘数是外生假设，不能当作政策因果系数。
+- **风险预案关键绩效指标（KPI）**：监测预订量、客单价和交通可达性，使2026年冲击幅度尽量高于−15%；若形成持续−15%水平缺口，2030年游客量和收入将比基准少 {abs(shock_low_visits['delta_2030']):.1f} 万人次、{abs(shock_low_income['delta_2030']):.2f} 亿元。损失仅为压力测试，不是风险概率预测。
+- **年度校准关键绩效指标（KPI）**：以基准2030年的 {float(baseline_2030['tourist_visits']):.1f} 万人次和 {float(baseline_2030['tourism_comprehensive_income']):.2f} 亿元作为可滚动修订的假设锚，而非硬承诺；每年用新实际更新偏差。锚值来自2025年政府目标代理值和设定增速，不具有因果或概率保证。
 
 ![问题3情景与敏感性](../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png)
 """
@@ -3379,44 +3574,44 @@ OAT 敏感性只围绕基准情景，每次只改变一项假设：客源年增�
 
 ### 结论先行
 
-**不能判定原分支赢家。** 原传统分支声明的主模型是 `post_2022_level_break`，而用户本轮统一协议明确不运行任何断点模型；原 ML 分支声明的是 `ridge_regime` 模型族和 `raw_target_ridge_alpha_0.1` 点路径。因此原声明代表没有一组可共同排名的滚动预测。
+**不能判定原分支赢家。** 原传统分支声明的主模型是2023年后水平断点模型（`post_2022_level_break`），而用户本轮统一协议明确不运行任何断点模型；原机器学习分支声明的是分阶段岭回归（`ridge_regime`）模型族和原尺度岭回归（`raw_target_ridge_alpha_0.1`）点预测路径。因此原声明代表没有一组可共同排名的滚动预测。
 
-在用户指定的模拟增强适配器轨上，描述性第一是 `{simulated_first['model']}`（macro-sMAPE {simulated_first['macro_smape_percent']:.3f}%）；在更适合作为稳健性依据的未模拟 canonical 共同行轨（official-source）上，描述性第一是 `{official_first['model']}`（{official_first['macro_smape_percent']:.3f}%）。{ordering_sentence} 这些表只比较“共同训练行上的固定规格适配器”，不是原分支胜负。
+在用户指定的模拟增强训练方案上，描述性第一是{REPORT_VALUE_LABELS.get(str(simulated_first['model']), str(simulated_first['model']))}（两个目标等权平均sMAPE为 {simulated_first['macro_smape_percent']:.3f}%）；在更适合作为稳健性依据的未模拟官方数据相同训练年份方案上，描述性第一是{REPORT_VALUE_LABELS.get(str(official_first['model']), str(official_first['model']))}（{official_first['macro_smape_percent']:.3f}%）。{ordering_sentence} 这些表只比较“相同训练年份上的固定模型规格”，不是原分支胜负。
 
-模拟增强轨是假设性分析，不是真实观测证据：log 插值和 log 增长尾推在结构上更贴近 log-linear OLS，而且会把游客量 2020—2022 的未知疫情路径平滑成趋势点。报告因此优先用未模拟共同行轨判断稳健性，并把两轨并列展示。
+模拟增强方案是假设性分析，不是真实观测证据：对数插值和对数增长率尾部外推在结构上更贴近对数线性普通最小二乘模型，而且会把游客量2020—2022年的未知疫情路径平滑成趋势点。报告因此优先用未模拟、相同训练年份的方案判断稳健性，并把两种方案并列展示。
 
-滚动稳定性框架采用截至 2023 年的 expanding-origin 外层验证；2024 年仅作最终单年 pseudo-holdout（每个目标 n=1），不用于本次执行的排序。模型族代码是在 2024 数据已经存在后形成，统一数据又是 final-vintage 回溯版，因此 2024 不是研究设计层真正“未见”的前瞻测试。2019 截断结果仅作跨疫情/恢复阶段压力测试，不与 pseudo-holdout 混称。
+滚动稳定性框架采用截至2023年的扩展窗口滚动外层检验（`expanding-origin`）；2024年仅作最终单年留出检验（代码中称 `pseudo-holdout`，每个目标测试点数为1），不用于本次执行的排序。模型族代码是在2024年数据已经存在后形成，统一数据又是最终修订版回溯数据（`final-vintage`），因此2024年不是研究设计层真正“未见”的前瞻测试。2019年截断结果仅作跨疫情及恢复阶段压力测试，不与单年留出检验混称。
 
 ### 分支数据合并结论
 
-- 共审计并合入 5 个唯一业务 tip。`main`、传统模型分支和 ML 分支的核心 `data/` 树完全相同，因此没有重复拼接同一批年度观测。
+- 共审计并合入5个唯一分支版本。`main`、传统模型分支和机器学习分支的核心数据目录完全相同，因此没有重复拼接同一批年度观测。
 - `origin/111` 的独有天津市 GDP（2010—2025）与天津市旅游基准已规范化为独立辅助表；天津市口径不会覆盖蓟州区 GDP，也不直接充当蓟州目标标签。
-- `origin/邱志烨-数据搜索` 的 8 条补全值保存在 `sensitivity_imputations.csv`，全部标记为非观测并排除在统一训练、测试和排名之外；其全样本标准化、异常检测等派生列也没有直接进入回测。
-- 两个分支中的旧版工作簿、预测和情景交付均保留在 Git 历史/原路径，但不会覆盖集成前 `main` 固定提交的 canonical 真值。逐文件来源、blob、SHA-256 和纳入决策见 `data/unified/branch_data_inventory.csv`。
+- `origin/邱志烨-数据搜索` 的8条补全值保存在 `sensitivity_imputations.csv`，全部标记为非观测并排除在统一训练、测试和排名之外；其全样本标准化、异常检测等派生列也没有直接进入回测。
+- 两个分支中的旧版工作簿、预测和情景交付均保留在Git历史和原路径，但不会覆盖集成前 `main` 固定提交的官方优选真值。逐文件来源、Git对象标识、SHA-256哈希和纳入决策见 `data/unified/branch_data_inventory.csv`。
 
 ### 可比协议
 
 - 随机种子固定为 `{RANDOM_SEED}`；所有模型读取同一统一数据层。
 - 滚动外层最小训练记录数为 5，游客量测试年为 `{rolling_years['tourist_visits']}`，综合收入测试年为 `{rolling_years['tourism_comprehensive_income']}`；外层测试最晚到 2023 年。
-- 每折模拟只读取该折测试年前已存在的 physical training rows：内部缺口用两侧训练边界在 log 尺度插值；训练尾部到 `test_year-1` 用最近至多 3 个训练区间的 annualized log-growth 中位数外推。逐点方法、源年、边界见 `simulated_training_points.csv`；绝不读取外层测试、未来官方值或邱分支 sidecar。
-- 固定主适配器是传统 `no_break_log_linear_common_rows` 与 ML `raw_target_ridge_alpha_0.1`。两者逐折使用完全相同的 physical/simulated/effective 行；脚本运行时强制验证这一不变量。
-- ML 全候选及新建 `ml_inner_selector` 只作探索；其预处理、调参和选择均限定在每个外层折训练内部，但不能据其事后名次宣布分支赢家。
-- 2024 pseudo-holdout 训练集每目标记录数为 `{train_counts}`，测试集严格为游客量和综合收入各一条 2024 实际值；隔离只成立于本次重跑的执行流程。
-- `data/unified/primary_train.csv` 是 2024 前的 physical 证据层；`outputs/unified_model_benchmark/primary_train_augmented.csv` 是用户指定的 2010—2023 建模训练层，包含 physical 与 simulated 行并保留 `is_simulated/method/known_through_year`，可直接与 `data/unified/primary_test.csv` 配对。
-- 主排序指标是先按目标计算 sMAPE，再对两个目标 50/50 等权；不跨单位汇总 RMSE。表中同时给出相对 `naive_last` 的 skill 与最坏点误差。
-- 传统断点模型 `post_2022_level_break`、`strict_evidence_level_break` 在所有 scope 均为 `not_executed_user_protocol`，不生成预测或误差。原生 `pre_covid_exponential` 和会排除 2020—2022 的 `no_break_log_linear` 仅保留在未模拟 canonical 敏感性表。
+- 每折模拟只读取该折测试年前已存在的原始证据训练行：内部缺口用两侧训练边界在对数尺度插值；训练尾部到测试年前一年，用最近至多3个训练区间的年化对数增长率中位数外推。逐点方法、源年、边界见 `simulated_training_points.csv`；绝不读取外层测试、未来官方值或邱分支的辅助数据表。
+- 固定主比较规格是传统分支的相同训练年份无断点对数线性回归（`no_break_log_linear_common_rows`）与机器学习分支的原尺度岭回归（`raw_target_ridge_alpha_0.1`）。两者逐折使用完全相同的原始证据行、模拟行和最终有效行；脚本运行时强制验证这一不变量。
+- 机器学习全部候选模型及新增的训练内部模型选择器（`ml_inner_selector`）只作探索；其预处理、调参和选择均限定在每个外层折训练内部，但不能据其事后名次宣布分支赢家。
+- 2024年单年留出检验的训练集每个目标记录数为 `{train_counts}`，测试集严格为游客量和综合收入各一条2024年实际值；隔离只成立于本次重跑的执行流程。
+- `data/unified/primary_train.csv` 是2024年前的原始证据层；`outputs/unified_model_benchmark/primary_train_augmented.csv` 是用户指定的2010—2023年建模训练层，包含原始证据行与模拟行，并保留是否模拟、生成方法和已知数据截止年等代码字段，可直接与 `data/unified/primary_test.csv` 配对。
+- 主排序指标是先按目标计算对称平均绝对百分比误差（sMAPE），再对两个目标各赋50%权重；不跨单位汇总均方根误差（RMSE）。表中同时给出相对上一期数值法（`naive_last`）的改进率与最差单点误差。
+- 传统分支的2023年后水平断点模型（`post_2022_level_break`）和严格证据口径水平断点模型（`strict_evidence_level_break`）在所有评价范围内都按本次约定不执行，不生成预测或误差。原生疫情前指数增长模型和会排除2020—2022年训练行的无断点对数线性模型，仅保留在未模拟官方数据敏感性表。
 
-### 用户指定的模拟增强固定适配器排序（假设性）
+### 用户指定的模拟增强固定模型排序（假设性）
 
 {_markdown_table(simulated_view, list(simulated_view.columns))}
 
-该表的 `descriptive_rank` 只描述用户指定规格在模拟伪标签上的相对误差；`robust_winner` 固定为 false。模拟点会改变目标路径，不能当成新增事实或原分支的历史声明流程。
+该表的“描述性排序”只描述用户指定规格在模拟伪标签上的相对误差；“稳健胜者”标志固定为否。模拟点会改变目标路径，不能当成新增事实或原分支的历史声明流程。
 
-### 未模拟 canonical 共同行排序（official-source，稳健性优先）
+### 未模拟官方数据的相同训练年份排序（稳健性优先）
 
 {_markdown_table(official_view, list(official_view.columns))}
 
-这里不生成任何 benchmark 伪标签。传统 common-row OLS 与 raw Ridge 都吃每折全部 physical canonical training rows，测试仍只用官方实际；canonical 可包含官方来源的同比反推、回列或 supporting 值，并以 `status/is_observed` 明示，例如 2010 年综合收入是 `inferred_from_yoy`，不是 strict observed。该轨优先于模拟轨用于判断结论是否由伪标签驱动；即使两轨顺序一致，也只能称适配器相对排序。
+这里不生成任何模型比较伪标签。传统分支的相同训练年份普通最小二乘模型与原尺度岭回归都使用每一折全部未模拟官方来源训练行，测试仍只用官方实际值；官方优选数据可包含官方来源的同比反推、回列或辅助值，并用数据状态和是否直接观测字段（`status/is_observed`）明示，例如2010年综合收入是“由同比反推”（`inferred_from_yoy`），不是严格意义上的直接观测。该方案优先于模拟增强方案，用于判断结论是否由伪标签驱动；即使两种方案顺序一致，也只能称固定规格的相对排序。
 
 ### 两轨逐目标核对
 
@@ -3426,51 +3621,51 @@ OAT 敏感性只围绕基准情景，每次只改变一项假设：客源年增�
 
 {_markdown_table(declared_view, list(declared_view.columns))}
 
-传统原声明模型没有执行值，`jointly_rankable_original_declared_representatives=false`。`raw_target_ridge_alpha_0.1` 本次每折固定 alpha 且不读取外层测试，但原 ML 分支推荐它时已检查含 2024 的回测；`ridge_regime` 仅作模型族声明审计。因此没有合法的原分支级胜者。
+传统原声明模型没有执行值，因此原声明代表不能共同排名（代码字段 `jointly_rankable_original_declared_representatives=false`）。原尺度岭回归本次每折固定惩罚参数α=0.1且不读取外层测试，但原机器学习分支推荐它时已检查包含2024年的回测；分阶段岭回归（`ridge_regime`）仅作模型族声明审计。因此没有合法的原分支级胜者。
 
 ### 全候选探索性排名
 
 {_markdown_table(exploratory_view, list(exploratory_view.columns))}
 
-全候选表用于诊断，不可从中事后挑一个最优候选再宣称无偏胜者。并列通过 1e-10 精度判定；`worst_point_smape_percent` 暴露平均值掩盖的失稳。两种断点模型无论代数上是否可识别，都因用户协议禁止而不执行、不展示误差。
+全候选表用于诊断，不可从中事后挑一个最优候选再宣称无偏胜者。并列通过1e-10精度判定；最差单点sMAPE用于暴露平均值可能掩盖的失稳。两种断点模型无论代数上是否可识别，都因用户协议禁止而不执行、不展示误差。
 
-### 未模拟 canonical 分支原生策略敏感性
+### 未模拟官方数据的分支原生策略敏感性
 
 {_markdown_table(native_view, list(native_view.columns))}
 
-`pre_covid_exponential` 与原生 `no_break_log_linear` 会删除部分统一训练行，故只能用来解释“分支原生过滤策略会怎样”，不能与共同行适配器混作纯算法比较。
+疫情前指数增长模型（`pre_covid_exponential`）与原生无断点对数线性回归（`no_break_log_linear`）会删除部分统一训练行，故只能用来解释“分支原生过滤策略会怎样”，不能与相同训练年份的固定规格混作纯算法比较。
 
-### 2024 最终单年 pseudo-holdout
+### 2024年最终单年留出检验（非真正前瞻）
 
 {_markdown_table(holdout_view, list(holdout_view.columns))}
 
-2024 pseudo-holdout 每个目标只有一个点，`MAE = absolute error`，MAPE/sMAPE 都没有稳定性含义；它只检查本次重跑中冻结后的方法能否跨到下一年。两种断点模型仍不执行。任何 2024 误差都没有回流到本次重跑的超参数、候选选择或主排序；但由于模型代码和方法讨论形成时 2024 已存在，它不能支持真正的前瞻泛化声明。
+2024年单年留出检验每个目标只有一个测试点，此时平均绝对误差（MAE）就等于该点的绝对误差，平均绝对百分比误差（MAPE）和对称平均绝对百分比误差（sMAPE）都没有稳定性含义；它只检查本次重跑中冻结后的方法能否跨到下一年。两种断点模型仍不执行。任何2024年误差都没有回流到本次重跑的超参数、候选选择或主排序；但由于模型代码和方法讨论形成时2024年数据已存在，它不能支持真正的前瞻泛化声明。
 
 ### 2019 截断跨阶段压力测试（不含 2024）
 
 {_markdown_table(stress_view, list(stress_view.columns))}
 
-压力测试的 physical training 只到 2019，测试为 2020—2023 中现有官方实际值：综合收入 2021/2023、游客量 2023；每个测试点单独生成截至 `test_year-1` 的模拟尾部，2021 实际不会流入 2023 压力测试训练。ML 的 pandemic/post-2022 特征在 physical training 中未见，输出属于跨阶段外推，不等于识别疫情或恢复效应。
+压力测试的原始证据训练数据只到2019年，测试使用2020—2023年间现有的官方实际值：综合收入为2021年和2023年，游客量为2023年；每个测试点单独生成截至测试年前一年的模拟尾部，2021年实际值不会流入2023年压力测试训练。机器学习模型的疫情期和2023年后恢复期指示变量在原始训练期中没有出现过变化，输出属于跨阶段外推，不等于识别疫情或恢复效应。
 
 ### 模型源码固定
 
 {_markdown_table(provenance_view, list(provenance_view.columns))}
 
-runner 在建模前校验两个可执行模型文件的 Git blob 与 SHA-256；任一字节漂移都会拒绝运行。原声明摘要也做字段校验。
+比较程序在建模前校验两个可执行模型文件的Git对象标识与SHA-256哈希；任一字节漂移都会拒绝运行。原声明摘要也做字段校验。
 
 ### 分支覆盖与未纳入原因
 
-- `codex/jizhou-tourism-modeling`：存在可执行 Python 实现；用户轨只跑无断点共同行 OLS，原生 pre-COVID/no-break 仅作敏感性，所有断点均不执行。
-- `codex/jizhou-tourism-ml`：存在可执行 Python 实现，实跑全部 7 个候选族、稳健集成、raw-target Ridge、naive 和训练内选择器。
-- `origin/111`：只有示例论文和工作簿，**缺少可执行模型源代码**；其中数据只能作统一数据层的旁证，不能把论文数值冒充为同一 split 下的重跑结果。
-- `origin/邱志烨-数据搜索`：有数据预处理、补值和模型建议，**没有模型实现**；补值 sidecar 明确排除在标签、外层训练和测试之外。
-- `main`：提供 canonical 目标真值并接收最终报告；没有另一套可独立执行的分支模型。
+- `codex/jizhou-tourism-modeling`：存在可执行Python实现；本次统一方案只运行相同训练年份的无断点普通最小二乘模型，原生疫情前/无断点规格仅作敏感性分析，所有断点模型均不执行。
+- `codex/jizhou-tourism-ml`：存在可执行Python实现，实际运行全部7个候选模型族、稳健集成模型、原尺度岭回归、上一期数值法和训练内部模型选择器。
+- `origin/111`：只有示例论文和工作簿，**缺少可执行模型源代码**；其中数据只能作统一数据层的旁证，不能把论文数值冒充为同一训练—测试划分下的重跑结果。
+- `origin/邱志烨-数据搜索`：有数据预处理、补值和模型建议，**没有模型实现**；补值辅助表明确排除在目标标签、外层训练和测试之外。
+- `main`：提供官方优选目标真值并接收最终报告；没有另一套可独立执行的分支模型。
 
 ### 复现与限制
 
-输入模式：`{inputs.source_mode}`。loader 会逐行验证 physical split/fold 与 `benchmark_observations.csv` 的目标值、状态、来源、观测标志、年份和 role 完全一致。`train_only_hyperparameters.csv` 可核对调参上限；`model_applicability.csv` 保留禁用断点与 ML 支持状态；逐点预测可复算所有指标。
+输入模式代码为 `{inputs.source_mode}`。数据读取程序会逐行验证原始证据训练—测试划分及滚动折，与 `benchmark_observations.csv` 中的目标值、状态、来源、观测标志、年份和训练/测试角色完全一致。`train_only_hyperparameters.csv` 可核对只在训练期内确定的超参数；`model_applicability.csv` 保留禁用断点模型与机器学习模型支持状态；逐点预测可复算所有指标。
 
-获取日期核对严格限定在 canonical annual summary 实际引用的 {len(canonical_source_access)} 个唯一来源：它们在 `data/metadata/sources.csv` 的 `notes` 中都记录 `accessed={canonical_access_dates}`，详见 `problem_source_access_dates.csv`。未被 canonical 使用的来源元数据不在这项完整性声明内。
+获取日期核对严格限定在官方优选年度汇总表实际引用的 {len(canonical_source_access)} 个唯一来源：它们在 `data/metadata/sources.csv` 的备注字段中都记录实际获取日期为 {canonical_access_dates}，详见 `problem_source_access_dates.csv`。未被官方优选数据使用的来源元数据不在这项完整性声明内。
 
 ```bash
 .venv/bin/python scripts/build_unified_branch_data.py
@@ -3478,13 +3673,13 @@ MPLCONFIGDIR=/tmp/jizhou-mpl XDG_CACHE_HOME=/tmp/jizhou-xdg .venv/bin/python cod
 .venv/bin/python -m unittest discover -s tests -v
 ```
 
-样本总量很小、测试年份不规则，2020—2022 又存在目标缺口；canonical 还是包含同比反推、回列修订的 final-vintage 数据。模拟伪标签会低估结构冲击，不增加信息量；sMAPE 和时间外推也无法替代结构解释。应联合查看未模拟 canonical 共同行轨、模拟轨、逐目标 naive skill、最坏误差、2019 stress 和 2024 单点，不能引用“稳健冠军”或“原分支赢家”结论。
+样本总量很小、测试年份不规则，2020—2022年又存在目标缺口；官方优选数据还是包含同比反推和回列修订的最终修订版回溯数据。模拟伪标签会低估结构冲击，不增加信息量；对称平均绝对百分比误差（sMAPE）和时间外推也无法替代结构解释。应联合查看未模拟官方数据相同训练年份方案、模拟增强方案、逐目标相对上一期数值法改进率、最差误差、2019年跨疫情阶段压力测试和2024年单年留出检验，不能引用“稳健冠军”或“原分支赢家”结论。
 
 ## 题目导向综合结论
 
-- **问题1：增长背景。** 疫情前 `pre_covid_exponential` 估计游客量年增长 {float(q1_growth_by_metric['tourist_visits']):.3f}%、综合收入年增长 {float(q1_growth_by_metric['tourism_comprehensive_income']):.3f}%；2023—2024 canonical 实际增长分别为 {float(q1_summary_by_metric.loc['tourist_visits', 'growth_2023_2024_percent']):.3f}% 和 {float(q1_summary_by_metric.loc['tourism_comprehensive_income', 'growth_2023_2024_percent']):.3f}%。恢复仍为正但结构已变，Q1 曲线机械外推到 2030 年会达到 {float(q1_forecast_keyed.loc[('tourist_visits', 2030)]):.1f} 万人次/{float(q1_forecast_keyed.loc[('tourism_comprehensive_income', 2030)]):.1f} 亿元，故只能作反例对照；GDP/第三产业按 2019 口径断点分段核对，综合收入不是增加值。
-- **问题2：主预测与不确定性。** 两条统一滚动轨均由 fixed raw Ridge 取得较低 macro-sMAPE，故主点预测采用该规格：游客量 {ridge_2026_visits:.1f}→{ridge_2030_visits:.1f} 万人次，综合收入 {ridge_2026_income:.2f}→{ridge_2030_income:.2f} 亿元；无断点 OLS 作为更陡的趋势对照。Ridge 游客量未模拟回测仍略逊 naive，且其 2030 隐含人均次消费较 2024 低 {abs(ridge_spend_2030_vs_2024):.2f}%，所以结论是“带客单价下行风险的相对审慎主线”，不是稳健冠军。
-- **问题3：情景与行动。** 政策基准到 2030 年为 {float(baseline_2030['tourist_visits']):.1f} 万人次和 {float(baseline_2030['tourism_comprehensive_income']):.2f} 亿元；在指定扰动下，客源年增速提高 2 个百分点对应游客量 +{source_high_visits['delta_2030']:.1f} 万人次、收入 +{source_high_income['delta_2030']:.2f} 亿元，同时应为 −15% 持续冲击下的 {abs(shock_low_income['delta_2030']):.2f} 亿元收入缺口准备预案。各 OAT 扰动宽度不同，不能当作标准化杠杆排名；全部增量来自 2025 目标 proxy 与透明假设，不代表政策因果效应或实现概率。
+- **问题1：增长背景。** 疫情前指数增长模型估计游客量年增长 {float(q1_growth_by_metric['tourist_visits']):.3f}%、综合收入年增长 {float(q1_growth_by_metric['tourism_comprehensive_income']):.3f}%；2023—2024年官方优选实际值的增长率分别为 {float(q1_summary_by_metric.loc['tourist_visits', 'growth_2023_2024_percent']):.3f}% 和 {float(q1_summary_by_metric.loc['tourism_comprehensive_income', 'growth_2023_2024_percent']):.3f}%。恢复仍为正但结构已变，问题1曲线机械外推到2030年会达到 {float(q1_forecast_keyed.loc[('tourist_visits', 2030)]):.1f} 万人次和 {float(q1_forecast_keyed.loc[('tourism_comprehensive_income', 2030)]):.1f} 亿元，故只能作反例对照；国内生产总值（GDP）和第三产业增加值按2019年口径断点分段核对，综合收入不是增加值。
+- **问题2：主预测与不确定性。** 两种统一滚动检验方案均由固定原尺度岭回归取得较低的两个目标等权平均sMAPE，故主点预测采用该规格：游客量 {ridge_2026_visits:.1f}→{ridge_2030_visits:.1f} 万人次，综合收入 {ridge_2026_income:.2f}→{ridge_2030_income:.2f} 亿元；无断点普通最小二乘模型作为更陡的趋势对照。岭回归的游客量未模拟回测仍略逊上一期数值法，且其2030年隐含人均次消费较2024年低 {abs(ridge_spend_2030_vs_2024):.2f}%，所以结论是“带客单价下行风险的相对审慎主线”，不是稳健冠军。
+- **问题3：情景与行动。** 政策基准到2030年为 {float(baseline_2030['tourist_visits']):.1f} 万人次和 {float(baseline_2030['tourism_comprehensive_income']):.2f} 亿元；在指定扰动下，客源年增速提高2个百分点对应游客量增加 {source_high_visits['delta_2030']:.1f} 万人次、收入增加 {source_high_income['delta_2030']:.2f} 亿元，同时应为−15%持续冲击下的 {abs(shock_low_income['delta_2030']):.2f} 亿元收入缺口准备预案。各单因素逐次敏感性分析（OAT）的扰动宽度不同，不能当作标准化杠杆排名；全部增量来自2025年政府目标代理值与透明假设，不代表政策因果效应或实现概率。
 """
     report_path.write_text(content, encoding="utf-8")
 
