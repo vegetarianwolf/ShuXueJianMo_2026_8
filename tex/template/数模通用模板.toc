@@ -3,12 +3,12 @@
 \contentsline {subsection}{\numberline {1.2}问题重述}{3}{subsection.1.2}%
 \contentsline {section}{\numberline {二、}问题分析}{3}{section.2}%
 \contentsline {section}{\numberline {三、}模型假设}{4}{section.3}%
-\contentsline {section}{\numberline {四、}符号说明}{5}{section.4}%
+\contentsline {section}{\numberline {四、}符号说明}{4}{section.4}%
 \contentsline {section}{\numberline {五、}数据预处理}{5}{section.5}%
 \contentsline {subsection}{\numberline {5.1}数据来源、指标口径与证据分层}{5}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}官方优选年度表与覆盖情况}{6}{subsection.5.2}%
 \contentsline {subsection}{\numberline {5.3}缺失值处理与训练层构造}{7}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}变量变换、阶段标记与派生量}{8}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.4}变量变换、阶段标记与派生量}{7}{subsection.5.4}%
 \contentsline {subsection}{\numberline {5.5}时间有序验证与评价指标}{8}{subsection.5.5}%
 \contentsline {section}{\numberline {六、}问题一的模型的建立和求解}{9}{section.6}%
 \contentsline {subsection}{\numberline {6.1}长期趋势与异常波动识别}{9}{subsection.6.1}%

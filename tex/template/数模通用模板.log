@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  18 AUG 2026 22:04
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  18 AUG 2026 22:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1592,21 +1592,21 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 [4] [5] [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 396--396
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
 []|\TU/texgyretermes(0)/m/n/9.03374 2010–2018 \TU/SourceHanSerifCN(0)/m/n/9.033
 74 年 \TU/texgyretermes(0)/m/n/9.03374 7.408%\TU/SourceHanSerifCN(0)/m/n/9.03374
  ；|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 396--396
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
 []|\TU/texgyretermes(0)/m/n/9.03374 2010–2018 \TU/SourceHanSerifCN(0)/m/n/9.033
 74 年 \TU/texgyretermes(0)/m/n/9.03374 7.014%\TU/SourceHanSerifCN(0)/m/n/9.03374
  ；|
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 396--396
+Underfull \hbox (badness 10000) in alignment at lines 394--394
 [][][][][] 
  []
 
@@ -1622,7 +1622,7 @@ File: ../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png Graphic f
 ile (type bmp)
 <../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png>
  [14] [15]
-Underfull \hbox (badness 1817) in paragraph at lines 666--666
+Underfull \hbox (badness 1817) in paragraph at lines 664--664
 []|\TU/texgyretermes(0)/m/n/9.03374 2026 \TU/SourceHanSerifCN(0)/m/n/9.03374 年 
 先 下 降 \TU/texgyretermes(0)/m/n/9.03374 15%\TU/SourceHanSerifCN(0)/m/n/9.03374 ，
 |
@@ -1633,13 +1633,13 @@ File: ../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png Graphi
 c file (type bmp)
 <../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png>
  [17]
-Underfull \hbox (badness 10000) in paragraph at lines 766--766
+Underfull \hbox (badness 10000) in paragraph at lines 764--764
 []|\TU/SourceHanSerifCN(0)/m/n/6.52437 将 客 源 年 增 速 由 \TU/texgyretermes(0)/m/n/6
 .52437 4.854% \TU/SourceHanSerifCN(0)/m/n/6.52437 提 高 至
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 766--766
+Underfull \hbox (badness 1303) in paragraph at lines 764--764
 \TU/SourceHanSerifCN(0)/m/n/6.52437 送；|  逐 年 核 对 实 际 路 径 是 否 达 到 基 准 的
  []
 
@@ -1667,7 +1667,7 @@ Package rerunfilecheck Info: File `数模通用模板.out' has not changed.
 Here is how much of TeX's memory you used:
  36415 strings out of 402620
  783358 string characters out of 5444058
- 1224357 words of memory out of 5000000
+ 1229357 words of memory out of 5000000
  64893 multiletter control sequences out of 15000+600000
  651713 words of font info for 192 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
