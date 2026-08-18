@@ -1,0 +1,18 @@
+{
+  "input": "data/jizhou_tourism_economy/official_annual_summary_2010_2025.csv",
+  "primary_model": "post_2022_level_break",
+  "excluded_from_normal_trend_fit": "2020-2022",
+  "forecast_origin_note": "2025 annual actual is unavailable; 2025 is predicted, forecasts requested start in 2026",
+  "scenario_note": "planning scenarios use 2025 targets as provisional anchors; optimistic and pessimistic cases are transparent assumptions, not causal estimates",
+  "generated_files": [
+    "baseline_forecast_2026_2030.csv",
+    "five_year_aggregate_constraints.csv",
+    "forecasts_2025_2030_all_models.csv",
+    "missingness_audit.csv",
+    "model_diagnostics.csv",
+    "parameter_estimates.csv",
+    "run_summary.json",
+    "scenario_forecasts_2026_2030.csv",
+    "trend_and_baseline_forecast.png"
+  ]
+}

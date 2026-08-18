@@ -1,0 +1,3 @@
+metric,selected_ml_model,full_sample_n,strict_sample_n,full_sample_2030,strict_sample_2030,strict_relative_difference_percent
+tourist_visits,ridge_regime,12,11,5969.918320,5821.681883,-2.483056
+tourism_comprehensive_income,ridge_regime,12,9,487.431677,441.235940,-9.477377

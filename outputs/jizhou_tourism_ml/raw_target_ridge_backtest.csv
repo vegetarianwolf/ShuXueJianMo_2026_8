@@ -1,0 +1,15 @@
+metric,model,train_end_year,test_year,actual,prediction,absolute_percentage_error,log_error,test_regime
+tourist_visits,raw_target_ridge_alpha_0.1,2014,2015,1818.72000000,1662.10588235,8.61122755,0.09004755,pre_covid
+tourist_visits,raw_target_ridge_alpha_0.1,2015,2016,2086.00000000,1919.95879781,7.95978917,0.08294463,pre_covid
+tourist_visits,raw_target_ridge_alpha_0.1,2016,2017,2392.00000000,2189.87307847,8.45012214,0.08828625,pre_covid
+tourist_visits,raw_target_ridge_alpha_0.1,2017,2018,2660.00000000,2483.03431217,6.65284541,0.06884480,pre_covid
+tourist_visits,raw_target_ridge_alpha_0.1,2018,2019,2800.00000000,2770.24800977,1.06257108,0.01068257,pre_covid
+tourist_visits,raw_target_ridge_alpha_0.1,2019,2023,2363.00000000,3674.70455326,55.51013767,-0.44154074,recovery
+tourist_visits,raw_target_ridge_alpha_0.1,2023,2024,2643.00000000,2595.14355492,1.81068653,0.01827280,recovery
+tourism_comprehensive_income,raw_target_ridge_alpha_0.1,2014,2015,94.00000000,85.77881426,8.74594228,0.09152273,pre_covid
+tourism_comprehensive_income,raw_target_ridge_alpha_0.1,2015,2017,130.00000000,112.53371017,13.43560756,0.14428163,pre_covid
+tourism_comprehensive_income,raw_target_ridge_alpha_0.1,2017,2018,142.00000000,135.27775485,4.73397546,0.04849695,pre_covid
+tourism_comprehensive_income,raw_target_ridge_alpha_0.1,2018,2019,165.00000000,151.70020695,8.06048063,0.08403922,pre_covid
+tourism_comprehensive_income,raw_target_ridge_alpha_0.1,2019,2021,110.00000000,185.30668003,68.46061821,-0.52153182,pandemic
+tourism_comprehensive_income,raw_target_ridge_alpha_0.1,2021,2023,191.50000000,212.98476175,11.21919674,-0.10633281,recovery
+tourism_comprehensive_income,raw_target_ridge_alpha_0.1,2023,2024,221.00000000,205.82446822,6.86675646,0.07113899,recovery
