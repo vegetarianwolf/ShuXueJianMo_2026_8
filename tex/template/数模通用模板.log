@@ -1315,4 +1315,35 @@ Underfull \hbox (badness 1303) in paragraph at lines 769--769
  []
 
 [19] [20]
-File: ../../outputs/ridge_optimization/ridge_lambda_search.png Graphic fil
+File: ../../outputs/ridge_optimization/ridge_lambda_search.png Graphic file (type bmp)
+<../../outputs/ridge_optimization/ridge_lambda_search.png>
+ [21] [22] [23] [24] (./数模通用模板.bbl) [25] [26
+
+]
+
+Package caption Warning: Unused \captionsetup[sub] on input line 14.
+See the caption package documentation for explanation.
+
+
+Package natbib Warning: There were undefined citations.
+
+[27
+
+] (./数模通用模板.aux)
+ ***********
+LaTeX2e <2025-11-01>
+L3 programming layer <2022/08/05>
+ ***********
+Package rerunfilecheck Info: File `数模通用模板.out' has not changed.
+(rerunfilecheck)             Checksum: 49B6D3C5EA041858FA6024CC40844510;1874.
+ ) 
+Here is how much of TeX's memory you used:
+ 35546 strings out of 468168
+ 767331 string characters out of 5432815
+ 1200046 words of memory out of 5000000
+ 63616 multiletter control sequences out of 15000+600000
+ 651713 words of font info for 192 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 108i,13n,116p,534b,980s stack positions out of 10000i,1000n,20000p,200000b,200000s
+
+Output written on 数模通用模板.pdf (27 pages).
