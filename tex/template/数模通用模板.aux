@@ -77,77 +77,80 @@
 \newlabel{tab:q1_mechanical_forecast@cref}{{[table][8][]8}{[1][11][]11}{}{}{}}
 \citation{hoerl1970ridge}
 \@writefile{toc}{\contentsline {section}{\numberline {七、}问题二的模型的建立和求解}{12}{section.7}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}模型选择依据与岭回归形式}{12}{subsection.7.1}\protected@file@percent }
-\newlabel{eq:ridge_objective}{{9}{12}{模型选择依据与岭回归形式}{equation.9}{}}
-\newlabel{eq:ridge_objective@cref}{{[equation][9][]9}{[1][12][]12}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}扩展窗口滚动选模}{12}{subsection.7.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 未模拟官方数据轨的滚动sMAPE比较}}{12}{table.caption.9}\protected@file@percent }
-\newlabel{tab:q2_backtest}{{9}{12}{未模拟官方数据轨的滚动sMAPE比较}{table.caption.9}{}}
-\newlabel{tab:q2_backtest@cref}{{[table][9][]9}{[1][12][]12}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1}建模思路与候选模型设置}{12}{subsection.7.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2}原尺度岭回归模型的构建与求解}{12}{subsection.7.2}\protected@file@percent }
+\newlabel{eq:ridge_objective}{{10}{12}{原尺度岭回归模型的构建与求解}{equation.10}{}}
+\newlabel{eq:ridge_objective@cref}{{[equation][10][]10}{[1][12][]12}{}{}{}}
+\newlabel{eq:ridge_solution}{{11}{12}{原尺度岭回归模型的构建与求解}{equation.11}{}}
+\newlabel{eq:ridge_solution@cref}{{[equation][11][]11}{[1][12][]12}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}时间有序滚动检验与主模型确定}{13}{subsection.7.3}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces 未模拟官方数据轨的滚动sMAPE比较}}{13}{table.caption.9}\protected@file@percent }
+\newlabel{tab:q2_backtest}{{9}{13}{未模拟官方数据轨的滚动sMAPE比较}{table.caption.9}{}}
+\newlabel{tab:q2_backtest@cref}{{[table][9][]9}{[1][13][]13}{}{}{}}
 \citation{efron1979bootstrap}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 问题2候选模型的时间有序评判}}{13}{figure.caption.10}\protected@file@percent }
-\newlabel{fig:q2_model_judgement}{{2}{13}{问题2候选模型的时间有序评判}{figure.caption.10}{}}
-\newlabel{fig:q2_model_judgement@cref}{{[figure][2][]2}{[1][12][]13}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.3}最终参数估计与统计诊断}{13}{subsection.7.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Ridge最终拟合诊断}}{13}{table.caption.11}\protected@file@percent }
-\newlabel{tab:q2_diagnostics}{{10}{13}{Ridge最终拟合诊断}{table.caption.11}{}}
-\newlabel{tab:q2_diagnostics@cref}{{[table][10][]10}{[1][13][]13}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Ridge标准化系数及95\%条件区间}}{14}{table.caption.12}\protected@file@percent }
-\newlabel{tab:q2_coefficients}{{11}{14}{Ridge标准化系数及95\%条件区间}{table.caption.12}{}}
-\newlabel{tab:q2_coefficients@cref}{{[table][11][]11}{[1][13][]14}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}2026--2030年预测及条件区间}{14}{subsection.7.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Ridge对2026--2030年的主预测}}{14}{table.caption.13}\protected@file@percent }
-\newlabel{tab:q2_forecast}{{12}{14}{Ridge对2026--2030年的主预测}{table.caption.13}{}}
-\newlabel{tab:q2_forecast@cref}{{[table][12][]12}{[1][14][]14}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Ridge主预测、条件区间及与问题1模型的对比}}{15}{figure.caption.14}\protected@file@percent }
-\newlabel{fig:q2_forecast}{{3}{15}{Ridge主预测、条件区间及与问题1模型的对比}{figure.caption.14}{}}
-\newlabel{fig:q2_forecast@cref}{{[figure][3][]3}{[1][14][]15}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}合理性分析及与问题1模型比较}{15}{subsection.7.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces 问题2候选模型的时间有序评判}}{14}{figure.caption.10}\protected@file@percent }
+\newlabel{fig:q2_model_judgement}{{2}{14}{问题2候选模型的时间有序评判}{figure.caption.10}{}}
+\newlabel{fig:q2_model_judgement@cref}{{[figure][2][]2}{[1][13][]14}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.4}全样本重估与不确定性量化}{14}{subsection.7.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Ridge最终拟合诊断}}{14}{table.caption.11}\protected@file@percent }
+\newlabel{tab:q2_diagnostics}{{10}{14}{Ridge最终拟合诊断}{table.caption.11}{}}
+\newlabel{tab:q2_diagnostics@cref}{{[table][10][]10}{[1][14][]14}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {11}{\ignorespaces Ridge标准化系数及95\%条件区间}}{15}{table.caption.12}\protected@file@percent }
+\newlabel{tab:q2_coefficients}{{11}{15}{Ridge标准化系数及95\%条件区间}{table.caption.12}{}}
+\newlabel{tab:q2_coefficients@cref}{{[table][11][]11}{[1][15][]15}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.5}2026--2030年预测结果及解释}{15}{subsection.7.5}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {12}{\ignorespaces Ridge对2026--2030年的主预测}}{15}{table.caption.13}\protected@file@percent }
+\newlabel{tab:q2_forecast}{{12}{15}{Ridge对2026--2030年的主预测}{table.caption.13}{}}
+\newlabel{tab:q2_forecast@cref}{{[table][12][]12}{[1][15][]15}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Ridge主预测、条件区间及与问题1模型的对比}}{16}{figure.caption.14}\protected@file@percent }
+\newlabel{fig:q2_forecast}{{3}{16}{Ridge主预测、条件区间及与问题1模型的对比}{figure.caption.14}{}}
+\newlabel{fig:q2_forecast@cref}{{[figure][3][]3}{[1][15][]16}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.6}模型合理性与问题间衔接}{16}{subsection.7.6}\protected@file@percent }
 \citation{jizhou2025report}
-\@writefile{toc}{\contentsline {section}{\numberline {八、}问题三的模型的建立和求解}{16}{section.8}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}政策锚点与情景核算模型}{16}{subsection.8.1}\protected@file@percent }
-\newlabel{eq:anchor_consumption}{{10}{16}{政策锚点与情景核算模型}{equation.10}{}}
-\newlabel{eq:anchor_consumption@cref}{{[equation][10][]10}{[1][16][]16}{}{}{}}
-\newlabel{eq:scenario_identity}{{11}{16}{政策锚点与情景核算模型}{equation.11}{}}
-\newlabel{eq:scenario_identity@cref}{{[equation][11][]11}{[1][16][]16}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces 三类政策情景的透明参数}}{16}{table.caption.15}\protected@file@percent }
-\newlabel{tab:scenario_assumptions}{{13}{16}{三类政策情景的透明参数}{table.caption.15}{}}
-\newlabel{tab:scenario_assumptions@cref}{{[table][13][]13}{[1][16][]16}{}{}{}}
-\newlabel{eq:baseline_visitor_growth}{{12}{16}{政策锚点与情景核算模型}{equation.12}{}}
-\newlabel{eq:baseline_visitor_growth@cref}{{[equation][12][]12}{[1][16][]16}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}三情景2026--2030年路径}{16}{subsection.8.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces 三情景下游客量与综合收入预测}}{17}{table.caption.16}\protected@file@percent }
-\newlabel{tab:q3_scenario_forecasts}{{14}{17}{三情景下游客量与综合收入预测}{table.caption.16}{}}
-\newlabel{tab:q3_scenario_forecasts@cref}{{[table][14][]14}{[1][16][]17}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}单因素敏感性分析}{17}{subsection.8.3}\protected@file@percent }
-\newlabel{eq:oat_sensitivity}{{13}{17}{单因素敏感性分析}{equation.13}{}}
-\newlabel{eq:oat_sensitivity@cref}{{[equation][13][]13}{[1][17][]17}{}{}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces 关键因素对2030年结果的单因素敏感性}}{17}{table.caption.17}\protected@file@percent }
-\newlabel{tab:q3_sensitivity}{{15}{17}{关键因素对2030年结果的单因素敏感性}{table.caption.17}{}}
-\newlabel{tab:q3_sensitivity@cref}{{[table][15][]15}{[1][17][]17}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 三情景路径与2030年关键因素敏感性}}{18}{figure.caption.18}\protected@file@percent }
-\newlabel{fig:q3_scenarios}{{4}{18}{三情景路径与2030年关键因素敏感性}{figure.caption.18}{}}
-\newlabel{fig:q3_scenarios@cref}{{[figure][4][]4}{[1][17][]18}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}量化对策及监测机制}{18}{subsection.8.4}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces 蓟州区旅游经济发展的量化对策}}{18}{table.caption.19}\protected@file@percent }
-\newlabel{tab:q3_policy}{{16}{18}{蓟州区旅游经济发展的量化对策}{table.caption.19}{}}
-\newlabel{tab:q3_policy@cref}{{[table][16][]16}{[1][18][]18}{}{}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {九、}模型的分析与检验}{20}{section.9}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}时间有序回测与残差诊断的分工}{20}{subsection.9.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}正则化强度稳健性}{20}{subsection.9.2}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Ridge惩罚强度的补充敏感性}}{20}{table.caption.20}\protected@file@percent }
-\newlabel{tab:ridge_lambda_sensitivity}{{17}{20}{Ridge惩罚强度的补充敏感性}{table.caption.20}{}}
-\newlabel{tab:ridge_lambda_sensitivity@cref}{{[table][17][]17}{[1][20][]20}{}{}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 两个预测目标的Ridge正则化强度搜索}}{21}{figure.caption.21}\protected@file@percent }
-\newlabel{fig:ridge_lambda_search}{{5}{21}{两个预测目标的Ridge正则化强度搜索}{figure.caption.21}{}}
-\newlabel{fig:ridge_lambda_search@cref}{{[figure][5][]5}{[1][20][]21}{}{}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}误差来源与结论边界}{21}{subsection.9.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {十、}模型的评价、改进与推广}{22}{section.10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}模型的优点}{22}{subsection.10.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}模型的局限}{22}{subsection.10.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}模型的改进方向}{22}{subsection.10.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}模型的推广}{23}{subsection.10.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {十一、}结论}{23}{section.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {八、}问题三的模型的建立和求解}{17}{section.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.1}政策锚点与情景核算模型}{17}{subsection.8.1}\protected@file@percent }
+\newlabel{eq:anchor_consumption}{{12}{17}{政策锚点与情景核算模型}{equation.12}{}}
+\newlabel{eq:anchor_consumption@cref}{{[equation][12][]12}{[1][17][]17}{}{}{}}
+\newlabel{eq:scenario_identity}{{13}{17}{政策锚点与情景核算模型}{equation.13}{}}
+\newlabel{eq:scenario_identity@cref}{{[equation][13][]13}{[1][17][]17}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {13}{\ignorespaces 三类政策情景的透明参数}}{17}{table.caption.15}\protected@file@percent }
+\newlabel{tab:scenario_assumptions}{{13}{17}{三类政策情景的透明参数}{table.caption.15}{}}
+\newlabel{tab:scenario_assumptions@cref}{{[table][13][]13}{[1][17][]17}{}{}{}}
+\newlabel{eq:baseline_visitor_growth}{{14}{17}{政策锚点与情景核算模型}{equation.14}{}}
+\newlabel{eq:baseline_visitor_growth@cref}{{[equation][14][]14}{[1][17][]17}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.2}三情景2026--2030年路径}{17}{subsection.8.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {14}{\ignorespaces 三情景下游客量与综合收入预测}}{18}{table.caption.16}\protected@file@percent }
+\newlabel{tab:q3_scenario_forecasts}{{14}{18}{三情景下游客量与综合收入预测}{table.caption.16}{}}
+\newlabel{tab:q3_scenario_forecasts@cref}{{[table][14][]14}{[1][17][]18}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.3}单因素敏感性分析}{18}{subsection.8.3}\protected@file@percent }
+\newlabel{eq:oat_sensitivity}{{15}{18}{单因素敏感性分析}{equation.15}{}}
+\newlabel{eq:oat_sensitivity@cref}{{[equation][15][]15}{[1][18][]18}{}{}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {15}{\ignorespaces 关键因素对2030年结果的单因素敏感性}}{18}{table.caption.17}\protected@file@percent }
+\newlabel{tab:q3_sensitivity}{{15}{18}{关键因素对2030年结果的单因素敏感性}{table.caption.17}{}}
+\newlabel{tab:q3_sensitivity@cref}{{[table][15][]15}{[1][18][]18}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces 三情景路径与2030年关键因素敏感性}}{19}{figure.caption.18}\protected@file@percent }
+\newlabel{fig:q3_scenarios}{{4}{19}{三情景路径与2030年关键因素敏感性}{figure.caption.18}{}}
+\newlabel{fig:q3_scenarios@cref}{{[figure][4][]4}{[1][18][]19}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {8.4}量化对策及监测机制}{19}{subsection.8.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {16}{\ignorespaces 蓟州区旅游经济发展的量化对策}}{19}{table.caption.19}\protected@file@percent }
+\newlabel{tab:q3_policy}{{16}{19}{蓟州区旅游经济发展的量化对策}{table.caption.19}{}}
+\newlabel{tab:q3_policy@cref}{{[table][16][]16}{[1][19][]19}{}{}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {九、}模型的分析与检验}{21}{section.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.1}时间有序回测与残差诊断的分工}{21}{subsection.9.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.2}正则化强度稳健性}{21}{subsection.9.2}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {17}{\ignorespaces Ridge惩罚强度的补充敏感性}}{21}{table.caption.20}\protected@file@percent }
+\newlabel{tab:ridge_lambda_sensitivity}{{17}{21}{Ridge惩罚强度的补充敏感性}{table.caption.20}{}}
+\newlabel{tab:ridge_lambda_sensitivity@cref}{{[table][17][]17}{[1][21][]21}{}{}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces 两个预测目标的Ridge正则化强度搜索}}{22}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:ridge_lambda_search}{{5}{22}{两个预测目标的Ridge正则化强度搜索}{figure.caption.21}{}}
+\newlabel{fig:ridge_lambda_search@cref}{{[figure][5][]5}{[1][21][]22}{}{}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {9.3}误差来源与结论边界}{22}{subsection.9.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {十、}模型的评价、改进与推广}{23}{section.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.1}模型的优点}{23}{subsection.10.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.2}模型的局限}{23}{subsection.10.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.3}模型的改进方向}{23}{subsection.10.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {10.4}模型的推广}{24}{subsection.10.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {十一、}结论}{24}{section.11}\protected@file@percent }
 \citation{untourism2024barometer}
 \citation{jiao2025ismmicmac}
 \citation{jin2024highquality}
@@ -165,12 +168,12 @@
 \bibcite{jiao2025ismmicmac}{{9}{2025}{{焦爱英\ 等}}{{焦爱英, 陈磊, and 贾童}}}
 \bibcite{jin2024highquality}{{10}{2024}{{金秋\ 等}}{{金秋, 王清岩, and 张文静}}}
 \bibcite{wu2024coupling}{{11}{2024}{{武彦辰\ 等}}{{武彦辰, 张戈, and 徐嵩}}}
-\@writefile{toc}{\contentsline {section}{参考文献}{24}{section*.22}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{人工智能工具使用声明}{25}{section*.25}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{附录 \numberline {A}支撑材料文件列表}{26}{section.1.A}\protected@file@percent }
-\newlabel{tab:文件列表}{{\caption@xref {tab:文件列表}{ on input line 913}}{26}{支撑材料文件列表}{table.caption.26}{}}
-\newlabel{tab:文件列表@cref}{{[section][1][]A}{[1][26][]26}{}{}{}}
-\@writefile{toc}{\contentsline {section}{附录 \numberline {B}完整源程序代码}{26}{section.1.B}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{参考文献}{25}{section*.22}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{人工智能工具使用声明}{26}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{附录 \numberline {A}支撑材料文件列表}{27}{section.1.A}\protected@file@percent }
+\newlabel{tab:文件列表}{{\caption@xref {tab:文件列表}{ on input line 942}}{27}{支撑材料文件列表}{table.caption.26}{}}
+\newlabel{tab:文件列表@cref}{{[section][1][]A}{[1][27][]27}{}{}{}}
+\@writefile{toc}{\contentsline {section}{附录 \numberline {B}完整源程序代码}{27}{section.1.B}\protected@file@percent }
 \pgfsyspdfmark {pgfid1}{4661699}{23290449}
 \ttl@finishall
-\gdef \@abspage@last{26}
+\gdef \@abspage@last{27}
