@@ -1,0 +1,5 @@
+year,tianjin_domestic_visitors_10k_persons,tianjin_domestic_tourism_income_100m_cny,jizhou_visitors_10k_persons,jizhou_comprehensive_income_100m_cny,jizhou_visitor_share,jizhou_income_share,status,is_observed,source_ref,source_commit,source_path,source_sheet,source_row
+2020,14100,1331.42,,,,,official_observed,true,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,111完整示例/蓟州区旅游经济整合可追溯数据集_2010-2025.xlsx,天津市旅游基准,4
+2021,17900,1968.81,,110,,0.0558713131282348,official_observed,true,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,111完整示例/蓟州区旅游经济整合可追溯数据集_2010-2025.xlsx,天津市旅游基准,5
+2023,23600,2215.41,2363,191.5,0.100127118644068,0.0864399817640979,official_observed,true,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,111完整示例/蓟州区旅游经济整合可追溯数据集_2010-2025.xlsx,天津市旅游基准,6
+2024,26100,2930.98,2643,221,0.101264367816092,0.0754014015789941,official_observed,true,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,111完整示例/蓟州区旅游经济整合可追溯数据集_2010-2025.xlsx,天津市旅游基准,7

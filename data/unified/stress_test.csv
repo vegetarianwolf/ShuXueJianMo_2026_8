@@ -1,0 +1,4 @@
+split_id,split,metric,year,value,unit,status,source_ids,quality_note,is_observed,cutoff_year
+stress_cutoff_2019_through_2023,test,tourism_comprehensive_income,2021,110,100m_cny,observed_rounded,gov_jz_report_2022;gov_jz_yearbook_2022,未找到精确游客量；宏观指标采用后版年鉴修订值,true,2019
+stress_cutoff_2019_through_2023,test,tourist_visits,2023,2363,10k_persons,observed_rounded,gov_jz_report_2024;gov_jz_yearbook_2024,宏观指标采用2024年鉴最终核实值,true,2019
+stress_cutoff_2019_through_2023,test,tourism_comprehensive_income,2023,191.5,100m_cny,observed,gov_jz_report_2024;gov_jz_yearbook_2024,宏观指标采用2024年鉴最终核实值,true,2019

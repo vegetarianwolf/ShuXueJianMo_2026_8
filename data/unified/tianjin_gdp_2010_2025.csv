@@ -1,0 +1,17 @@
+year,tianjin_gdp_100m_cny,tianjin_real_gdp_growth_rate,status,is_observed,source_note,source_ref,source_commit,source_path,source_sheet,source_row
+2010,6830.76,0.144,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,5
+2011,8112.51,0.134,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,6
+2012,9043.02,0.113,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,7
+2013,9945.44,0.101,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,8
+2014,10640.62,0.075,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,9
+2015,10879.51,0.069,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,10
+2016,11477.2,0.06,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,11
+2017,12450.56,0.034,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,12
+2018,13362.92,0.034,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,13
+2019,14055.46,0.048,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,14
+2020,14007.99,0.014,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,15
+2021,15685.1,0.066,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,16
+2022,16311.3,0.01,official_observed,true,天津统计年鉴2025表3-1（历史修订序列）,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,17
+2023,16737.3,0.043,official_observed,true,天津市统计局：2023年统计公报,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,18
+2024,18024.32,0.051,official_observed,true,天津市统计局：2024年统计公报,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,19
+2025,18539.82,0.048,official_observed,true,天津市统计局：2025年经济运行发布,origin/111,71c7ddcd287e3713f05e50651a8d52508daf5b89,data/tianjin_gdp_2010_2025/天津市GDP数据集_2010-2025.xlsx,GDP数据,20

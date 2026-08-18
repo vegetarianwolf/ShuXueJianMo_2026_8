@@ -1,0 +1,3 @@
+split_id,split,metric,year,value,unit,status,source_ids,quality_note,is_observed,cutoff_year
+primary_holdout_2024,test,tourist_visits,2024,2643,10k_persons,observed_rounded,gov_jz_report_2025;gov_jz_yearbook_2024,宏观指标采用2024年鉴现价值,true,2023
+primary_holdout_2024,test,tourism_comprehensive_income,2024,221,100m_cny,observed_rounded,gov_jz_report_2025;gov_jz_yearbook_2024,宏观指标采用2024年鉴现价值,true,2023

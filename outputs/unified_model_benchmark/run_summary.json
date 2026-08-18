@@ -1,0 +1,228 @@
+{
+  "random_seed": 20260817,
+  "input_mode": "observations=data/unified/benchmark_observations.csv;primary=physical_unified_files;rolling=physical_unified_file;stress=physical_unified_files",
+  "input_sha256": {
+    "data/unified/benchmark_observations.csv": "39cfda82c1b8bdd8725f6d393b6266ddf1112d82b060c5078694f8d33d47216f",
+    "data/unified/primary_train.csv": "ea3e07401f15f962a53bc8de6b46b53e3489a8044a70cb17290433371baf0118",
+    "data/unified/primary_test.csv": "a58fbcbbba2dec5fa84e000a3b4a9dc27c928d16fb449162b1d07251c383ff7c",
+    "data/unified/rolling_origin_folds.csv": "bb82e32ec5c2e1ba1f491b137c0aaa84325c7106e786d5ffbfe94720d606dd53",
+    "data/unified/stress_train.csv": "8c1b3b48e28b7ac14522bc1121ec151cae9d2b75e6137dc75b9ff7bbe00608f4",
+    "data/unified/stress_test.csv": "b7939d55f40953bf224fd779563a423afa8048d1555056d0b735cc93bbb5654c"
+  },
+  "software": {
+    "python": "3.12.13",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0"
+  },
+  "model_source_provenance": [
+    {
+      "branch": "codex/jizhou-tourism-modeling",
+      "path": "code/scripts/model_jizhou_tourism.py",
+      "pinned_commit": "66e27eb5a29bbf3abd51dc2dc1af4b8e41fc349c",
+      "git_blob_oid": "86ed05d5ccb2086532293d81ba02640aa35dd3de",
+      "sha256": "8622be9dee45afdb10458eaa38501053fd3035913e77ab78bb67a2d51fe2cdc2",
+      "actual_sha256": "8622be9dee45afdb10458eaa38501053fd3035913e77ab78bb67a2d51fe2cdc2",
+      "actual_git_blob_oid": "86ed05d5ccb2086532293d81ba02640aa35dd3de",
+      "validated": true
+    },
+    {
+      "branch": "codex/jizhou-tourism-ml",
+      "path": "code/scripts/model_jizhou_tourism_ml.py",
+      "pinned_commit": "3709084fc84614223ee00979494aa82b458296fe",
+      "git_blob_oid": "81ba267b066c0d60a446e862ae100be0767ce6e9",
+      "sha256": "688195945f5e35ec585962484fb30d43884f2a32d008cf4c08b6e354e98c7355",
+      "actual_sha256": "688195945f5e35ec585962484fb30d43884f2a32d008cf4c08b6e354e98c7355",
+      "actual_git_blob_oid": "81ba267b066c0d60a446e862ae100be0767ce6e9",
+      "validated": true
+    }
+  ],
+  "original_branch_declarations": {
+    "traditional_summary": "outputs/jizhou_tourism_model/run_summary.json",
+    "traditional_primary_model": "post_2022_level_break",
+    "ml_summary": "outputs/jizhou_tourism_ml/run_summary.json",
+    "ml_selected_models": {
+      "tourist_visits": "ridge_regime",
+      "tourism_comprehensive_income": "ridge_regime"
+    },
+    "ml_recommended_point_forecast": "raw_target_ridge_alpha_0.1"
+  },
+  "headline": {
+    "original_branch_winner_determined": false,
+    "reason": "original declared representatives are not jointly executable under the user protocol; adapter ordering is consistent but remains descriptive",
+    "cross_track_order_consistent": true,
+    "simulated_augmentation_descriptive_first": {
+      "branch": "codex/jizhou-tourism-ml",
+      "model": "raw_target_ridge_alpha_0.1",
+      "macro_smape_percent": 14.744552854880364
+    },
+    "official_only_descriptive_first": {
+      "branch": "codex/jizhou-tourism-ml",
+      "model": "raw_target_ridge_alpha_0.1",
+      "macro_smape_percent": 14.661179653797117
+    }
+  },
+  "primary_stability_protocol": {
+    "design": "expanding-origin outer validation; tests end at 2023",
+    "min_outer_train_records": 5,
+    "outer_test_years": {
+      "tourist_visits": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2023
+      ],
+      "tourism_comprehensive_income": [
+        2015,
+        2017,
+        2018,
+        2019,
+        2021,
+        2023
+      ]
+    },
+    "tuning": "nested rolling-origin inner CV inside each augmented outer-training frame; exploratory models only",
+    "ranking_metric": "equal-target-weighted macro sMAPE",
+    "naive_skill": "1 - model sMAPE / naive_last sMAPE",
+    "all_candidate_ranking_status": "exploratory only; cannot declare a branch winner",
+    "user_protocol_fixed_adapters": {
+      "codex/jizhou-tourism-modeling": "no_break_log_linear_common_rows",
+      "codex/jizhou-tourism-ml": "raw_target_ridge_alpha_0.1"
+    },
+    "simulated_augmentation": {
+      "status": "user-directed hypothetical track; not observational evidence",
+      "internal_gap_method": "log-linear interpolation from visible outer-training boundaries",
+      "tail_method": "median of up to three recent visible annualized log-growth intervals",
+      "bias_warning": "structurally favors log-linear paths and smooths unobserved pandemic shocks"
+    },
+    "official_only_common_row": {
+      "status": "priority robustness track; no simulated labels",
+      "same_effective_rows_verified": true
+    }
+  },
+  "final_holdout_2024": {
+    "train_max_year": 2023,
+    "test_year": 2024,
+    "test_n_by_target": {
+      "tourism_comprehensive_income": 1,
+      "tourist_visits": 1
+    },
+    "selection_use": "simulated-augmentation pseudo-holdout for this rerun only; no 2024 row enters tuning, selection, or augmentation",
+    "pseudo_holdout": true,
+    "prospectively_unseen_at_research_design_level": false,
+    "level_break_status": [
+      "not_executed_user_protocol"
+    ],
+    "n_per_target": 1
+  },
+  "cross_regime_stress": {
+    "train_max_year": 2019,
+    "test_years": [
+      2021,
+      2023
+    ],
+    "contains_2024": false,
+    "selection_use": "diagnostic only; not primary ranking"
+  },
+  "level_break_policy": "post_2022_level_break and strict_evidence_level_break are not executed in any scope under the user-directed no-break protocol; no predictions or errors are generated",
+  "branch_coverage": [
+    {
+      "ref": "main",
+      "role": "canonical target truth and merged reporting destination",
+      "executable_model_implementation": false,
+      "original_declared_model": "",
+      "benchmark_decision": "data source; no standalone branch model",
+      "model_source_path": "",
+      "model_source_pinned_commit": "",
+      "model_source_git_blob_oid": "",
+      "model_source_sha256": "",
+      "model_source_validated": false
+    },
+    {
+      "ref": "codex/jizhou-tourism-modeling",
+      "role": "traditional log-linear model source",
+      "executable_model_implementation": true,
+      "original_declared_model": "post_2022_level_break",
+      "benchmark_decision": "user protocol executes no-break common-row OLS; native no-break/pre-COVID are no-simulation canonical sensitivities; all breakpoint models are not executed",
+      "model_source_path": "code/scripts/model_jizhou_tourism.py",
+      "model_source_pinned_commit": "66e27eb5a29bbf3abd51dc2dc1af4b8e41fc349c",
+      "model_source_git_blob_oid": "86ed05d5ccb2086532293d81ba02640aa35dd3de",
+      "model_source_sha256": "8622be9dee45afdb10458eaa38501053fd3035913e77ab78bb67a2d51fe2cdc2",
+      "model_source_validated": true
+    },
+    {
+      "ref": "codex/jizhou-tourism-ml",
+      "role": "machine-learning candidate source",
+      "executable_model_implementation": true,
+      "original_declared_model": "ridge_regime (selected family); raw_target_ridge_alpha_0.1 (recommended point path)",
+      "benchmark_decision": "fixed raw-target Ridge is the user-protocol adapter; all candidates and inner selector are exploratory",
+      "model_source_path": "code/scripts/model_jizhou_tourism_ml.py",
+      "model_source_pinned_commit": "3709084fc84614223ee00979494aa82b458296fe",
+      "model_source_git_blob_oid": "81ba267b066c0d60a446e862ae100be0767ce6e9",
+      "model_source_sha256": "688195945f5e35ec585962484fb30d43884f2a32d008cf4c08b6e354e98c7355",
+      "model_source_validated": true
+    },
+    {
+      "ref": "origin/111",
+      "role": "example paper/workbooks",
+      "executable_model_implementation": false,
+      "original_declared_model": "",
+      "benchmark_decision": "not benchmarked: no executable model source code",
+      "model_source_path": "",
+      "model_source_pinned_commit": "",
+      "model_source_git_blob_oid": "",
+      "model_source_sha256": "",
+      "model_source_validated": false
+    },
+    {
+      "ref": "origin/邱志烨-数据搜索",
+      "role": "data preprocessing and model recommendations",
+      "executable_model_implementation": false,
+      "original_declared_model": "",
+      "benchmark_decision": "not benchmarked: no executable model implementation",
+      "model_source_path": "",
+      "model_source_pinned_commit": "",
+      "model_source_git_blob_oid": "",
+      "model_source_sha256": "",
+      "model_source_validated": false
+    }
+  ],
+  "known_absences": {
+    "origin/111": "no executable model source code",
+    "origin/邱志烨-数据搜索": "no executable model implementation"
+  },
+  "historical_selection_warning": "raw_target_ridge_alpha_0.1 is a fixed user-protocol adapter here, but the original ML branch recommendation was made after a backtest that included 2024",
+  "research_design_warning": "The model-family code and method discussion were created after 2024 data existed, and the canonical table is final-vintage retrospective data with backfilled/revised values. Therefore 2024 is isolated only in this rerun's execution graph, not a genuinely prospective unseen holdout.",
+  "generated_files": [
+    "README.md",
+    "branch_implementation_inventory.csv",
+    "cross_regime_stress_macro_diagnostic.csv",
+    "cross_regime_stress_metrics_by_target.csv",
+    "cross_regime_stress_predictions.csv",
+    "final_holdout_2024_macro_diagnostic.csv",
+    "final_holdout_2024_metrics_by_target.csv",
+    "final_holdout_2024_predictions.csv",
+    "model_applicability.csv",
+    "model_source_provenance.csv",
+    "primary_train_augmented.csv",
+    "run_summary.json",
+    "simulated_training_points.csv",
+    "stability_clean_branch_ranking.csv",
+    "stability_exploratory_model_ranking.csv",
+    "stability_metrics_by_target.csv",
+    "stability_official_only_common_row_comparison.csv",
+    "stability_official_only_common_row_metrics_by_target.csv",
+    "stability_official_only_common_row_predictions.csv",
+    "stability_official_only_native_sensitivity_macro.csv",
+    "stability_predeclared_representatives.csv",
+    "stability_ranking_status.csv",
+    "stability_rolling_predictions.csv",
+    "stability_simulated_augmentation_adapter_comparison.csv",
+    "stability_simulated_augmentation_predictions.csv",
+    "train_only_hyperparameters.csv"
+  ],
+  "report_artifact_name": "unified_branch_model_comparison.md",
+  "default_report_location": "docs/unified_branch_model_comparison.md"
+}
