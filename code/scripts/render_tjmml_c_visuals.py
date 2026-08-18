@@ -37,10 +37,10 @@ COLORS: Final = {
 }
 
 MODEL_LABELS: Final = {
-    "raw_target_ridge_alpha_0.1": "Raw-target Ridge",
-    "no_break_log_linear_common_rows": "无断点 Log-linear OLS",
-    "naive_last": "Naive-last",
-    "pre_covid_exponential": "Q1 疫情前指数模型",
+    "raw_target_ridge_alpha_0.1": "原尺度岭回归",
+    "no_break_log_linear_common_rows": "无断点对数 OLS",
+    "naive_last": "上一期数值法",
+    "pre_covid_exponential": "问题1疫情前指数模型",
 }
 
 MODEL_COLORS: Final = {
@@ -244,86 +244,70 @@ def _macro_smape(frame: pd.DataFrame, model: str) -> float:
 
 
 def _render_q2_judgement(output_dir: Path, path: Path) -> None:
-    simulated = pd.read_csv(output_dir / "stability_metrics_by_target.csv")
     official = pd.read_csv(
         output_dir / "stability_official_only_common_row_metrics_by_target.csv"
     )
-    holdout = pd.read_csv(output_dir / "final_holdout_2024_metrics_by_target.csv")
     required = {"metric", "model", "smape_percent"}
-    for frame, label in ((simulated, "simulated metrics"), (official, "canonical metrics"), (holdout, "holdout metrics")):
-        _require_columns(frame, required, label)
+    _require_columns(official, required, "official-only rolling metrics")
 
     models = [
         "raw_target_ridge_alpha_0.1",
         "no_break_log_linear_common_rows",
+        "pre_covid_exponential",
         "naive_last",
     ]
-    tracks = [("模拟增强", simulated), ("未模拟 canonical", official)]
-    fig, axes = plt.subplots(2, 2, figsize=(12.4, 7.8))
+    tick_labels = ["Ridge\n$\\lambda=0.1$", "无断点\n对数OLS", "问题1\n指数模型", "上一期\n数值法"]
+    values_by_metric = {
+        metric: [_metric_smape(official, metric, model) for model in models]
+        for metric in METRIC_LABELS
+    }
+    y_max = max(max(values) for values in values_by_metric.values()) * 1.20
 
-    ax = axes[0, 0]
-    x = np.arange(2)
-    width = 0.32
-    for offset, model in zip((-width / 2, width / 2), models[:2], strict=True):
-        values = [_macro_smape(frame, model) for _, frame in tracks]
+    fig, axes = plt.subplots(1, 2, figsize=(10.8, 4.5), sharey=True)
+    x = np.arange(len(models))
+    for ax, metric in zip(axes, METRIC_LABELS, strict=True):
+        values = values_by_metric[metric]
         bars = ax.bar(
-            x + offset,
+            x,
             values,
-            width,
-            label=MODEL_LABELS[model],
-            color=MODEL_COLORS[model],
+            width=0.64,
+            color=[MODEL_COLORS[model] for model in models],
         )
-        _annotate_values(ax, bars)
-    ax.set_xticks(x, [item[0] for item in tracks])
-    ax.set_title("两目标等权 macro-sMAPE")
-    _format_axes(ax, x_label="训练轨", y_label="sMAPE（%，越低越好）")
-
-    for ax, metric in zip((axes[0, 1], axes[1, 0]), METRIC_LABELS, strict=True):
-        x = np.arange(2)
-        width = 0.24
-        for index, model in enumerate(models):
-            values = [_metric_smape(frame, metric, model) for _, frame in tracks]
-            bars = ax.bar(
-                x + (index - 1) * width,
-                values,
-                width,
-                label=MODEL_LABELS[model],
-                color=MODEL_COLORS[model],
-            )
-            _annotate_values(ax, bars)
-        ax.set_xticks(x, [item[0] for item in tracks])
-        ax.set_title(f"{METRIC_LABELS[metric]}滚动回测")
-        _format_axes(ax, x_label="训练轨", y_label="sMAPE（%）")
-
-    ax = axes[1, 1]
-    x = np.arange(2)
-    width = 0.24
-    for index, model in enumerate(models):
-        values = [_metric_smape(holdout, metric, model) for metric in METRIC_LABELS]
-        bars = ax.bar(
-            x + (index - 1) * width,
-            values,
-            width,
-            label=MODEL_LABELS[model],
-            color=MODEL_COLORS[model],
+        _annotate_values(ax, bars, decimals=1)
+        ax.set_xticks(x, tick_labels)
+        ax.set_ylim(0, y_max)
+        winner = int(np.argmin(values))
+        ax.text(
+            winner,
+            values[winner] + y_max * 0.08,
+            "最低",
+            ha="center",
+            va="bottom",
+            fontsize=8,
+            color=MODEL_COLORS[models[winner]],
         )
-        _annotate_values(ax, bars)
-    ax.set_xticks(x, [METRIC_LABELS[item] for item in METRIC_LABELS])
-    ax.set_title("2024 pseudo-holdout（每目标 n=1）")
-    _format_axes(ax, x_label="目标", y_label="sMAPE（%）")
+        ax.set_title(METRIC_LABELS[metric])
+        _format_axes(ax, x_label="模型", y_label="sMAPE（%，越低越好）" if ax is axes[0] else "")
 
-    handles, labels = axes[0, 1].get_legend_handles_labels()
-    fig.legend(handles, labels, frameon=False, loc="upper center", ncol=3, bbox_to_anchor=(0.5, 0.955))
-    fig.suptitle("问题2：用题目两个预测目标评判模型", fontsize=14, y=0.995)
+    macro_values = [_macro_smape(official, model) for model in models]
+    macro_text = "；".join(
+        f"{label} {value:.3f}%"
+        for label, value in zip(
+            ("Ridge", "无断点OLS", "问题1模型", "上一期法"),
+            macro_values,
+            strict=True,
+        )
+    )
+    fig.suptitle("问题2：官方数据扩展窗口滚动检验", fontsize=14, y=0.99)
     fig.text(
         0.5,
-        0.012,
-        "sMAPE、naive 基线与 pseudo-holdout 是为题目的“适用性、合理性和模型优劣”设置的评价工具，并非题面指定指标。",
+        0.015,
+        f"两目标等权平均：{macro_text}；Ridge 为综合主模型，但游客量单目标最低的是上一期数值法。",
         ha="center",
-        fontsize=8.2,
+        fontsize=8.0,
         color="#4B5563",
     )
-    fig.tight_layout(rect=[0, 0.04, 1, 0.92])
+    fig.tight_layout(rect=[0, 0.07, 1, 0.91])
     _save(fig, path)
 
 
