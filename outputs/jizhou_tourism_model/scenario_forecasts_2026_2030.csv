@@ -1,0 +1,46 @@
+year,scenario,assumption,metric,value,unit
+2026,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourist_visits,2935.922330,10k_persons
+2026,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourism_comprehensive_income,249.480000,100m_cny
+2026,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,nominal_spend_per_visit,849.750000,cny_per_visit
+2027,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourist_visits,3078.442832,10k_persons
+2027,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourism_comprehensive_income,269.438400,100m_cny
+2027,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,nominal_spend_per_visit,875.242500,cny_per_visit
+2028,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourist_visits,3227.881804,10k_persons
+2028,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourism_comprehensive_income,290.993472,100m_cny
+2028,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,nominal_spend_per_visit,901.499775,cny_per_visit
+2029,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourist_visits,3384.575095,10k_persons
+2029,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourism_comprehensive_income,314.272950,100m_cny
+2029,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,nominal_spend_per_visit,928.544768,cny_per_visit
+2030,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourist_visits,3548.874857,10k_persons
+2030,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,tourism_comprehensive_income,339.414786,100m_cny
+2030,baseline_policy_anchor,2025 targets as proxies; revenue +8%/yr; spend per visit +3%/yr,nominal_spend_per_visit,956.401111,cny_per_visit
+2026,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourist_visits,3015.384615,10k_persons
+2026,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourism_comprehensive_income,258.720000,100m_cny
+2026,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,nominal_spend_per_visit,858.000000,cny_per_visit
+2027,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourist_visits,3247.337278,10k_persons
+2027,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourism_comprehensive_income,289.766400,100m_cny
+2027,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,nominal_spend_per_visit,892.320000,cny_per_visit
+2028,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourist_visits,3497.132453,10k_persons
+2028,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourism_comprehensive_income,324.538368,100m_cny
+2028,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,nominal_spend_per_visit,928.012800,cny_per_visit
+2029,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourist_visits,3766.142642,10k_persons
+2029,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourism_comprehensive_income,363.482972,100m_cny
+2029,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,nominal_spend_per_visit,965.133312,cny_per_visit
+2030,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourist_visits,4055.845922,10k_persons
+2030,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,tourism_comprehensive_income,407.100929,100m_cny
+2030,optimistic_assumption,2025 targets as proxies; revenue +12%/yr; spend per visit +4%/yr,nominal_spend_per_visit,1003.738644,cny_per_visit
+2026,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourist_visits,2333.333333,10k_persons
+2026,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourism_comprehensive_income,196.350000,100m_cny
+2026,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",nominal_spend_per_visit,841.500000,cny_per_visit
+2027,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourist_visits,2401.960784,10k_persons
+2027,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourism_comprehensive_income,206.167500,100m_cny
+2027,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",nominal_spend_per_visit,858.330000,cny_per_visit
+2028,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourist_visits,2472.606690,10k_persons
+2028,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourism_comprehensive_income,216.475875,100m_cny
+2028,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",nominal_spend_per_visit,875.496600,cny_per_visit
+2029,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourist_visits,2545.330416,10k_persons
+2029,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourism_comprehensive_income,227.299669,100m_cny
+2029,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",nominal_spend_per_visit,893.006532,cny_per_visit
+2030,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourist_visits,2620.193075,10k_persons
+2030,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",tourism_comprehensive_income,238.664652,100m_cny
+2030,pessimistic_assumption,"2025 targets as proxies; 2026 -15% shock, then revenue +5%/yr; spend +2%/yr",nominal_spend_per_visit,910.866663,cny_per_visit

@@ -1,0 +1,9 @@
+metric,unit,year,selected_ml_model,imputed_value,backtest_stress_lower,backtest_stress_upper,use_restriction
+tourist_visits,10k_persons,2020,ridge_regime,3436.917974,1575.632208,7496.930499,diagnostic only; do not overwrite official missing values
+tourist_visits,10k_persons,2021,ridge_regime,3929.302150,1801.362462,8570.965427,diagnostic only; do not overwrite official missing values
+tourist_visits,10k_persons,2022,ridge_regime,4492.226903,2059.431575,9798.870131,diagnostic only; do not overwrite official missing values
+tourist_visits,10k_persons,2025,ridge_regime,3056.589356,1401.273081,6667.321752,diagnostic only; do not overwrite official missing values
+tourism_comprehensive_income,100m_cny,2016,ridge_regime,97.583161,44.334988,214.784616,diagnostic only; do not overwrite official missing values
+tourism_comprehensive_income,100m_cny,2020,ridge_regime,100.268934,45.555216,220.696115,diagnostic only; do not overwrite official missing values
+tourism_comprehensive_income,100m_cny,2022,ridge_regime,130.143946,59.128339,286.452263,diagnostic only; do not overwrite official missing values
+tourism_comprehensive_income,100m_cny,2025,ridge_regime,253.962635,115.382923,558.982372,diagnostic only; do not overwrite official missing values

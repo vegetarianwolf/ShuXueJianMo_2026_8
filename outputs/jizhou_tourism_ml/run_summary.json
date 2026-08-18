@@ -1,0 +1,46 @@
+{
+  "input": "data/jizhou_tourism_economy/official_annual_summary_2010_2025.csv",
+  "python": "3.12.13",
+  "scikit_learn": "1.9.0",
+  "validation": "expanding-window rolling origin; all preprocessing and tuning inside each outer fold",
+  "target_gap_policy": "never pre-impute targets; model-based imputations are diagnostic outputs only",
+  "features": [
+    "year_index",
+    "pandemic_2020_2022",
+    "post_2022"
+  ],
+  "selected_ml_models": {
+    "tourist_visits": "ridge_regime",
+    "tourism_comprehensive_income": "ridge_regime"
+  },
+  "recommended_point_forecast": "raw_target_ridge_alpha_0.1",
+  "ensemble_members": [
+    "ridge_regime",
+    "bayesian_ridge",
+    "huber_regime"
+  ],
+  "interval_warning": "BayesianRidge exports a model-conditional Gaussian 95% interval. The selected-model stress envelope uses the maximum rolling-origin absolute log error and has no coverage guarantee; there are too few calibration residuals for finite-sample 95% conformal coverage.",
+  "target_transform_warning": "Raw-target Ridge is the recommended planning point path because it has lower rolling-origin MAPE here, but the large additive-versus-log difference remains structural uncertainty.",
+  "resource_decision": "CPU sequential fitting (n_jobs=1): only 12 observations per target; available memory was low, and parallelism would add overhead without analytical benefit.",
+  "generated_files": [
+    "bayesian_conditional_forecasts_2025_2030.csv",
+    "forecast_behavior.csv",
+    "ml_feature_availability_audit.csv",
+    "ml_forecast_comparison.png",
+    "ml_forecasts_2025_2030_all_models.csv",
+    "ml_missing_year_imputations.csv",
+    "model_comparison.csv",
+    "model_comparison_by_regime.csv",
+    "permutation_importance_exploratory.csv",
+    "pre_covid_long_horizon_pressure_test.csv",
+    "raw_target_ridge_backtest.csv",
+    "recommended_ml_forecasts_2025_2030.csv",
+    "rolling_backtest_predictions.csv",
+    "rolling_backtest_smape.png",
+    "run_summary.json",
+    "selected_hyperparameters.csv",
+    "selected_ml_forecasts_2025_2030.csv",
+    "strict_evidence_sensitivity.csv",
+    "target_transform_sensitivity_forecast.csv"
+  ]
+}

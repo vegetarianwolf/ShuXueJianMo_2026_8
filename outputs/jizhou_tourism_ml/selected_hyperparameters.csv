@@ -1,0 +1,15 @@
+metric,model,parameters,rolling_inner_log_mae,inner_folds,selected_ml_model
+tourist_visits,ridge_regime,"{""alpha"": 0.01}",0.12800621,8,True
+tourist_visits,bayesian_ridge,"{""prior"": 1e-06}",0.13012693,8,False
+tourist_visits,huber_regime,"{""alpha"": 1.0}",0.13600371,8,False
+tourist_visits,spline_ridge,"{""alpha"": 0.1, ""n_knots"": 3}",0.32778455,8,False
+tourist_visits,svr_rbf,"{""C"": 1.0, ""epsilon"": 0.05, ""gamma"": 0.3}",0.17760555,8,False
+tourist_visits,random_forest,"{""max_depth"": null, ""min_samples_leaf"": 1}",0.16775264,8,False
+tourist_visits,gaussian_process,"{""alpha"": 1e-06, ""family"": ""rbf""}",0.12088528,8,False
+tourism_comprehensive_income,ridge_regime,"{""alpha"": 1.0}",0.16983596,8,True
+tourism_comprehensive_income,bayesian_ridge,"{""prior"": 0.01}",0.21468228,8,False
+tourism_comprehensive_income,huber_regime,"{""alpha"": 1.0}",0.21335789,8,False
+tourism_comprehensive_income,spline_ridge,"{""alpha"": 0.1, ""n_knots"": 3}",0.45283728,8,False
+tourism_comprehensive_income,svr_rbf,"{""C"": 10.0, ""epsilon"": 0.05, ""gamma"": 0.3}",0.27104935,8,False
+tourism_comprehensive_income,random_forest,"{""max_depth"": null, ""min_samples_leaf"": 1}",0.29078555,8,False
+tourism_comprehensive_income,gaussian_process,"{""alpha"": 1e-06, ""family"": ""rbf""}",0.14166210,8,False
