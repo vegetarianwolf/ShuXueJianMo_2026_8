@@ -1,0 +1,24 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{#1}
+\expandafter\ifx\csname urlstyle\endcsname\relax\else
+  \urlstyle{same}\fi
+\expandafter\ifx\csname href\endcsname\relax
+  \DeclareUrlCommand\doi{\urlstyle{rm}}\else
+  \providecommand\doi[1]{\href{https://doi.org/#1}{\nolinkurl{#1}}}\fi
+
+\bibitem[Hyndman et~al.(2021)Hyndman and
+  Athanasopoulos]{hyndman2021forecasting}
+HYNDMAN~R~J, ATHANASOPOULOS~G.
+\newblock Forecasting: Principles and practice\allowbreak[M/OL].
+\newblock 3rd ed.
+\newblock Melbourne, Australia: OTexts, 2021.
+\newblock \url{https://otexts.com/fpp3/}.
+
+\bibitem[{UN Tourism}(2024)]{untourism2024barometer}
+{UN Tourism}.
+\newblock World tourism barometer\allowbreak[R/OL].
+\newblock Madrid: UN Tourism, 2024.
+\newblock \url{https://www.unwto.org/un-tourism-world-tourism-barometer-data}.
+
+\end{thebibliography}
