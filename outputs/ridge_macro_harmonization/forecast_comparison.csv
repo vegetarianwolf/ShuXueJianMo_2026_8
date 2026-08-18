@@ -1,0 +1,21 @@
+metric,model,year,harmonized_bridge,original_mixed,harmonized_minus_original_forecast,harmonized_vs_original_percent,comparison_note
+jizhou_gdp,ridge_fixed_lambda_0.1,2026,320.4172915699,317.8705101078,2.5467814620,0.8012009233,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_fixed_lambda_0.1,2027,331.1697958691,327.3359455650,3.8338503042,1.1712280170,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_fixed_lambda_0.1,2028,341.9223001684,336.8013810221,5.1209191463,1.5204566949,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_fixed_lambda_0.1,2029,352.6748044677,346.2668164793,6.4079879885,1.8505925730,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_fixed_lambda_0.1,2030,363.4273087670,355.7322519364,7.6950568306,2.1631597328,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_nested_tuned,2026,312.3501507941,307.8209891849,4.5291616092,1.4713621775,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_nested_tuned,2027,320.8855611297,309.9502046307,10.9353564990,3.5281010742,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_nested_tuned,2028,329.4209714653,312.0794200765,17.3415513888,5.5567750621,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_nested_tuned,2029,337.9563818008,314.2086355223,23.7477462786,7.5579546816,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_gdp,ridge_nested_tuned,2030,346.4917921364,316.3378509680,30.1539411683,9.5321951123,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_fixed_lambda_0.1,2026,196.9342993653,195.4836295870,1.4506697783,0.7420927171,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_fixed_lambda_0.1,2027,203.6971278647,201.5042121335,2.1929157312,1.0882728991,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_fixed_lambda_0.1,2028,210.4599563640,207.5247946800,2.9351616840,1.4143667452,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_fixed_lambda_0.1,2029,217.2227848633,213.5453772265,3.6774076369,1.7220731653,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_fixed_lambda_0.1,2030,223.9856133627,219.5659597730,4.4196535897,2.0129047300,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_nested_tuned,2026,191.7577632740,188.5233215448,3.2344417292,1.7156719406,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_nested_tuned,2027,197.1405189744,190.0175978848,7.1229210896,3.7485586435,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_nested_tuned,2028,202.5232746747,191.5118742247,11.0114004501,5.7497220445,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_nested_tuned,2029,207.9060303751,193.0061505646,14.8998798105,7.7198989602,both forecasts use the same Ridge algorithm and training end year; only the data scope differs
+jizhou_tertiary_value_added,ridge_nested_tuned,2030,213.2887860754,194.5004269045,18.7883591709,9.6598035644,both forecasts use the same Ridge algorithm and training end year; only the data scope differs

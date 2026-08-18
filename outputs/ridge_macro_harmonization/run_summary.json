@@ -1,0 +1,93 @@
+{
+  "experiment": "ridge_macro_scope_harmonization",
+  "bridge_method": "approximate_fixed_bridge_from_2019_revised_current_value_and_2019_bulletin_comparable_price_growth",
+  "bridge_warning": "Approximate bridge for sensitivity analysis; not an official current-price backcast. The bulletin growth rate is at comparable prices while the annual levels are at current prices. The 2.1%/4.4% growth rates are from the 2019 bulletin initial release, while the 219.62/136.91 anchors are later-yearbook revised values; no matching finalized growth rates were found, so the bridge also contains a vintage mismatch.",
+  "bridge_factors": {
+    "jizhou_gdp": 0.5635980725058835,
+    "jizhou_tertiary_value_added": 0.5596613466340689
+  },
+  "protocol": {
+    "algorithm": "unchanged StandardScaler + raw-target Ridge",
+    "fixed_lambda": 0.1,
+    "positive_lambda_grid": [
+      0.0001,
+      0.00017782794100389227,
+      0.00031622776601683794,
+      0.0005623413251903491,
+      0.001,
+      0.0017782794100389228,
+      0.0031622776601683794,
+      0.005623413251903491,
+      0.01,
+      0.01778279410038923,
+      0.03162277660168379,
+      0.05623413251903491,
+      0.1,
+      0.1778279410038923,
+      0.31622776601683794,
+      0.5623413251903491,
+      1.0,
+      1.7782794100389228,
+      3.1622776601683795,
+      5.623413251903491,
+      10.0,
+      17.78279410038923,
+      31.622776601683793,
+      56.23413251903491,
+      100.0,
+      177.82794100389228,
+      316.22776601683796,
+      562.341325190349,
+      1000.0
+    ],
+    "rolling_test_years": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "final_selection_max_year": 2023,
+    "final_fit_max_year": 2024,
+    "holdout_year": 2025,
+    "forecast_years": [
+      2026,
+      2027,
+      2028,
+      2029,
+      2030
+    ],
+    "uses_2025_for_fit": false
+  },
+  "headline": {
+    "fixed_original_macro_smape_percent": 22.032029985927714,
+    "fixed_harmonized_macro_smape_percent": 8.28054453711045,
+    "fixed_delta_percent_points": -13.751485448817265,
+    "nested_tuned_original_macro_smape_percent": 18.297223070149997,
+    "nested_tuned_harmonized_macro_smape_percent": 8.832111524521661,
+    "nested_tuned_delta_percent_points": -9.465111545628336,
+    "all_2019_break_fold_scores_improve": true,
+    "existing_tourism_ridge_max_abs_delta": 0.0
+  },
+  "input_sha256": {
+    "data/unified/canonical_official_annual_2010_2025.csv": "9660557e72f2b6ea052800f1d2af7974a84633f18141999537038081a40aa905",
+    "code/scripts/optimize_ridge_model.py": "d8844e195b0c7f0ea9606cb170769b99190e438b42397150c8abb5104b04e2bf"
+  },
+  "generated_files": [
+    "README.md",
+    "break_fold_comparison.csv",
+    "final_lambda_selection.csv",
+    "forecast_comparison.csv",
+    "forecasts_2026_2030.csv",
+    "harmonized_macro_series.csv",
+    "holdout_2025.csv",
+    "metrics_by_target.csv",
+    "rolling_predictions.csv",
+    "run_summary.json",
+    "tourism_ridge_invariance.csv"
+  ]
+}
