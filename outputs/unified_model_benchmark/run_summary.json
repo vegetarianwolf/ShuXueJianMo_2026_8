@@ -7,7 +7,9 @@
     "data/unified/primary_test.csv": "a58fbcbbba2dec5fa84e000a3b4a9dc27c928d16fb449162b1d07251c383ff7c",
     "data/unified/rolling_origin_folds.csv": "bb82e32ec5c2e1ba1f491b137c0aaa84325c7106e786d5ffbfe94720d606dd53",
     "data/unified/stress_train.csv": "8c1b3b48e28b7ac14522bc1121ec151cae9d2b75e6137dc75b9ff7bbe00608f4",
-    "data/unified/stress_test.csv": "b7939d55f40953bf224fd779563a423afa8048d1555056d0b735cc93bbb5654c"
+    "data/unified/stress_test.csv": "b7939d55f40953bf224fd779563a423afa8048d1555056d0b735cc93bbb5654c",
+    "data/unified/canonical_official_annual_2010_2025.csv": "9660557e72f2b6ea052800f1d2af7974a84633f18141999537038081a40aa905",
+    "data/metadata/sources.csv": "3f52f44e1fcf1ef8b55f30bdd5c4301a3b7b1e6cde5dc5cd2ce2806bae9fe5f4"
   },
   "software": {
     "python": "3.12.13",
@@ -195,6 +197,49 @@
   },
   "historical_selection_warning": "raw_target_ridge_alpha_0.1 is a fixed user-protocol adapter here, but the original ML branch recommendation was made after a backtest that included 2024",
   "research_design_warning": "The model-family code and method discussion were created after 2024 data existed, and the canonical table is final-vintage retrospective data with backfilled/revised values. Therefore 2024 is isolated only in this rerun's execution graph, not a genuinely prospective unseen holdout.",
+  "problem_aligned_outputs": {
+    "problem1": {
+      "simple_growth_model": "pre_covid_exponential",
+      "fit_year_range": "2010-2019 available canonical values",
+      "mechanical_forecast_years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "mechanical_forecast_selected_for_q2": false,
+      "indicator_count": 4,
+      "canonical_cited_source_count": 23,
+      "canonical_source_access_dates": [
+        "2026-08-17"
+      ]
+    },
+    "problem2": {
+      "final_training_years": "2010-2024",
+      "excluded_training_year": 2025,
+      "forecast_years": [
+        2026,
+        2027,
+        2028,
+        2029,
+        2030
+      ],
+      "models": [
+        "no_break_log_linear_common_rows",
+        "raw_target_ridge_alpha_0.1"
+      ],
+      "ridge_bootstrap_repetitions": 10000,
+      "ridge_bootstrap_seed": 20260817,
+      "interval_scope": "model-conditional; repeated-sampling 95% coverage is not guaranteed"
+    },
+    "problem3": {
+      "anchor_year": 2025,
+      "anchor_status": "government_target_proxy_not_actual",
+      "scenario_count": 3,
+      "sensitivity_is_causal": false
+    }
+  },
   "generated_files": [
     "README.md",
     "branch_implementation_inventory.csv",
@@ -207,6 +252,21 @@
     "model_applicability.csv",
     "model_source_provenance.csv",
     "primary_train_augmented.csv",
+    "problem1_indicator_summary.csv",
+    "problem1_simple_growth_diagnostics.csv",
+    "problem1_simple_growth_forecasts_2026_2030.csv",
+    "problem1_simple_growth_parameters.csv",
+    "problem2_final_model_diagnostics.csv",
+    "problem2_final_training_2010_2024.csv",
+    "problem2_forecasts_2026_2030.csv",
+    "problem2_ridge_standardized_parameters.csv",
+    "problem3_policy_sensitivity.csv",
+    "problem3_scenario_forecasts_2026_2030.csv",
+    "problem_source_access_dates.csv",
+    "q1_required_indicators.png",
+    "q2_forecast_2026_2030.png",
+    "q2_model_judgement.png",
+    "q3_scenarios_sensitivity.png",
     "run_summary.json",
     "simulated_training_points.csv",
     "stability_clean_branch_ranking.csv",

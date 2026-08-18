@@ -1,4 +1,4 @@
-# 数学建模题目 C：天津市统计数据分析与预测
+# 数学建模 C 题：蓟州区旅游经济发展趋势预测与对策分析
 
 本仓库用于保存小组数学建模题目 C 的原始资料、数据处理代码、分析结果和论文源文件。
 
@@ -33,7 +33,7 @@
 6. 模板已改为引用仓库内字体；不再依赖 `STHeiti`、Times New Roman、Arial 或 `simkai.ttf` 等系统字体。
 7. 五个业务分支的独有数据和模型交付已合入，并在 `data/unified/branch_data_inventory.csv` 中按固定提交记录哈希与使用决策。
 8. `data/unified/primary_train.csv` 保留 2023 年及以前的 22 条 canonical 证据；用户指定的 2010—2023 模拟增强建模层另存为 `outputs/unified_model_benchmark/primary_train_augmented.csv`，2024 年两条实际观测只作执行流程 pseudo-holdout。
-9. 传统与 ML 固定适配器已在“模拟增强”和“未模拟 canonical 共同行（official-source）”两轨重跑；原分支声明代表无法共同排名，不能据此判定原分支赢家。统一报告见 `docs/unified_branch_model_comparison.md`。
+9. 传统与 ML 固定适配器已在“模拟增强”和“未模拟 canonical 共同行（official-source）”两轨重跑；题目 1—3 所需的指标图、增长模型、2026—2030 预测区间、三情景、敏感性和量化建议均已生成。原分支声明代表无法共同排名；题目导向结论与审计见 `docs/unified_branch_model_comparison.md`。
 
 ## 可复现约定
 

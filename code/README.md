@@ -10,4 +10,5 @@
 
 - `scripts/model_jizhou_tourism.py`：传统对数线性模型。
 - `scripts/model_jizhou_tourism_ml.py`：机器学习候选与原生滚动回测。
-- `scripts/compare_branch_models.py`：读取 `data/unified/`，执行逐折模拟增强轨与未模拟 canonical 共同行稳健性轨、2024 pseudo-holdout 和跨阶段压力测试；所有断点模型按用户协议不执行。
+- `scripts/compare_branch_models.py`：读取 `data/unified/`，执行统一回测并生成题目 1—3 的增长模型、2026—2030 预测区间、三情景、敏感性、报告和审计产物；所有断点模型按用户协议不执行。
+- `scripts/render_tjmml_c_visuals.py`：生成报告中的四项核心指标、模型评判、未来预测与情景敏感性图。

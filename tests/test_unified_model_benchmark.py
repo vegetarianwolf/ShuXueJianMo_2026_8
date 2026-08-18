@@ -256,6 +256,295 @@ class ModelSourceProvenanceTest(unittest.TestCase):
                 benchmark.validate_model_source_provenance(temp_root)
 
 
+class ProblemAlignedComputationTest(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.canonical = pd.read_csv(
+            ROOT / "data/unified/canonical_official_annual_2010_2025.csv"
+        )
+        cls.observations = pd.read_csv(
+            ROOT / "data/unified/benchmark_observations.csv"
+        )
+        (
+            cls.final_training,
+            cls.forecasts,
+            cls.final_diagnostics,
+            cls.ridge_parameters,
+        ) = benchmark.build_problem2_outputs(cls.observations)
+
+    def test_problem1_indicator_coverage_growth_and_status_boundaries(self) -> None:
+        summary = benchmark.build_problem1_indicator_summary(self.canonical).set_index(
+            "metric"
+        )
+
+        self.assertEqual(set(summary.index), set(benchmark.PROBLEM1_INDICATORS))
+        self.assertEqual(int(summary.loc["tourist_visits", "nonmissing_count"]), 12)
+        self.assertEqual(
+            summary.loc["tourist_visits", "missing_years"], "2020;2021;2022;2025"
+        )
+        self.assertEqual(
+            summary.loc["tourism_comprehensive_income", "missing_years"],
+            "2016;2020;2022;2025",
+        )
+        self.assertEqual(int(summary.loc["jizhou_gdp", "nonmissing_count"]), 16)
+        self.assertTrue(
+            np.isnan(float(summary.loc["jizhou_gdp", "cagr_2010_2019_percent"]))
+        )
+        self.assertAlmostEqual(
+            float(summary.loc["jizhou_gdp", "cagr_2010_2018_percent"]),
+            7.4079009368,
+            places=8,
+        )
+        self.assertAlmostEqual(
+            float(summary.loc["jizhou_gdp", "cagr_2019_2025_percent"]),
+            6.0229449942,
+            places=8,
+        )
+        visitors = self.canonical.set_index("year")[
+            "preferred_visitor_10k_persons"
+        ]
+        expected_cagr = ((visitors.loc[2019] / visitors.loc[2010]) ** (1 / 9) - 1) * 100
+        self.assertAlmostEqual(
+            float(summary.loc["tourist_visits", "cagr_2010_2019_percent"]),
+            float(expected_cagr),
+        )
+        self.assertIn("scope break", summary.loc["jizhou_gdp", "status_boundary_note"])
+
+    def test_problem1_simple_growth_has_full_inference_and_diagnostics(self) -> None:
+        parameters, diagnostics = benchmark.build_problem1_simple_growth_outputs(
+            self.canonical
+        )
+
+        self.assertEqual(set(parameters["model"]), {"pre_covid_exponential"})
+        self.assertEqual(len(parameters), 4)
+        self.assertTrue(
+            np.isfinite(
+                parameters[
+                    [
+                        "estimate",
+                        "standard_error",
+                        "t_value",
+                        "p_value",
+                        "ci95_lower",
+                        "ci95_upper",
+                    ]
+                ]
+            ).all().all()
+        )
+        self.assertTrue(
+            parameters["estimate"].between(
+                parameters["ci95_lower"], parameters["ci95_upper"]
+            ).all()
+        )
+        self.assertEqual(len(diagnostics), 2)
+        required = [
+            "r_squared_log",
+            "adjusted_r_squared_log",
+            "rmse_original_units",
+            "mape_percent",
+            "aicc_log",
+            "loocv_log_rmse",
+            "durbin_watson",
+            "jarque_bera_p",
+        ]
+        self.assertTrue(np.isfinite(diagnostics[required]).all().all())
+
+        forecasts = benchmark.build_problem1_simple_growth_forecasts(self.canonical)
+        self.assertEqual(len(forecasts), 10)
+        self.assertEqual(set(forecasts["year"]), set(range(2026, 2031)))
+        self.assertFalse(forecasts["uses_2025_as_training"].any())
+        keyed = forecasts.set_index(["metric", "year"])["forecast"]
+        self.assertAlmostEqual(
+            float(keyed.loc[("tourist_visits", 2026)]), 7723.7, delta=0.1
+        )
+        self.assertAlmostEqual(
+            float(keyed.loc[("tourist_visits", 2030)]), 13223.9, delta=0.1
+        )
+        self.assertAlmostEqual(
+            float(keyed.loc[("tourism_comprehensive_income", 2026)]),
+            572.5,
+            delta=0.1,
+        )
+        self.assertAlmostEqual(
+            float(keyed.loc[("tourism_comprehensive_income", 2030)]),
+            1128.4,
+            delta=0.1,
+        )
+
+    def test_canonical_cited_sources_have_verified_access_dates(self) -> None:
+        sources = pd.read_csv(ROOT / "data/metadata/sources.csv")
+        audit = benchmark.build_canonical_source_access_audit(
+            self.canonical, sources
+        )
+
+        self.assertEqual(len(audit), 23)
+        self.assertEqual(set(audit["accessed_date"]), {"2026-08-17"})
+        self.assertTrue(audit["used_by_canonical"].all())
+
+    def test_problem2_final_training_is_internal_gap_only_and_excludes_2025(self) -> None:
+        expected_simulated = {
+            "tourist_visits": {2020, 2021, 2022},
+            "tourism_comprehensive_income": {2016, 2020, 2022},
+        }
+        self.assertNotIn("test_year", self.final_training.columns)
+        for metric in benchmark.TARGETS:
+            rows = self.final_training[self.final_training["metric"].eq(metric)]
+            self.assertEqual(rows["year"].tolist(), list(range(2010, 2025)))
+            self.assertEqual(len(rows), 15)
+            self.assertEqual(int(rows["is_simulated"].sum()), 3)
+            simulated = rows[rows["is_simulated"]]
+            self.assertEqual(set(simulated["year"]), expected_simulated[metric])
+            self.assertEqual(set(simulated["method"]), {"log_linear_interpolation"})
+            self.assertTrue(simulated["boundary_left_year"].lt(simulated["year"]).all())
+            self.assertTrue(simulated["boundary_right_year"].gt(simulated["year"]).all())
+            self.assertTrue(simulated["boundary_right_year"].le(2024).all())
+        self.assertFalse(self.final_training["uses_2025_as_training"].any())
+
+    def test_problem2_2025_sentinel_cannot_change_training_or_forecasts(self) -> None:
+        sentinel_rows = []
+        for metric, unit in (
+            ("tourist_visits", "10k_persons"),
+            ("tourism_comprehensive_income", "100m_cny"),
+        ):
+            sentinel_rows.append(
+                {
+                    "metric": metric,
+                    "year": 2025,
+                    "value": 1.0e15,
+                    "unit": unit,
+                    "status": "observed_sentinel",
+                    "source_ids": "test_sentinel",
+                    "quality_note": "must be ignored",
+                    "is_observed": True,
+                }
+            )
+        injected = pd.concat(
+            [self.observations, pd.DataFrame(sentinel_rows)], ignore_index=True
+        )
+        training, forecasts, diagnostics, parameters = benchmark.build_problem2_outputs(
+            injected
+        )
+        pd.testing.assert_frame_equal(training, self.final_training)
+        pd.testing.assert_frame_equal(forecasts, self.forecasts)
+        pd.testing.assert_frame_equal(diagnostics, self.final_diagnostics)
+        pd.testing.assert_frame_equal(parameters, self.ridge_parameters)
+
+    def test_problem2_forecast_values_intervals_and_bootstrap_contract(self) -> None:
+        self.assertEqual(set(self.forecasts["year"]), set(range(2026, 2031)))
+        self.assertEqual(
+            set(self.forecasts["model"]),
+            {
+                "raw_target_ridge_alpha_0.1",
+                "no_break_log_linear_common_rows",
+            },
+        )
+        self.assertTrue(self.forecasts["training_end_year"].eq(2024).all())
+        self.assertFalse(self.forecasts["uses_2025_as_training"].any())
+        self.assertTrue(
+            self.forecasts["prediction_interval95_lower"]
+            .le(self.forecasts["mean_ci95_lower"])
+            .all()
+        )
+        self.assertTrue(
+            self.forecasts["mean_ci95_lower"].le(self.forecasts["forecast"]).all()
+        )
+        self.assertTrue(
+            self.forecasts["forecast"].le(self.forecasts["mean_ci95_upper"]).all()
+        )
+        self.assertTrue(
+            self.forecasts["mean_ci95_upper"]
+            .le(self.forecasts["prediction_interval95_upper"])
+            .all()
+        )
+        ridge = self.forecasts[
+            self.forecasts["model"].eq("raw_target_ridge_alpha_0.1")
+        ]
+        self.assertTrue(
+            ridge["bootstrap_repetitions"].eq(
+                benchmark.RIDGE_BOOTSTRAP_REPETITIONS
+            ).all()
+        )
+        self.assertTrue(ridge["random_seed"].eq(benchmark.RANDOM_SEED).all())
+        expected = {
+            ("tourist_visits", "no_break_log_linear_common_rows", 2026): 3840.327121,
+            ("tourist_visits", "raw_target_ridge_alpha_0.1", 2030): 3887.258656,
+            (
+                "tourism_comprehensive_income",
+                "no_break_log_linear_common_rows",
+                2030,
+            ): 441.150844,
+            (
+                "tourism_comprehensive_income",
+                "raw_target_ridge_alpha_0.1",
+                2026,
+            ): 241.158964,
+        }
+        keyed = self.forecasts.set_index(["metric", "model", "year"])["forecast"]
+        for key, value in expected.items():
+            self.assertAlmostEqual(float(keyed.loc[key]), value, places=5)
+        self.assertEqual(len(self.ridge_parameters), 8)
+        self.assertEqual(
+            set(self.ridge_parameters["parameter"]),
+            {"intercept", *benchmark.ml_model.FEATURE_NAMES},
+        )
+        self.assertTrue(
+            self.ridge_parameters["estimate"].between(
+                self.ridge_parameters["bootstrap_ci95_lower"],
+                self.ridge_parameters["bootstrap_ci95_upper"],
+            ).all()
+        )
+
+    def test_problem3_scenarios_and_oat_sensitivity_obey_identity(self) -> None:
+        scenarios = benchmark.build_problem3_scenario_forecasts()
+        sensitivity = benchmark.build_problem3_policy_sensitivity(scenarios)
+
+        self.assertEqual(len(scenarios), 45)
+        self.assertFalse(scenarios["anchor_is_observed"].any())
+        self.assertEqual(
+            set(scenarios["anchor_status"]),
+            {"government_target_proxy_not_actual"},
+        )
+        pivot = scenarios.pivot_table(
+            index=["scenario", "year"], columns="metric", values="value"
+        )
+        reconstructed_income = (
+            pivot["tourist_visits"]
+            * pivot["nominal_spend_per_visit"]
+            / 10_000.0
+        )
+        np.testing.assert_allclose(
+            reconstructed_income,
+            pivot["tourism_comprehensive_income"],
+            rtol=0.0,
+            atol=1e-10,
+        )
+        baseline_2030 = pivot.loc[("baseline_policy_anchor", 2030)]
+        self.assertAlmostEqual(float(baseline_2030["tourist_visits"]), 3548.874857, places=6)
+        self.assertAlmostEqual(
+            float(baseline_2030["tourism_comprehensive_income"]),
+            339.414786,
+            places=6,
+        )
+        self.assertEqual(len(sensitivity), 16)
+        self.assertEqual(
+            set(sensitivity["factor"]),
+            {
+                "source_market_growth",
+                "new_format_spend_growth",
+                "policy_coordination_multiplier",
+                "external_shock",
+            },
+        )
+        self.assertEqual(set(sensitivity["setting"]), {"low", "high"})
+        self.assertFalse(sensitivity["historically_identified_causal_effect"].any())
+        np.testing.assert_allclose(
+            sensitivity["delta_2030"],
+            sensitivity["scenario_2030"] - sensitivity["baseline_2030"],
+            rtol=0.0,
+            atol=1e-10,
+        )
+
+
 class GeneratedBenchmarkContractTest(unittest.TestCase):
     OUTPUT = ROOT / "outputs/unified_model_benchmark"
     ADAPTER_MODELS = {
@@ -442,6 +731,52 @@ class GeneratedBenchmarkContractTest(unittest.TestCase):
         self.assertTrue(
             all(item["validated"] for item in summary["model_source_provenance"])
         )
+
+    def test_problem_aligned_outputs_and_report_embeds_are_present(self) -> None:
+        required_csv = {
+            "problem1_indicator_summary.csv",
+            "problem_source_access_dates.csv",
+            "problem1_simple_growth_parameters.csv",
+            "problem1_simple_growth_diagnostics.csv",
+            "problem1_simple_growth_forecasts_2026_2030.csv",
+            "problem2_final_training_2010_2024.csv",
+            "problem2_forecasts_2026_2030.csv",
+            "problem2_final_model_diagnostics.csv",
+            "problem2_ridge_standardized_parameters.csv",
+            "problem3_scenario_forecasts_2026_2030.csv",
+            "problem3_policy_sensitivity.csv",
+        }
+        self.assertTrue(
+            all((self.OUTPUT / filename).is_file() for filename in required_csv)
+        )
+        report = (ROOT / "docs/unified_branch_model_comparison.md").read_text(
+            encoding="utf-8"
+        )
+        for section in (
+            "# C题：蓟州区旅游经济趋势预测与对策分析——统一分支模型比较报告",
+            "## 题目要求覆盖矩阵",
+            "## 问题1：指标整理与简单增长模型",
+            "## 问题2：模型评判与 2026—2030 预测",
+            "## 问题3：政策锚定三情景与敏感性",
+            "## 附录：统一分支模型回测与审计",
+            "## 题目导向综合结论",
+        ):
+            self.assertIn(section, report)
+        for relative_path in (
+            "../outputs/unified_model_benchmark/q1_required_indicators.png",
+            "../outputs/unified_model_benchmark/q2_model_judgement.png",
+            "../outputs/unified_model_benchmark/q2_forecast_2026_2030.png",
+            "../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png",
+        ):
+            self.assertIn(relative_path, report)
+        self.assertIn("不是题面直接指定的评价指标", report)
+        self.assertIn("不能把“综合收入/GDP”解释为旅游增加值贡献率", report)
+        self.assertIn("23 个唯一 `source_id`", report)
+        self.assertIn("实际获取日期均为 2026-08-17", report)
+        self.assertIn("作为 2026—2030 的主点预测", report)
+        self.assertIn("Q1 疫情前简单模型在疫情后不再适合作为主预测", report)
+        self.assertIn("target_scale/loocv_scale", report)
+        self.assertIn("不是标准化弹性", report)
 
 
 class BenchmarkReproducibilityTest(unittest.TestCase):
