@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  17 AUG 2026 16:35
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  18 AUG 2026 16:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1567,14 +1567,65 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 140
 
 (D:\junk mass\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2] [3] [4] [5] [6] [7]
-[8] [9] [10]
+) [2] [3]
+Underfull \hbox (badness 3758) in paragraph at lines 219--219
+[]|\TU/SourceHanSerifCN(0)/m/n/9.03374 保 留 \TU/texgyretermes(0)/m/n/9.03374 ann
+ual \TU/SourceHanSerifCN(0)/m/n/9.03374 且 状 态 为
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\TU/SourceHanSerifCN(0)/m/n/9.03374 排 除 \TU/texgyretermes(0)/m/n/9.03374 tar
+get \TU/SourceHanSerifCN(0)/m/n/9.03374 和
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+\TU/texgyretermes(0)/m/n/9.03374 five_year_total\TU/SourceHanSerifCN(0)/m/n/9.0
+3374 ，|  不
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|\TU/texgyretermes(0)/m/n/9.03374 2010 \TU/SourceHanSerifCN(0)/m/n/9.03374 年 
+收 入 反 推 值、|
+ []
+
+
+Underfull \hbox (badness 1448) in paragraph at lines 219--219
+\TU/texgyretermes(0)/m/n/9.03374 2015 \TU/SourceHanSerifCN(0)/m/n/9.03374 年 附 件
+ 值 及 \TU/texgyretermes(0)/m/n/9.03374 2025
+ []
+
+[4] [5]
+Underfull \hbox (badness 1377) in paragraph at lines 286--286
+[]|\TU/texgyretermes(0)/m/n/9.03374 2020–2022 \TU/SourceHanSerifCN(0)/m/n/9.033
+74 年 旅 游
+ []
+
+
+Underfull \hbox (badness 1215) in paragraph at lines 286--286
+[]|\TU/SourceHanSerifCN(0)/m/n/9.03374 保 留 空 白 或 冲 击 观 测，|
+ []
+
+
+Underfull \hbox (badness 2253) in paragraph at lines 286--286
+[]|\TU/SourceHanSerifCN(0)/m/n/9.03374 主 模 型 截 止 \TU/texgyretermes(0)/m/n/9.033
+74 2024 \TU/SourceHanSerifCN(0)/m/n/9.03374 年，|
+ []
+
+
+Underfull \hbox (badness 3547) in paragraph at lines 286--286
+[]|\TU/SourceHanSerifCN(0)/m/n/9.03374 优 先 后 版 修 订 和 精 确
+ []
+
+[6] [7] [8] [9] [10] [11] [12] [13]
 No file 数模通用模板.bbl.
 
 Package caption Warning: Unused \captionsetup[sub] on input line 14.
 See the caption package documentation for explanation.
 
-[11] (数模通用模板.aux)
+[14] (数模通用模板.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026/08/07>
@@ -1583,16 +1634,22 @@ L3 programming layer <2026/08/07>
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `数模通用模板.out' has not changed.
-(rerunfilecheck)             Checksum: F62694F44B8F32F3490EB9FF263A840B;4220.
+
+Package rerunfilecheck Warning: File `数模通用模板.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `数模通用模板.out':
+(rerunfilecheck)             Before: A2D2461342E626AA7B49FD51C0F4C59B;4255
+(rerunfilecheck)             After:  10AE50587B43E68AE9683B2C35A67806;5533.
  ) 
 Here is how much of TeX's memory you used:
- 35433 strings out of 402620
- 747946 string characters out of 5444058
- 1210720 words of memory out of 5000000
- 63959 multiletter control sequences out of 15000+600000
- 637638 words of font info for 121 fonts, out of 8000000 for 9000
+ 35591 strings out of 402620
+ 756648 string characters out of 5444058
+ 1208720 words of memory out of 5000000
+ 64101 multiletter control sequences out of 15000+600000
+ 644192 words of font info for 151 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 112i,11n,117p,537b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 112i,10n,117p,537b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 数模通用模板.pdf (12 pages).
+Output written on 数模通用模板.pdf (15 pages).
