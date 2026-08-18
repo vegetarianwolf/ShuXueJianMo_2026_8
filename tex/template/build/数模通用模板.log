@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  18 AUG 2026 15:50
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  18 AUG 2026 16:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1404,6 +1404,25 @@ File: md-frame-1.mdf 2013/07/01\ 1.9b: md-frame-1
 \c@mdf@zref@counter=\count425
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
+(D:\junk mass\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip182
+\f@nch@offset@elh=\skip183
+\f@nch@offset@erh=\skip184
+\f@nch@offset@olh=\skip185
+\f@nch@offset@orh=\skip186
+\f@nch@offset@elf=\skip187
+\f@nch@offset@erf=\skip188
+\f@nch@offset@olf=\skip189
+\f@nch@offset@orf=\skip190
+\f@nch@height=\skip191
+\f@nch@footalignment=\skip192
+\f@nch@widthL=\skip193
+\f@nch@widthC=\skip194
+\f@nch@widthR=\skip195
+\@temptokenb=\toks46
+)
 (D:\junk mass\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarysh
 apes.geometric.code.tex
 File: tikzlibraryshapes.geometric.code.tex 2026-08-01 v3.1.12 (3.1.12)
@@ -1425,95 +1444,95 @@ File: tikzlibrarypositioning.code.tex 2026-08-01 v3.1.12 (3.1.12)
 ) (数模通用模板.aux)
 \openout1 = `数模通用模板.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 53.
-LaTeX Font Info:    ... okay on input line 53.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 85.
+LaTeX Font Info:    ... okay on input line 85.
 \symlegacymaths=\mathgroup9
 LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
-(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 53.
-LaTeX Font Info:    Redeclaring math accent \acute on input line 53.
-LaTeX Font Info:    Redeclaring math accent \grave on input line 53.
-LaTeX Font Info:    Redeclaring math accent \ddot on input line 53.
-LaTeX Font Info:    Redeclaring math accent \tilde on input line 53.
-LaTeX Font Info:    Redeclaring math accent \bar on input line 53.
-LaTeX Font Info:    Redeclaring math accent \breve on input line 53.
-LaTeX Font Info:    Redeclaring math accent \check on input line 53.
-LaTeX Font Info:    Redeclaring math accent \hat on input line 53.
-LaTeX Font Info:    Redeclaring math accent \dot on input line 53.
-LaTeX Font Info:    Redeclaring math accent \mathring on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Delta on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Theta on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Xi on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Pi on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Phi on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Psi on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \Omega on input line 53.
-LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 53.
-LaTeX Font Info:    Redeclaring symbol font `operators' on input line 53.
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 85.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 85.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 85.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 85.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 85.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 85.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 85.
+LaTeX Font Info:    Redeclaring math accent \check on input line 85.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 85.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 85.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 85.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 85.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 85.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `normal' on input line 53.
+(Font)              `operators' in the math version `normal' on input line 85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> TU/texgyretermes(0)/m/n on input line 5
-3.
+(Font)                  OT1/cmr/m/n --> TU/texgyretermes(0)/m/n on input line 8
+5.
 LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
-(Font)              `operators' in the math version `bold' on input line 53.
+(Font)              `operators' in the math version `bold' on input line 85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  OT1/cmr/bx/n --> TU/texgyretermes(0)/m/n on input line 
-53.
+85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  TU/texgyretermes(0)/m/n --> TU/texgyretermes(0)/m/n on 
-input line 53.
+input line 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
 (Font)                  OT1/cmr/m/it --> TU/texgyretermes(0)/m/it on input line
- 53.
+ 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
 (Font)                  OT1/cmr/bx/n --> TU/texgyretermes(0)/b/n on input line 
-53.
+85.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/texgyreheros(0)/m/n on input line 5
-3.
+(Font)                  OT1/cmss/m/n --> TU/texgyreheros(0)/m/n on input line 8
+5.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/YaHei.Consolas.1.11b(1)/m/n on inpu
-t line 53.
+t line 85.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
 (Font)                  TU/texgyretermes(0)/m/n --> TU/texgyretermes(0)/b/n on 
-input line 53.
+input line 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> TU/texgyretermes(0)/b/it on input lin
-e 53.
+e 85.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
 (Font)                  OT1/cmss/bx/n --> TU/texgyreheros(0)/b/n on input line 
-53.
+85.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/YaHei.Consolas.1.11b(1)/b/n on inpu
-t line 53.
+t line 85.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
 * driver: xetex
-* paper: <default>
+* paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
@@ -1525,8 +1544,8 @@ t line 53.
 * \textheight=702.78308pt
 * \oddsidemargin=-1.1381pt
 * \evensidemargin=-1.1381pt
-* \topmargin=-38.1381pt
-* \headheight=12.0pt
+* \topmargin=-41.1381pt
+* \headheight=15.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
 * \footskip=30.0pt
@@ -1547,101 +1566,127 @@ t line 53.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring ON on input line 53.
+Package hyperref Info: Link coloring OFF on input line 85.
 (数模通用模板.out) (数模通用模板.out)
 \@outlinefile=\write5
 \openout5 = `数模通用模板.out'.
 
  [1
 
-] [1]
-LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 140.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 140
-.
+] (数模通用模板.toc
+LaTeX Font Info:    Trying to load font information for U+msa on input line 1.
 
 (D:\junk mass\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 140
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 1.
 
 (D:\junk mass\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2] [3]
-Underfull \hbox (badness 3758) in paragraph at lines 219--219
+))
+\tf@toc=\write6
+\openout6 = `数模通用模板.toc'.
+
+ [2] [3
+
+]
+LaTeX Font Info:    Calculating math sizes for size <12.05> on input line 172.
+ [4] [5]
+Underfull \hbox (badness 3758) in paragraph at lines 251--251
 []|\TU/SourceHanSerifCN(0)/m/n/9.03374 保 留 \TU/texgyretermes(0)/m/n/9.03374 ann
 ual \TU/SourceHanSerifCN(0)/m/n/9.03374 且 状 态 为
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
 []|\TU/SourceHanSerifCN(0)/m/n/9.03374 排 除 \TU/texgyretermes(0)/m/n/9.03374 tar
 get \TU/SourceHanSerifCN(0)/m/n/9.03374 和
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
 \TU/texgyretermes(0)/m/n/9.03374 five_year_total\TU/SourceHanSerifCN(0)/m/n/9.0
 3374 ，|  不
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
 []|\TU/texgyretermes(0)/m/n/9.03374 2010 \TU/SourceHanSerifCN(0)/m/n/9.03374 年 
 收 入 反 推 值、|
  []
 
 
-Underfull \hbox (badness 1448) in paragraph at lines 219--219
+Underfull \hbox (badness 1448) in paragraph at lines 251--251
 \TU/texgyretermes(0)/m/n/9.03374 2015 \TU/SourceHanSerifCN(0)/m/n/9.03374 年 附 件
  值 及 \TU/texgyretermes(0)/m/n/9.03374 2025
  []
 
-[4] [5]
-Underfull \hbox (badness 1377) in paragraph at lines 286--286
+[6] [7]
+Underfull \hbox (badness 1377) in paragraph at lines 318--318
 []|\TU/texgyretermes(0)/m/n/9.03374 2020–2022 \TU/SourceHanSerifCN(0)/m/n/9.033
 74 年 旅 游
  []
 
 
-Underfull \hbox (badness 1215) in paragraph at lines 286--286
+Underfull \hbox (badness 1215) in paragraph at lines 318--318
 []|\TU/SourceHanSerifCN(0)/m/n/9.03374 保 留 空 白 或 冲 击 观 测，|
  []
 
 
-Underfull \hbox (badness 2253) in paragraph at lines 286--286
+Underfull \hbox (badness 2253) in paragraph at lines 318--318
 []|\TU/SourceHanSerifCN(0)/m/n/9.03374 主 模 型 截 止 \TU/texgyretermes(0)/m/n/9.033
 74 2024 \TU/SourceHanSerifCN(0)/m/n/9.03374 年，|
  []
 
 
-Underfull \hbox (badness 3547) in paragraph at lines 286--286
+Underfull \hbox (badness 3547) in paragraph at lines 318--318
 []|\TU/SourceHanSerifCN(0)/m/n/9.03374 优 先 后 版 修 订 和 精 确
  []
 
-[6] [7] [8] [9] [10] [11] [12] [13]
+[8] [9] [10] [11] [12] [13] [14] [15]
 (D:\junk mass\小乱七八糟\数学建模\26国赛\shared files\tex\template\build\数模通用模板.bbl)
-[14]
+[16] [17
+
+] (D:\junk mass\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
+nput line 618.
+
+(code/1.数据预处理.py [18
+
+]) (D:\junk mass\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(code/q1.m) (code/q2.py) (D:\junk mass\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+)
+(D:\junk mass\MiKTeX\tex/latex/listings\lstmisc.sty
+File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
+) (code/q3.c [19])
+(D:\junk mass\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/11/14 1.11b listings language file
+) (code/q4.cpp)
 
 Package caption Warning: Unused \captionsetup[sub] on input line 14.
 See the caption package documentation for explanation.
 
-[15] (数模通用模板.aux)
+[20] (数模通用模板.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026/08/07>
  ***********
 Package rerunfilecheck Info: File `数模通用模板.out' has not changed.
-(rerunfilecheck)             Checksum: E5C8B890F163E043DF6DAC2096DB4886;5609.
+(rerunfilecheck)             Checksum: 13BF53DBCFD04242CA17270A79B0DB99;1950.
  ) 
 Here is how much of TeX's memory you used:
- 35601 strings out of 402620
- 757238 string characters out of 5444058
- 1208720 words of memory out of 5000000
- 64106 multiletter control sequences out of 15000+600000
- 644192 words of font info for 151 fonts, out of 8000000 for 9000
+ 36995 strings out of 402620
+ 783453 string characters out of 5444058
+ 1652811 words of memory out of 5000000
+ 65456 multiletter control sequences out of 15000+600000
+ 649178 words of font info for 176 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 112i,10n,117p,592b,556s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 112i,13n,117p,592b,2331s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on D:\junk mass\小乱七八糟\数学建模\26国赛\shared files\tex\template\build\
-数模通用模板.pdf (16 pages).
+数模通用模板.pdf (20 pages).

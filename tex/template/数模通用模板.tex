@@ -11,9 +11,45 @@
 \usepackage[framemethod=TikZ]{mdframed}  % 框架宏包
 \usepackage{url}  % 网页链接宏包
 \usepackage{subcaption}  % 子图宏包
+\usepackage{fancyhdr}    % 五校联赛要求：正文右上角标注队伍控制号
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
 \newcolumntype{L}{>{\raggedright\arraybackslash}X}\renewcommand{\textbf}[1]{{\song\bfseries #1}}
+
+%================ 第一届天津市五校数学建模联赛格式设置 ================
+% 提交前只需在此处填写组委会分配的队伍控制号。
+\newcommand{\teamcontrolnumber}{TJMML2026036}
+% 将code目录中的示例文件替换为最终、完整、可运行且无身份信息的程序后，
+% 把下一行false改为true，即可在附录中自动插入全部源码。
+\newif\iffinalsourcecode
+\finalsourcecodefalse
+
+% 摘要页和目录页：仅保留页脚居中的连续页码。
+\fancypagestyle{fiveSchoolFront}{%
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+
+% 正文、参考文献、AI声明及附录：右上角显示队伍控制号。
+\fancypagestyle{fiveSchoolBody}{%
+  \fancyhf{}
+  \fancyhead[R]{\zihao{-5}\songti 队伍控制号：\teamcontrolnumber}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0pt}
+}
+\setlength{\headheight}{15pt}
+\geometry{a4paper,top=25mm,bottom=25mm,left=25mm,right=25mm}
+\hypersetup{
+  pdfauthor={},
+  pdfsubject={第一届天津市五校数学建模联赛参赛论文},
+  hidelinks
+}
+% 目录限定为一级标题，确保目录独占第2页、正文从第3页开始。
+\setcounter{tocdepth}{1}
+%=====================================================================
 
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows.meta, positioning}
@@ -52,9 +88,9 @@
 %% 正文
 \begin{document}
 	
-% 封面和目录页不显示页码
-\pagenumbering{gobble}
 \maketitle
+\pagestyle{fiveSchoolFront}
+\thispagestyle{fiveSchoolFront}
 \begin{abstract}
 
 
@@ -76,9 +112,11 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-%\vspace{-1.4cm} 
-%\tableofcontents  % 目录
-%\newpage
+\thispagestyle{fiveSchoolFront}
+\tableofcontents  % 目录
+\clearpage
+\pagestyle{fiveSchoolBody}
+\thispagestyle{fiveSchoolBody}
 
 
 
@@ -91,8 +129,6 @@
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\pagenumbering{arabic}
-\vspace{-1.4cm} 
 \section{问题背景与重述}
 \subsection{问题背景}
 
@@ -517,6 +553,12 @@ Z_{kt}=\frac{X_{kt}-\bar X_{k,\rm train}}{s_{k,\rm train}}.
 \bibliographystyle{gbt7714-numerical}  % 引用格式
 \bibliography{tjmml_refs}  % 本题参考文献
 
+\clearpage
+\section*{人工智能工具使用声明}
+\phantomsection
+\addcontentsline{toc}{section}{人工智能工具使用声明}
+
+本参赛队在论文准备过程中使用了人工智能工具，现作如下披露：使用工具为\mbox{OpenAI Codex}，主要用于论文结构梳理、数据处理方案讨论、\LaTeX{}排版及语言表达优化。所有数据来源、统计口径、模型设定、程序代码、计算结果和论文结论均由参赛队成员逐项核验并作最终决定，未将未经人工复核的生成内容直接作为论文结论。若后续使用其他人工智能工具，参赛队将在提交前按照联赛《人工智能工具使用规定》补充工具名称、使用环节、主要用途及人工核验方式。
 
 
 
@@ -530,7 +572,8 @@ Z_{kt}=\frac{X_{kt}-\bar X_{k,\rm train}}{s_{k,\rm train}}.
 
 
 
-\newpage
+
+\clearpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% 附录
 \begin{appendices}
@@ -538,7 +581,8 @@ Z_{kt}=\frac{X_{kt}-\bar X_{k,\rm train}}{s_{k,\rm train}}.
 	
 	
 	
-\section{文件列表}
+\section{支撑材料文件列表}
+支撑材料压缩包中的文件应与下表及论文正文保持一致；提交前须确认所有程序能够独立运行并复现论文中的主要结果。
 \begin{table}[H]
 \centering
 \begin{tabularx}{\textwidth}{LL}
@@ -546,10 +590,11 @@ Z_{kt}=\frac{X_{kt}-\bar X_{k,\rm train}}{s_{k,\rm train}}.
 文件名   & 功能描述 \\
 \midrule
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-数据预处理.py & 预处理程序代码 \\
+1.数据预处理.py & 数据清洗、缺失标记与变量转换程序 \\
+q1.m & 问题一模型程序 \\
 q2.py & 问题二程序代码 \\
 q3.c & 问题三程序代码 \\
-q4.cpp & 问题四程序代码 \\
+q4.cpp & 辅助优化或扩展分析程序 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bottomrule
 \end{tabularx}
@@ -563,25 +608,36 @@ q4.cpp & 问题四程序代码 \\
 
 
 
-%\section{代码}
-%\noindent 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%数据预处理.py
-%\lstinputlisting[language=python]{code/1.数据预处理.py}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%q2.py
-%\lstinputlisting[language=python]{code/q2.py}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-%
-%q3.c
-%\lstinputlisting[language=c]{code/q3.c}
-%
-%
-%q4.cpp
-%\lstinputlisting[language=c++]{code/q4.cpp}
+\section{完整源程序代码}
+\iffinalsourcecode
+\lstset{
+  basicstyle=\footnotesize\yaheiconsola,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny,
+  breaklines=true,
+  columns=fullflexible
+}
+
+\subsection{数据预处理程序}
+\lstinputlisting[language=Python]{code/1.数据预处理.py}
+
+\subsection{问题一程序}
+\lstinputlisting[language=Matlab]{code/q1.m}
+
+\subsection{问题二程序}
+\lstinputlisting[language=Python]{code/q2.py}
+
+\subsection{问题三程序}
+\lstinputlisting[language=C]{code/q3.c}
+
+\subsection{辅助优化程序}
+\lstinputlisting[language=C++]{code/q4.cpp}
+\else
+\begin{mdframed}
+\textbf{提交前必须完成：}当前\texttt{code}目录中的文件仍为模板示例，不能作为正式支撑材料提交。请将其替换为与论文模型、结果和文件列表完全一致的完整可运行程序，删除姓名、学校、本机用户名及绝对路径等身份信息，并在文首把\texttt{\string\finalsourcecodefalse}改为\texttt{\string\finalsourcecodetrue}。重新编译后，本节将自动插入全部源程序代码。
+\end{mdframed}
+\fi
 
 \end{appendices}
 \end{document}
