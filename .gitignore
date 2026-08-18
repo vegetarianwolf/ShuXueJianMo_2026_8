@@ -25,3 +25,4 @@ figures/*
 # Download caches
 *.part
 *.crdownload
+node_modules
