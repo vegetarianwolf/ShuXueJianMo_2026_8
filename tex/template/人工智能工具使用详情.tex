@@ -1,0 +1,72 @@
+%! TEX program = xelatex
+\documentclass[12pt,a4paper,fontset=none]{ctexart}
+\usepackage[top=25mm,bottom=25mm,left=28mm,right=28mm]{geometry}
+\usepackage{booktabs,tabularx,array,enumitem,fancyhdr,hyperref}
+\setCJKmainfont[
+  Path=./fonts/,
+  UprightFont=SourceHanSerifCN-Regular.otf,
+  BoldFont=SourceHanSerifCN-Bold.otf
+]{SourceHanSerifCN}
+\setCJKfamilyfont{hei}[
+  Path=./fonts/,
+  UprightFont=FandolHei-Regular.otf,
+  BoldFont=FandolHei-Bold.otf
+]{FandolHei}
+\setCJKfamilyfont{song}[
+  Path=./fonts/,
+  UprightFont=SourceHanSerifCN-Regular.otf,
+  BoldFont=SourceHanSerifCN-Bold.otf
+]{SourceHanSerifCN}
+\def\songti{\CJKfamily{song}}
+\def\heiti{\CJKfamily{hei}}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\zihao{-5}\songti 队伍控制号：TJMML2026036}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\headheight}{15pt}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.4em}
+\hypersetup{hidelinks,pdfauthor={},pdfsubject={第一届天津市五校数学建模联赛支撑材料}}
+
+\begin{document}
+\begin{center}
+  {\zihao{2}\bfseries 人工智能工具使用详情\par}
+\end{center}
+
+\section*{一、所用AI工具}
+\begin{table}[htbp]
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{p{3.3cm}L}
+\toprule
+项目 & 详情 \\
+\midrule
+工具名称 & OpenAI Codex \\
+版本/型号 & GPT-5 \\
+开发机构/公司 & OpenAI \\
+使用日期 & 2026年8月17日至2026年8月19日 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\section*{二、具体使用目的和环节}
+\begin{enumerate}[leftmargin=2.3em,itemsep=0.55em]
+  \item \textbf{论文结构梳理与问题拆解。}
+  辅助讨论“数据治理—统计预测—条件情景”的论文结构，并对三个子问题的衔接逻辑和表达层次提供建议。
+
+  \item \textbf{数据处理方案与程序实现。}
+  辅助讨论缺失值标记、双侧对数线性插值、时间有序滚动检验及数据泄漏防范；辅助编写和精简指数回归、原尺度Ridge、残差自助法、情景恒等式和OAT敏感性分析的实现代码。
+
+  \item \textbf{文字表达与\LaTeX{}排版。}
+  辅助优化部分表述的准确性和连贯性，调整表格、公式、图题、引用、附录代码及页眉页码的\LaTeX{}排版。
+
+  \item \textbf{一致性与可复现性检查。}
+  辅助执行程序语法检查、表格数值复算、正文与附录方法对应检查以及PDF编译和版面检查。
+\end{enumerate}
+
+\section*{三、人工复核说明}
+参赛队员对数据来源、统计口径、缺失值处理、模型设定、程序代码、参数、计算结果、图表及论文结论进行了逐项复核，并作出最终取舍和定稿。AI工具仅用于上述辅助环节，未将未经人工核验的生成内容直接作为数据事实、模型结果或论文结论。
+
+\end{document}
