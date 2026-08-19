@@ -19,10 +19,9 @@
 %================ 第一届天津市五校数学建模联赛格式设置 ================
 % 提交前只需在此处填写组委会分配的队伍控制号。
 \newcommand{\teamcontrolnumber}{TJMML2026036}
-% 复核下方引用的实际支撑脚本，确认其完整、可运行且无身份信息后，
-% 把下一行false改为true，即可在附录中自动插入全部源码。
+% 附录仅插入与正文方法直接对应的精简核心代码。
 \newif\iffinalsourcecode
-\finalsourcecodefalse
+\finalsourcecodetrue
 
 % 摘要页和目录页：仅保留页脚居中的连续页码。
 \fancypagestyle{fiveSchoolFront}{%
@@ -418,7 +417,7 @@ Z_{ik}=\frac{X_{ik}-\bar X_{k,\rm train}}{s_{k,\rm train}}
 \widehat\beta_1(t-2010)\right],
 \label{eq:q1_exp_model}
 \end{equation}
-其中$Y_t$分别取$V_t$与$R_t$，\beta_0表示2010年目标变量对数水平的基准项，\beta_1表示时间每增加一年时对数期望值的平均变化量，\varepsilon_t为随机扰动项。由于模型在对数尺度上估计，\beta_1不能直接当作百分比增长率；将其变换回原尺度后，模型隐含的拟合年增长率为：
+其中$Y_t$分别取$V_t$与$R_t$，$\beta_0$表示2010年目标变量对数水平的基准项，$\beta_1$表示时间每增加一年时对数期望值的平均变化量，$\varepsilon_t$为随机扰动项。由于模型在对数尺度上估计，$\beta_1$不能直接当作百分比增长率；将其变换回原尺度后，模型隐含的拟合年增长率为：
 \begin{equation}
 \widehat g=\exp(\widehat\beta_1)-1.
 \label{eq:q1_growth}
@@ -903,10 +902,7 @@ S_{k,2030}=\frac{\Delta_{k,2030}}
 文件名   & 功能描述 \\
 \midrule
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-build\_unified\_branch\_data.py & 构造统一事实层、训练测试切分与滚动折 \\
-compare\_branch\_models.py & 完成问题1--3的增长模型、滚动回测、Ridge预测、情景和敏感性计算 \\
-render\_tjmml\_c\_visuals.py & 根据结构化结果生成论文核心图 \\
-test\_unified\_model\_benchmark.py & 核验数据契约、预测结果、情景恒等式与输出完整性 \\
+tourism\_core.py & 问题1--3的核心预处理、建模、滚动检验、区间及情景计算 \\
 problem\_source\_access\_dates.csv & 列示23项实际引用数据源的题名、网址、证据状态和获取日期 \\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bottomrule
@@ -921,31 +917,23 @@ problem\_source\_access\_dates.csv & 列示23项实际引用数据源的题名�
 
 
 
-\section{完整源程序代码}
+\section{核心源程序代码}
 \iffinalsourcecode
 \lstset{
-  basicstyle=\footnotesize\yaheiconsola,
+  basicstyle=\scriptsize\ttfamily,
   frame=single,
   numbers=left,
   numberstyle=\tiny,
   breaklines=true,
-  columns=fullflexible
+  columns=fullflexible,
+  showstringspaces=false
 }
 
-\subsection{数据预处理程序}
-\lstinputlisting[language=Python]{../../scripts/build_unified_branch_data.py}
-
-\subsection{统一建模与问题1--3求解程序}
-\lstinputlisting[language=Python]{../../code/scripts/compare_branch_models.py}
-
-\subsection{可视化程序}
-\lstinputlisting[language=Python]{../../code/scripts/render_tjmml_c_visuals.py}
-
-\subsection{结果核验程序}
-\lstinputlisting[language=Python]{../../tests/test_unified_model_benchmark.py}
+\noindent 为控制篇幅，附录删去数据文件读写、来源整理、结果导出、图形绘制与边缘性实现，仅保留正文明确使用的对数线性补值、指数回归、扩展窗口检验、原尺度Ridge、固定设计残差自助法、情景恒等式及OAT敏感性分析。
+\lstinputlisting[language=Python]{code/tourism_core.py}
 \else
 \begin{mdframed}
-\textbf{提交前必须完成：}正式支撑程序已在本项目的\texttt{scripts}、\texttt{code/scripts}与\texttt{tests}目录中列明。提交压缩包前须删除姓名、学校、本机用户名及绝对路径等身份信息，确认程序可在干净环境复现主要表图，再将文首\texttt{\string\finalsourcecodefalse}改为\texttt{\string\finalsourcecodetrue}并重新编译；届时本节将自动插入源码。
+\textbf{说明：}将文首开关改为\texttt{\string\finalsourcecodetrue}后重新编译，即可插入精简核心源码。
 \end{mdframed}
 \fi
 
