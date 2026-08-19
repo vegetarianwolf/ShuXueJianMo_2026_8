@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  19 AUG 2026 00:01
+This is XeTeX, Version 3.141592653-2.6-0.999998 (MiKTeX 26.5) (preloaded format=xelatex 2026.8.17)  19 AUG 2026 10:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1584,103 +1584,90 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 98.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] (数模通用模板.toc)
+] (数模通用模板.toc [2])
 \tf@toc=\write6
 \openout6 = `数模通用模板.toc'.
 
- [2] [3
+ [3]
+[4
 
-]
-[4] [5] [6] [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
+] [5] [6] [7] [8]
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 []|\TU/texgyretermes(0)/m/n/9.03374 2010–2018 \TU/SourceHanSerifCN(0)/m/n/9.033
 74 年 \TU/texgyretermes(0)/m/n/9.03374 7.408%\TU/SourceHanSerifCN(0)/m/n/9.03374
  ；|
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
+Underfull \hbox (badness 10000) in paragraph at lines 395--395
 []|\TU/texgyretermes(0)/m/n/9.03374 2010–2018 \TU/SourceHanSerifCN(0)/m/n/9.033
 74 年 \TU/texgyretermes(0)/m/n/9.03374 7.014%\TU/SourceHanSerifCN(0)/m/n/9.03374
  ；|
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 394--394
+Underfull \hbox (badness 10000) in alignment at lines 395--395
 [][][][][] 
  []
 
+[9]
 File: ../../outputs/unified_model_benchmark/q1_required_indicators.png Graphic 
 file (type bmp)
 <../../outputs/unified_model_benchmark/q1_required_indicators.png>
-[9] [10] [11] [12]
+ [10] [11] [12]
 File: ../../outputs/unified_model_benchmark/q2_model_judgement.png Graphic file
  (type bmp)
 <../../outputs/unified_model_benchmark/q2_model_judgement.png>
- [13]
+ [13] [14]
 File: ../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png Graphic f
 ile (type bmp)
 <../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png>
- [14] [15]
-Underfull \hbox (badness 1817) in paragraph at lines 641--641
+ [15]
+Underfull \hbox (badness 1817) in paragraph at lines 651--651
 []|\TU/texgyretermes(0)/m/n/9.03374 2026 \TU/SourceHanSerifCN(0)/m/n/9.03374 年 
 先 下 降 \TU/texgyretermes(0)/m/n/9.03374 15%\TU/SourceHanSerifCN(0)/m/n/9.03374 ，
 |
  []
 
-[16]
+[16] [17]
 File: ../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png Graphi
 c file (type bmp)
 <../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png>
- [17]
-Underfull \hbox (badness 10000) in paragraph at lines 741--741
+ [18]
+Underfull \hbox (badness 10000) in paragraph at lines 749--749
 []|\TU/SourceHanSerifCN(0)/m/n/6.52437 将 客 源 年 增 速 由 \TU/texgyretermes(0)/m/n/6
 .52437 4.854% \TU/SourceHanSerifCN(0)/m/n/6.52437 提 高 至
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 741--741
+Underfull \hbox (badness 1303) in paragraph at lines 749--749
 \TU/SourceHanSerifCN(0)/m/n/6.52437 送；|  逐 年 核 对 实 际 路 径 是 否 达 到 基 准 的
  []
 
-[18] [19]
-File: ../../outputs/ridge_optimization/ridge_lambda_search.png Graphic file (ty
-pe bmp)
-<../../outputs/ridge_optimization/ridge_lambda_search.png>
- [20] [21] [22] [23] (数模通用模板.bbl) [24] [25
+[19] [20] (数模通用模板.bbl) [21] [22
 
 ]
 
 Package caption Warning: Unused \captionsetup[sub] on input line 14.
 See the caption package documentation for explanation.
 
-[26
+[23
 
 ] (数模通用模板.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026/08/07>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `数模通用模板.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `数模通用模板.out':
-(rerunfilecheck)             Before: 915F961FD54BB7A1EBAAA069E5412966;1872
-(rerunfilecheck)             After:  F7781473E088EB9EAB85F4D823F80F11;1872.
+Package rerunfilecheck Info: File `数模通用模板.out' has not changed.
+(rerunfilecheck)             Checksum: 870590B4BAE10F2A0117C3612970B02B;4496.
  ) 
 Here is how much of TeX's memory you used:
- 36415 strings out of 402620
- 783358 string characters out of 5444058
- 1228354 words of memory out of 5000000
- 64893 multiletter control sequences out of 15000+600000
+ 36405 strings out of 402620
+ 782702 string characters out of 5444058
+ 1228741 words of memory out of 5000000
+ 64885 multiletter control sequences out of 15000+600000
  651713 words of font info for 192 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 112i,13n,117p,537b,1040s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 112i,13n,117p,537b,1036s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 数模通用模板.pdf (26 pages).
+Output written on 数模通用模板.pdf (23 pages).

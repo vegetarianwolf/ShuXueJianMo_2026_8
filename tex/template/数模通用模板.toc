@@ -1,41 +1,36 @@
-\contentsline {section}{\numberline {一、}问题背景与重述}{3}{section.1}%
-\contentsline {subsection}{\numberline {1.1}问题背景}{3}{subsection.1.1}%
-\contentsline {subsection}{\numberline {1.2}问题重述}{3}{subsection.1.2}%
-\contentsline {section}{\numberline {二、}问题分析}{3}{section.2}%
-\contentsline {section}{\numberline {三、}模型假设}{4}{section.3}%
-\contentsline {section}{\numberline {四、}符号说明}{4}{section.4}%
-\contentsline {section}{\numberline {五、}数据预处理}{5}{section.5}%
-\contentsline {subsection}{\numberline {5.1}数据来源、指标口径与证据分层}{5}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}官方优选年度表与覆盖情况}{6}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}缺失值处理与训练层构造}{7}{subsection.5.3}%
-\contentsline {subsection}{\numberline {5.4}变量变换、阶段标记与派生量}{7}{subsection.5.4}%
-\contentsline {subsection}{\numberline {5.5}时间有序验证与评价指标}{8}{subsection.5.5}%
+\contentsline {section}{\numberline {一、}问题背景与重述}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}问题背景}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}问题重述}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {二、}问题分析}{4}{section.2}%
+\contentsline {section}{\numberline {三、}模型假设}{5}{section.3}%
+\contentsline {section}{\numberline {四、}符号说明}{5}{section.4}%
+\contentsline {section}{\numberline {五、}数据预处理}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}数据来源、指标口径与证据分层}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}官方优选年度表与覆盖情况}{7}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}缺失值处理与训练层构造}{8}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}变量变换、阶段标记与派生量}{8}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}时间有序验证与评价指标}{9}{subsection.5.5}%
 \contentsline {section}{\numberline {六、}问题一的模型的建立和求解}{9}{section.6}%
 \contentsline {subsection}{\numberline {6.1}长期趋势与异常波动识别}{9}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}疫情前指数增长模型}{10}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}模型求解、诊断与适用性}{10}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.2}疫情前指数增长模型}{11}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}模型求解、诊断与适用性}{12}{subsection.6.3}%
 \contentsline {section}{\numberline {七、}问题二的模型的建立和求解}{12}{section.7}%
 \contentsline {subsection}{\numberline {7.1}问题二模型的建立}{12}{subsection.7.1}%
-\contentsline {subsection}{\numberline {7.2}问题二模型的求解}{12}{subsection.7.2}%
-\contentsline {subsubsection}{\numberline {7.2.1}预测模型的选择}{12}{subsubsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2}问题二模型的求解}{13}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}预测模型的选择}{13}{subsubsection.7.2.1}%
 \contentsline {subsubsection}{\numberline {7.2.2}最终预测结果}{14}{subsubsection.7.2.2}%
 \contentsline {section}{\numberline {八、}问题三的模型的建立和求解}{16}{section.8}%
-\contentsline {subsection}{\numberline {8.1}政策锚点与情景核算模型}{16}{subsection.8.1}%
-\contentsline {subsection}{\numberline {8.2}三情景2026--2030年路径}{16}{subsection.8.2}%
-\contentsline {subsection}{\numberline {8.3}单因素敏感性分析}{17}{subsection.8.3}%
-\contentsline {subsection}{\numberline {8.4}量化对策及监测机制}{18}{subsection.8.4}%
-\contentsline {section}{\numberline {九、}模型的分析与检验}{20}{section.9}%
-\contentsline {subsection}{\numberline {9.1}时间有序回测与残差诊断的分工}{20}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}正则化强度稳健性}{20}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}误差来源与结论边界}{21}{subsection.9.3}%
-\contentsline {section}{\numberline {十、}模型的评价、改进与推广}{22}{section.10}%
-\contentsline {subsection}{\numberline {10.1}模型的优点}{22}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}模型的局限}{22}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}模型的改进方向}{22}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}模型的推广}{23}{subsection.10.4}%
-\contentsline {section}{\numberline {十一、}结论}{23}{section.11}%
-\contentsline {section}{参考文献}{24}{section*.21}%
-\contentsline {section}{人工智能工具使用声明}{25}{section*.24}%
-\contentsline {section}{附录 \numberline {A}支撑材料文件列表}{26}{section.1.A}%
-\contentsline {section}{附录 \numberline {B}完整源程序代码}{26}{section.1.B}%
+\contentsline {subsection}{\numberline {8.1}模型构建}{16}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}模型求解}{17}{subsection.8.2}%
+\contentsline {section}{\numberline {九、}模型的评价、改进与推广}{19}{section.9}%
+\contentsline {subsection}{\numberline {9.1}模型的优点}{19}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}模型的局限}{20}{subsection.9.2}%
+\contentsline {subsection}{\numberline {9.3}模型的改进方向}{20}{subsection.9.3}%
+\contentsline {subsection}{\numberline {9.4}模型的推广}{20}{subsection.9.4}%
+\contentsline {section}{参考文献}{21}{section*.19}%
+\contentsline {section}{\numberline {十、}人工智能工具使用声明}{22}{section.10}%
+\contentsline {section}{人工智能工具使用声明}{22}{section*.21}%
+\contentsline {section}{\numberline {十一、}附录}{23}{section.11}%
+\contentsline {section}{附录 \numberline {A}支撑材料文件列表}{23}{section.1.A}%
+\contentsline {section}{附录 \numberline {B}完整源程序代码}{23}{section.1.B}%
 \contentsfinish 
