@@ -1,23 +1,23 @@
 # Fdb version 4
-["bibtex 数模通用模板"] 1787117036.18421 "数模通用模板.aux" "数模通用模板.bbl" "数模通用模板" 1787117038.46 0
+["bibtex 数模通用模板"] 1787118050.06779 "数模通用模板.aux" "数模通用模板.bbl" "数模通用模板" 1787118052.2781 0
   "./gbt7714-numerical.bst" 1786936028.53654 36981 b468873a0d715b19033dd98fde01e8f1 ""
   "./tjmml_refs.bib" 1787117031.60088 3341 fb810d8cdde7b1b4a35f387402c30fea ""
-  "数模通用模板.aux" 1787117037.23053 16817 3b1a83b0bfebe203fb52b4472c3a4c80 "xelatex"
+  "数模通用模板.aux" 1787118051.05588 16903 2024393c384383d139fe869da4ba6724 "xelatex"
   (generated)
   "数模通用模板.bbl"
   "数模通用模板.blg"
   (rewritten before read)
-["xdvipdfmx"] 1787117037.41726 "数模通用模板.xdv" "数模通用模板.pdf" "数模通用模板" 1787117038.46139 0
-  "数模通用模板.xdv" 1787117037.23163 539792 97f8161b5f7e66ceed3c36ca7bdee698 "xelatex"
+["xdvipdfmx"] 1787118051.24357 "数模通用模板.xdv" "数模通用模板.pdf" "数模通用模板" 1787118052.27951 0
+  "数模通用模板.xdv" 1787118051.05689 543652 01dde0a13d9937c4536e37770b64a509 "xelatex"
   (generated)
   "数模通用模板.pdf"
   (rewritten before read)
-["xelatex"] 1787117036.25171 "数模通用模板.tex" "数模通用模板.xdv" "数模通用模板" 1787117038.46005 0
+["xelatex"] 1787118050.1359 "数模通用模板.tex" "数模通用模板.xdv" "数模通用模板" 1787118052.27815 0
   "../../outputs/ridge_optimization/ridge_lambda_search.png" 1787052476.69878 176122 79b7e238d870dd3ea18bac777f3f1ee8 ""
-  "../../outputs/unified_model_benchmark/q1_required_indicators.png" 1787057246.066 250215 d9ef3dba5f84e3f743969161744f92fc ""
-  "../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png" 1787058235.58916 158840 aecf9e00c691644eb126c2e13f7f8948 ""
-  "../../outputs/unified_model_benchmark/q2_model_judgement.png" 1787058235.59027 109992 3eba84ed33c15ba236fc4b5abb7c7dd5 ""
-  "../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png" 1787057246.64501 249603 5393e42811d15a16fa754b6ba1716612 ""
+  "../../outputs/unified_model_benchmark/q1_required_indicators.png" 1787118024.98051 223408 d2519fa0736473ab8b7bfc6f7e7da172 ""
+  "../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png" 1787118025.22315 123190 c407bd9aa1069e5aa1ee02a2d9f06e44 ""
+  "../../outputs/unified_model_benchmark/q2_model_judgement.png" 1787118025.11944 73890 cd3fcfaff0b449cb3ee72d00a7af56c3 ""
+  "../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png" 1787118025.40763 226048 bf99fcbbea3d7721602be212a8b2ecb0 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
   "/usr/local/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1246382020 1120 1e8878807317373affa7f7bba4cf2f6a ""
@@ -245,11 +245,11 @@
   "/usr/local/texlive/2026/texmf.cnf" 1774209515 577 648cd9f92f9c0eac486f4c71c85cfbbe ""
   "code/tourism_core.py" 1787116022.85951 6133 87db3001b5b21c1914a282c101e144fc ""
   "cumcmthesis.cls" 1786937181.39071 27760 0bf1df455fb98e35a0425a67ff8309a9 ""
-  "数模通用模板.aux" 1787117037.23053 16817 3b1a83b0bfebe203fb52b4472c3a4c80 "xelatex"
-  "数模通用模板.bbl" 1787117036.2489 3865 58bc0714a7b03a5160f9b2e7fcaa5791 "bibtex 数模通用模板"
-  "数模通用模板.out" 1787117037.23142 1749 a60b62d35fd47ef8e2cfabdb67469bd8 "xelatex"
-  "数模通用模板.tex" 1787116937.2375 61403 d7cfbab80ef246b8250905e01c2e585d ""
-  "数模通用模板.toc" 1787117037.23159 3656 ef05bcc1928acd342113188f378fb466 "xelatex"
+  "数模通用模板.aux" 1787118051.05588 16903 2024393c384383d139fe869da4ba6724 "xelatex"
+  "数模通用模板.bbl" 1787118050.13351 3865 58bc0714a7b03a5160f9b2e7fcaa5791 "bibtex 数模通用模板"
+  "数模通用模板.out" 1787118051.05671 1749 a60b62d35fd47ef8e2cfabdb67469bd8 "xelatex"
+  "数模通用模板.tex" 1787117993.7832 62035 44943ba04146bbfb62d4ae4393bfc802 ""
+  "数模通用模板.toc" 1787118051.05685 3656 ef05bcc1928acd342113188f378fb466 "xelatex"
   (generated)
   "数模通用模板.aux"
   "数模通用模板.log"

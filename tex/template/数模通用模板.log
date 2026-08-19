@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.18)  19 AUG 2026 13:23
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.5.18)  19 AUG 2026 13:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1640,7 +1640,7 @@ File: ../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png Graphic f
 ile (type bmp)
 <../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png>
  [15] [16]
-Underfull \hbox (badness 1817) in paragraph at lines 664--664
+Underfull \hbox (badness 1817) in paragraph at lines 666--666
 []|\TU/texgyretermes(0)/m/n/9.03374 2026 \TU/SourceHanSerifCN(0)/m/n/9.03374 年 
 先 下 降 \TU/texgyretermes(0)/m/n/9.03374 15%\TU/SourceHanSerifCN(0)/m/n/9.03374 ，
 |
@@ -1651,13 +1651,13 @@ File: ../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png Graphi
 c file (type bmp)
 <../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png>
  [18]
-Underfull \hbox (badness 10000) in paragraph at lines 764--764
+Underfull \hbox (badness 10000) in paragraph at lines 767--767
 []|\TU/SourceHanSerifCN(0)/m/n/6.52437 将 客 源 年 增 速 由 \TU/texgyretermes(0)/m/n/6
 .52437 4.854% \TU/SourceHanSerifCN(0)/m/n/6.52437 提 高 至
  []
 
 
-Underfull \hbox (badness 1303) in paragraph at lines 764--764
+Underfull \hbox (badness 1303) in paragraph at lines 767--767
 \TU/SourceHanSerifCN(0)/m/n/6.52437 送；|  逐 年 核 对 实 际 路 径 是 否 达 到 基 准 的
  []
 
@@ -1670,7 +1670,7 @@ pe bmp)
 File: lstlang1.sty 2025/11/14 1.11b listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 927.
+nput line 930.
 
 (./code/tourism_core.py [26
 
@@ -1688,12 +1688,12 @@ Package rerunfilecheck Info: File `数模通用模板.out' has not changed.
 (rerunfilecheck)             Checksum: A60B62D35FD47EF8E2CFABDB67469BD8;1749.
  ) 
 Here is how much of TeX's memory you used:
- 35810 strings out of 468168
- 773516 string characters out of 5432815
- 1996514 words of memory out of 5000000
- 63868 multiletter control sequences out of 15000+600000
- 654223 words of font info for 205 fonts, out of 8000000 for 9000
+ 35899 strings out of 468168
+ 780112 string characters out of 5432815
+ 1997816 words of memory out of 5000000
+ 63955 multiletter control sequences out of 15000+600000
+ 654239 words of font info for 207 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  108i,13n,116p,474b,2387s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 数模通用模板.xdv (28 pages, 539792 bytes).
+Output written on 数模通用模板.xdv (28 pages, 543652 bytes).

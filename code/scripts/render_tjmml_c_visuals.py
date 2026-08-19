@@ -211,21 +211,9 @@ def _render_q1(canonical: pd.DataFrame, augmented: pd.DataFrame, path: Path) -> 
 
     axes[0, 0].legend(frameon=False, ncol=2, loc="upper left")
     axes[0, 1].legend(frameon=False, ncol=2, loc="upper left")
-    fig.suptitle(
-        "问题1：题目要求的四项核心指标、数据覆盖与疫情缺口",
-        fontsize=14,
-        fontweight="normal",
-        y=0.995,
-    )
-    fig.text(
-        0.5,
-        0.012,
-        "灰色区间为 2020—2022 年；紫色叉号是训练期内生成的模拟值，不是官方观测。",
-        ha="center",
-        fontsize=8.5,
-        color="#4B5563",
-    )
-    fig.tight_layout(rect=[0, 0.035, 1, 0.96])
+    # The overall title and explanatory note are typeset by LaTeX.  Keep the
+    # raster asset limited to the actual panels, axes, legends, and annotations.
+    fig.tight_layout()
     _save(fig, path)
 
 
@@ -234,13 +222,6 @@ def _metric_smape(frame: pd.DataFrame, metric: str, model: str) -> float:
     if len(row) != 1:
         raise ValueError(f"expected one sMAPE row for {metric}/{model}, got {len(row)}")
     return float(row.iloc[0]["smape_percent"])
-
-
-def _macro_smape(frame: pd.DataFrame, model: str) -> float:
-    rows = frame[frame["model"].eq(model)]
-    if set(rows["metric"]) != set(METRIC_LABELS):
-        raise ValueError(f"incomplete target coverage for {model}")
-    return float(rows["smape_percent"].mean())
 
 
 def _render_q2_judgement(output_dir: Path, path: Path) -> None:
@@ -289,25 +270,9 @@ def _render_q2_judgement(output_dir: Path, path: Path) -> None:
         ax.set_title(METRIC_LABELS[metric])
         _format_axes(ax, x_label="模型", y_label="sMAPE（%，越低越好）" if ax is axes[0] else "")
 
-    macro_values = [_macro_smape(official, model) for model in models]
-    macro_text = "；".join(
-        f"{label} {value:.3f}%"
-        for label, value in zip(
-            ("Ridge", "无断点OLS", "问题1模型", "上一期法"),
-            macro_values,
-            strict=True,
-        )
-    )
-    fig.suptitle("问题2：官方数据扩展窗口滚动检验", fontsize=14, y=0.99)
-    fig.text(
-        0.5,
-        0.015,
-        f"两目标等权平均：{macro_text}；Ridge 为综合主模型，但游客量单目标最低的是上一期数值法。",
-        ha="center",
-        fontsize=8.0,
-        color="#4B5563",
-    )
-    fig.tight_layout(rect=[0, 0.07, 1, 0.91])
+    # The overall title and the macro-average explanation live in the TeX
+    # figure environment so they remain selectable and follow document fonts.
+    fig.tight_layout()
     _save(fig, path)
 
 
@@ -420,20 +385,8 @@ def _render_q2_forecast(
         _format_axes(ax, y_label=METRIC_UNITS[metric])
         ax.set_xticks([2018, 2020, 2022, 2024, 2026, 2028, 2030])
     axes[0].legend(frameon=False, loc="upper left")
-    fig.suptitle(
-        "问题2：2026—2030 预测区间及与问题1初步模型的对比",
-        fontsize=14,
-        y=1.01,
-    )
-    fig.text(
-        0.5,
-        -0.01,
-        "深色带：OLS为 log 均值指数化（原尺度条件中位数）区间，Ridge为条件均值区间；浅色带为单次预测区间。Q1虚线仅作机械外推对照。",
-        ha="center",
-        fontsize=8.2,
-        color="#4B5563",
-    )
-    fig.tight_layout(rect=[0, 0.04, 1, 0.95])
+    # The overall title and interval explanation are typeset by LaTeX.
+    fig.tight_layout()
     _save(fig, path)
 
 
@@ -536,16 +489,8 @@ def _render_q3(scenarios: pd.DataFrame, sensitivity: pd.DataFrame, path: Path) -
         _format_axes(ax, x_label="相对基准变化（%）", y_label="")
         ax.invert_yaxis()
 
-    fig.suptitle("问题3：三情景预测与关键情景杠杆", fontsize=14, y=0.995)
-    fig.text(
-        0.5,
-        0.01,
-        "敏感性结果来自透明的情景假设与收入恒等式，不是从历史样本识别出的因果政策效应。",
-        ha="center",
-        fontsize=8.2,
-        color="#4B5563",
-    )
-    fig.tight_layout(rect=[0, 0.035, 1, 0.96])
+    # The overall title and sensitivity caveat are typeset by LaTeX.
+    fig.tight_layout()
     _save(fig, path)
 
 

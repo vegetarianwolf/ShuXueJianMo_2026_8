@@ -398,10 +398,10 @@ Z_{ik}=\frac{X_{ik}-\bar X_{k,\rm train}}{s_{k,\rm train}}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{../../outputs/unified_model_benchmark/q1_required_indicators.png}
-\caption{四项核心指标、数据覆盖与异常阶段}
+\caption{问题1：题目要求的四项核心指标、数据覆盖与疫情缺口}
 \label{fig:q1_indicators}
+\caption*{\footnotesize 注：灰色区域为2020--2022年的疫情特殊时期，紫色叉号及虚线表示模型训练层的模拟值，2019年虚线表示统计口径边界。}
 \end{figure}
-\noindent\textbf{注：}图中灰色区域为2020--2022年的疫情特殊时期，紫色叉号及虚线表示模型训练层的模拟值，2019年虚线表示统计口径边界。
 
 图\ref{fig:q1_indicators}清晰的展示了疫情前旅游接待量和综合收入总体快速上升的趋势，而疫情结束后的恢复期并未回到同一条增长轨道。2023年游客量较2019年低15.607\%，2024年同比上升11.849\%后仍低5.607\%；综合收入2021年较2019年低33.333\%，2023年则已高于2019年16.061\%，2024年进一步同比增长15.405\%。游客量恢复慢于综合收入，表明旅游经济质量不能仅由客流规模判断，恢复过程中还可能伴随游客结构、平均停留时间、价格水平及消费组合的变化。换言之，收入的较快修复并不等同于游客规模的完全恢复。
 
@@ -534,8 +534,9 @@ Ridge对综合收入相较上一期数值法改善41.189\%，但游客量误差�
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{../../outputs/unified_model_benchmark/q2_model_judgement.png}
-\caption{问题2候选模型的时间有序评判}
+\caption{问题2：官方数据扩展窗口滚动检验}
 \label{fig:q2_model_judgement}
+\caption*{\footnotesize 注：两目标等权平均为Ridge 14.661\%、无断点OLS 18.001\%、问题1模型21.209\%、上一期法20.259\%；Ridge为综合主模型，但游客量单目标最低的是上一期数值法。}
 \end{figure}
 
 \subsection{最终参数估计与统计诊断}
@@ -612,8 +613,9 @@ Ridge对综合收入相较上一期数值法改善41.189\%，但游客量误差�
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{../../outputs/unified_model_benchmark/q2_forecast_2026_2030.png}
-\caption{Ridge主预测、条件区间及与问题1模型的对比}
+\caption{问题2：2026--2030年预测区间及与问题1初步模型的对比}
 \label{fig:q2_forecast}
+\caption*{\footnotesize 注：深色带中，OLS为对数均值指数化（原尺度条件中位数）区间，Ridge为条件均值区间；浅色带为单次预测区间。问题1虚线仅作机械外推对照。}
 \end{figure}
 
 平均响应区间描述同一设计点上条件均值的不确定性；若考虑一次新的年度观测，2030年单次预测95\%条件区间为游客量3449.140--4251.025万人次、综合收入269.985--318.666亿元。两类区间均以模型结构、$\lambda=0.1$、训练补值和解释变量为给定条件，不覆盖超参数选择、缺失机制、序列相关、统计口径变化及政策冲击，也不是五年同时置信带。
@@ -738,8 +740,9 @@ S_{k,2030}=\frac{\Delta_{k,2030}}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.98\textwidth]{../../outputs/unified_model_benchmark/q3_scenarios_sensitivity.png}
-\caption{三情景路径与2030年关键因素敏感性}
+\caption{问题3：三情景预测与关键情景杠杆}
 \label{fig:q3_scenarios}
+\caption*{\footnotesize 注：敏感性结果来自透明的情景假设与收入恒等式，不是从历史样本识别出的因果政策效应。}
 \end{figure}
 
 \subsection{量化对策及监测机制}
