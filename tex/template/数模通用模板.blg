@@ -9,42 +9,42 @@ Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Database file #1: tjmml_refs.bib
 You've used 11 entries,
             4281 wiz_defined-function locations,
-            956 strings with 8311 characters,
-and the built_in function-call counts, 35294 in all, are:
-= -- 1301
-> -- 3096
-< -- 4345
-+ -- 1516
-- -- 452
-* -- 452
-:= -- 5314
-add.period$ -- 44
+            953 strings with 8288 characters,
+and the built_in function-call counts, 34072 in all, are:
+= -- 1259
+> -- 2975
+< -- 4206
++ -- 1489
+- -- 454
+* -- 416
+:= -- 5130
+add.period$ -- 43
 call.type$ -- 11
-change.case$ -- 21
-chr.to.int$ -- 1344
+change.case$ -- 20
+chr.to.int$ -- 1313
 cite$ -- 11
-duplicate$ -- 208
-empty$ -- 858
+duplicate$ -- 207
+empty$ -- 818
 format.name$ -- 104
-if$ -- 9028
+if$ -- 8738
 int.to.chr$ -- 2
 int.to.str$ -- 12
 missing$ -- 0
-newline$ -- 76
+newline$ -- 75
 num.names$ -- 33
-pop$ -- 931
+pop$ -- 847
 preamble$ -- 1
 purify$ -- 11
 quote$ -- 0
-skip$ -- 3294
+skip$ -- 3181
 stack$ -- 0
-substring$ -- 2288
+substring$ -- 2183
 swap$ -- 21
-text.length$ -- 85
+text.length$ -- 86
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 137
+type$ -- 135
 warning$ -- 0
-while$ -- 120
+while$ -- 118
 width$ -- 0
-write$ -- 178
+write$ -- 173

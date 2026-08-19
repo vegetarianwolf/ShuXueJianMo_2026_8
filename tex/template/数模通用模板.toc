@@ -1,9 +1,9 @@
 \contentsline {section}{\numberline {一、}问题背景与重述}{4}{section.1}%
 \contentsline {subsection}{\numberline {1.1}问题背景}{4}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}问题重述}{4}{subsection.1.2}%
-\contentsline {section}{\numberline {二、}问题分析}{4}{section.2}%
+\contentsline {section}{\numberline {二、}问题分析}{5}{section.2}%
 \contentsline {section}{\numberline {三、}模型假设}{5}{section.3}%
-\contentsline {section}{\numberline {四、}符号说明}{5}{section.4}%
+\contentsline {section}{\numberline {四、}符号说明}{6}{section.4}%
 \contentsline {section}{\numberline {五、}数据预处理}{6}{section.5}%
 \contentsline {subsection}{\numberline {5.1}数据来源、指标口径与证据分层}{6}{subsection.5.1}%
 \contentsline {subsection}{\numberline {5.2}官方优选年度表与覆盖情况}{7}{subsection.5.2}%
@@ -22,15 +22,12 @@
 \contentsline {section}{\numberline {八、}问题三的模型的建立和求解}{16}{section.8}%
 \contentsline {subsection}{\numberline {8.1}模型构建}{16}{subsection.8.1}%
 \contentsline {subsection}{\numberline {8.2}模型求解}{17}{subsection.8.2}%
-\contentsline {section}{\numberline {九、}模型的评价、改进与推广}{19}{section.9}%
+\contentsline {section}{\numberline {九、}模型的评价}{19}{section.9}%
 \contentsline {subsection}{\numberline {9.1}模型的优点}{19}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}模型的局限}{20}{subsection.9.2}%
-\contentsline {subsection}{\numberline {9.3}模型的改进方向}{20}{subsection.9.3}%
-\contentsline {subsection}{\numberline {9.4}模型的推广}{20}{subsection.9.4}%
-\contentsline {section}{参考文献}{21}{section*.19}%
-\contentsline {section}{\numberline {十、}人工智能工具使用声明}{22}{section.10}%
-\contentsline {section}{人工智能工具使用声明}{22}{section*.21}%
-\contentsline {section}{\numberline {十一、}附录}{23}{section.11}%
+\contentsline {section}{\numberline {十、}参考文献}{21}{section.10}%
+\contentsline {section}{\numberline {十一、}人工智能工具使用声明}{22}{section.11}%
+\contentsline {section}{\numberline {十二、}附录}{23}{section.12}%
 \contentsline {section}{附录 \numberline {A}支撑材料文件列表}{23}{section.1.A}%
 \contentsline {section}{附录 \numberline {B}完整源程序代码}{23}{section.1.B}%
 \contentsfinish 

@@ -52,12 +52,6 @@ HOERL~A~E, KENNARD~R~W.
 \newblock Technometrics, 1970, 12\penalty0 (1):\penalty0 55-67.
 \newblock DOI: \doi{10.1080/00401706.1970.10488634}.
 
-\bibitem[Efron(1979)]{efron1979bootstrap}
-EFRON~B.
-\newblock Bootstrap methods: Another look at the jackknife\allowbreak[J/OL].
-\newblock The Annals of Statistics, 1979, 7\penalty0 (1):\penalty0 1-26.
-\newblock DOI: \doi{10.1214/aos/1176344552}.
-
 \bibitem[{UN Tourism}(2024)]{untourism2024barometer}
 {UN Tourism}.
 \newblock World tourism barometer\allowbreak[R/OL].
@@ -83,5 +77,11 @@ EFRON~B.
 \newblock
   超大城市远郊乡村农文旅融合发展评价及耦合分析——以天津市蓟州区为例\allowbreak[J].
 \newblock 小城镇建设, 2024, 42\penalty0 (10):\penalty0 30-39.
+
+\bibitem[{OpenAI}(2026)]{openaiCodex2026}
+{OpenAI}.
+\newblock OpenAI
+  Codex，GPT-5，OpenAI，使用日期：2026-08-19\allowbreak[Z].
+\newblock [出版地不详: 出版者不详], 2026.
 
 \end{thebibliography}
